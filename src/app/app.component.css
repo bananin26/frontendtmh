@@ -1,0 +1,12 @@
+.toolbar-content {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .toolbar-text {
+    margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
+  }
+  
+  
+  

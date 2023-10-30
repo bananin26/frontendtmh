@@ -1,13 +1,29 @@
 <mat-toolbar color="accent">
-  <mat-icon style="margin-right: 20px;">menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuUser">User</button></mat-toolbar>
+  <div class="toolbar-content">
+    <span class="toolbar-text">Take Me Home</span>
+  </div>
+    <button mat-icon-button [matMenuTriggerFor]="menuIcon">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-<mat-menu #menuUser="matMenu">
-  <button mat-menu-item routerLink="/user/new">Register</button>
-  <button mat-menu-item routerLink="/user">To-List</button>
+  <mat-menu #menuIcon="matMenu" class="custom-menu">
+    <button mat-menu-item [matMenuTriggerFor]="menuUser">User</button>
+    <button mat-menu-item [matMenuTriggerFor]="menuProduct">Product</button>
+  </mat-menu>
 
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-menu #menuUser="matMenu">
+    <button mat-menu-item routerLink="/user/new">Add User</button>
+    <button mat-menu-item routerLink="/user">User List</button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
+  </mat-menu>
+
+  <mat-menu #menuProduct="matMenu">
+    <button mat-menu-item routerLink="/product/new">Add Product</button>
+    <button mat-menu-item routerLink="/product">Product List</button>
+    <!-- Agrega más elementos de menú para "Product" si es necesario -->
+  </mat-menu>
+</mat-toolbar>
+
 
 
 <router-outlet></router-outlet>

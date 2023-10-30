@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <br />
+      <h2>Product register</h2>
+      <form [formGroup]="form" (submit)="accept()" class="example-form">
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Name Product</mat-label>
+          <input matInput placeholder="Name Product" formControlName="nameProduct" />
+          <mat-error
+            *ngIf="obtenerControlCampo('nameProduct')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Description" formControlName="descriptionProduct" />
+            <mat-error
+              *ngIf="obtenerControlCampo('descriptionProduct')?.errors?.['required']"
+            >
+              La descripción es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+          <br />           
+          <mat-form-field class="example-full-width">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Price" formControlName="priceProduct" />
+            <mat-error
+              *ngIf="obtenerControlCampo('priceProduct')?.errors?.['required']"
+            >
+              El precio es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />           
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Dimensions</mat-label>
+            <input matInput placeholder="Dimensions" formControlName="dimensionsProduct" />
+            <mat-error
+              *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
+            >
+              Las dimensiones son obligatorias.
+            </mat-error>
+          </mat-form-field>
+          <br />     
+
+<br/>
+        <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
+        <button mat-stroked-button color="warn" routerLink="/product">
+            Cancel
+          </button>
+<br/>
+        <p>{{ mensaje }}</p>
+        <br/>
+
+      </form>
+    </div>
+  </body>
+</html>
