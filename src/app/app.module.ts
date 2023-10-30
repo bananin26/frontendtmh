@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './component/user/user.component';
@@ -17,14 +18,17 @@ import{MatNativeDateModule} from '@angular/material/core'
 import {MatPaginatorModule} from '@angular/material/paginator'
 import { MatMenuModule } from '@angular/material/menu';
 import{MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateditUserComponent } from './component/user/createdit-user/createdit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    TolistUserComponent
+    TolistUserComponent,
+    CreateditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

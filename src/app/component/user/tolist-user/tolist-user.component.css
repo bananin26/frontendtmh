@@ -1,6 +1,6 @@
 table {
-    width: 20%;
-  }
+  width: 20%;
+}
      
   .my-custom-table th, .my-custom-table td {
     padding: 8px; /* Añade un espacio de relleno a las celdas */
@@ -14,6 +14,29 @@ table {
   
   /* Reduce el espacio entre las celdas de encabezado */
   .mat-header-cell {
+    padding: 3px;
+  }
+  
+  /* Reduce el espacio entre las celdas de datos */
+  .mat-cell {
+    padding: 5px;
+  }
+  .my-custom-table {
+    width: 100%; /* Ancho total de la tabla */
+    table-layout: fixed; /* Fuerza que el ancho de las columnas sea uniforme */
+  
+    th, td {
+      padding: 5px; /* Espacio de relleno en las celdas */
+    }
+  }
+  
+  /* Establece el ancho de las columnas, puedes ajustar los valores según tus necesidades */
+  .mat-header-cell, .mat-cell {
+    width: 10%; /* Porcentaje del ancho de la tabla */
+  }
+  
+  /* Reduce el espacio entre las celdas de encabezado */
+  .mat-header-cell {
     padding: 5px;
   }
   
@@ -21,4 +44,8 @@ table {
   .mat-cell {
     padding: 5px;
   }
+
+.mat-column-email {
+  width: 25%; /* Ajusta el ancho de la columna "IDUSER" */
+}
   
