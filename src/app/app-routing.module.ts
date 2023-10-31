@@ -6,12 +6,17 @@ import { ProductComponent } from './component/product/product.component';
 import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
 import { OrderComponent } from './component/order/order.component';
 import { CreateditOrderComponent } from './component/order/createdit-order/createdit-order.component';
+import { MessageComponent } from './component/message/message.component';
+import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
 
 const routes: Routes = [
   {
     path: 'user',
     component: UserComponent,
-    children: [{ path: 'new', component: CreateditUserComponent }],
+    children: [
+      { path: 'new', component: CreateditUserComponent },
+      { path: 'edition/:id', component: CreateditUserComponent },
+    ],
   },
   {
     path: 'product',
@@ -23,8 +28,11 @@ const routes: Routes = [
     component: OrderComponent,
     children: [{ path: 'new', component: CreateditOrderComponent }],
   },
-
-
+  {
+    path: 'message',
+    component: MessageComponent,
+    children: [{ path: 'new', component: CreateditMessageComponent }],
+  },
 ];
 
 @NgModule({

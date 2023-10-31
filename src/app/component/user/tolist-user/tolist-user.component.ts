@@ -7,11 +7,20 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-tolist-user',
   templateUrl: './tolist-user.component.html',
-  styleUrls: ['./tolist-user.component.css']
+  styleUrls: ['./tolist-user.component.css'],
 })
-export class TolistUserComponent implements OnInit{
+export class TolistUserComponent implements OnInit {
   dataSource: MatTableDataSource<User> = new MatTableDataSource();
-  displayedColumns: string[] = ['idUser', 'name','email','phone','birthday','country'];
+  displayedColumns: string[] = [
+    'idUser',
+    'name',
+    'email',
+    'phone',
+    'birthday',
+    'country',
+    'actualizar',
+    'eliminar',
+  ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -26,5 +35,15 @@ export class TolistUserComponent implements OnInit{
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
+  }
+  eliminar(id: number) {
+    this.uS.delete(id).subscribe((data) => {
+      this.uS.list().subscribe((data) => {
+        this.uS.setList(data);
+      });
+    });
+  }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
   }
 }

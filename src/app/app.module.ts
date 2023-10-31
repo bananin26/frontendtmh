@@ -28,6 +28,9 @@ import { CreateditProductComponent } from './component/product/createdit-product
 import { OrderComponent } from './component/order/order.component';
 import { TolistOrderComponent } from './component/order/tolist-order/tolist-order.component';
 import { CreateditOrderComponent } from './component/order/createdit-order/createdit-order.component';
+import { MessageComponent } from './component/message/message.component';
+import { TolistMessageComponent } from './component/message/tolist-message/tolist-message.component';
+import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { CreateditOrderComponent } from './component/order/createdit-order/creat
     CreateditProductComponent,
     OrderComponent,
     TolistOrderComponent,
-    CreateditOrderComponent
+    CreateditOrderComponent,
+    MessageComponent,
+    TolistMessageComponent,
+    CreateditMessageComponent
   ],
   imports: [
     BrowserModule,

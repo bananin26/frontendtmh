@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
 import {
   FormGroup,
@@ -21,16 +21,25 @@ export class CreateditUserComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   user: User = new User();
   mensaje: string = '';
+  id: number = 0;
   maxFecha: Date = moment().add(-1, 'days').toDate();
   dueDateUser = new FormControl(new Date());
+  edition: boolean = false;
  
   constructor(
     private uS: UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idUser: [''],
       name: ['', Validators.required],
@@ -68,4 +77,20 @@ export class CreateditUserComponent implements OnInit {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.uS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idUser: new FormControl(data.idUser),
+          name: new FormControl(data.name),
+          email: new FormControl(data.email),
+          phone: new FormControl(data.phone),
+          birthday: new FormControl(data.birthday),
+          country: new FormControl(data.country),          
+        });
+      });
+    }
+  }  
+
 }

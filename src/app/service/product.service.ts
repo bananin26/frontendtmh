@@ -4,10 +4,9 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../model/product';
 
-
 const base_url = environment.base;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
   private url = `${base_url}/Products`;
@@ -24,5 +23,14 @@ export class ProductService {
   }
   getList() {
     return this.listaCambio.asObservable();
+  }
+  listId(id:number){
+    return this.http.get<Product>(`${this.url}/${id}`);
+  } 
+  update(p: Product) {
+    return this.http.put(this.url, p);
+  }
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
   }
 }

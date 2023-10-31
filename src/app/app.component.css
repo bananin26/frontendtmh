@@ -7,6 +7,16 @@
   .toolbar-text {
     margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
   }
+  /* styles.css */
+/* Estilo personalizado para la barra de herramientas */
+.mat-toolbar.mat-primary {
+  background-color: lightblue;
+  color: white; /* Cambia el color del texto si es necesario */
+}
+
+
+
+
   
   
   
