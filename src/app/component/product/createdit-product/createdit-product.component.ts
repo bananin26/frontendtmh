@@ -21,7 +21,6 @@ export class CreateditProductComponent {
   product: Product = new Product();
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();
-  dueDateUser = new FormControl(new Date());
  
   constructor(
     private pS: ProductService,

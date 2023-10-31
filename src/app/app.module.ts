@@ -25,6 +25,9 @@ import { CreateditUserComponent } from './component/user/createdit-user/createdi
 import { ProductComponent } from './component/product/product.component';
 import { TolistProductComponent } from './component/product/tolist-product/tolist-product.component';
 import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
+import { OrderComponent } from './component/order/order.component';
+import { TolistOrderComponent } from './component/order/tolist-order/tolist-order.component';
+import { CreateditOrderComponent } from './component/order/createdit-order/createdit-order.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { CreateditProductComponent } from './component/product/createdit-product
     CreateditUserComponent,
     ProductComponent,
     TolistProductComponent,
-    CreateditProductComponent
+    CreateditProductComponent,
+    OrderComponent,
+    TolistOrderComponent,
+    CreateditOrderComponent
   ],
   imports: [
     BrowserModule,
