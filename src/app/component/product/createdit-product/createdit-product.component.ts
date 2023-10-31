@@ -16,7 +16,7 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './createdit-product.component.html',
   styleUrls: ['./createdit-product.component.css']
 })
-export class CreateditProductComponent {
+export class CreateditProductComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   product: Product = new Product();
   mensaje: string = '';

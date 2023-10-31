@@ -8,7 +8,7 @@ import { OrderService } from 'src/app/service/order.service';
   templateUrl: './tolist-order.component.html',
   styleUrls: ['./tolist-order.component.css']
 })
-export class TolistOrderComponent {
+export class TolistOrderComponent implements OnInit {
   dataSource: MatTableDataSource<Order> = new MatTableDataSource();
   displayedColumns: string[] = ['idOrder','shippingDate','arriveDate','destinationCountry','destinationCity','destinationAddress','originCountry','originCity'];
 

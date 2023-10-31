@@ -17,7 +17,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./createdit-user.component.css']
 })
 
-export class CreateditUserComponent {
+export class CreateditUserComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   user: User = new User();
   mensaje: string = '';

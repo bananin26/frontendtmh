@@ -16,7 +16,7 @@ import { OrderService } from 'src/app/service/order.service';
   templateUrl: './createdit-order.component.html',
   styleUrls: ['./createdit-order.component.css']
 })
-export class CreateditOrderComponent {
+export class CreateditOrderComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   order: Order = new Order();
   mensaje: string = '';

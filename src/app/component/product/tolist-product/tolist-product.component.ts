@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/service/product.service';
   templateUrl: './tolist-product.component.html',
   styleUrls: ['./tolist-product.component.css']
 })
-export class TolistProductComponent {
+export class TolistProductComponent implements OnInit {
   dataSource: MatTableDataSource<Product> = new MatTableDataSource();
   displayedColumns: string[] = ['idProduct', 'nameProduct','descriptionProduct','priceProduct','dimensionsProduct'];
 

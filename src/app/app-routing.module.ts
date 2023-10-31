@@ -23,6 +23,8 @@ const routes: Routes = [
     component: OrderComponent,
     children: [{ path: 'new', component: CreateditOrderComponent }],
   },
+
+
 ];
 
 @NgModule({

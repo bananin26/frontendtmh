@@ -9,7 +9,7 @@
   <mat-menu #menuIcon="matMenu" class="custom-menu">
     <button mat-menu-item [matMenuTriggerFor]="menuUser">User</button>
     <button mat-menu-item [matMenuTriggerFor]="menuProduct">Product</button>
-    <button mat-menu-item [matMenuTriggerFor]="menuOrders">Order</button>
+    <button mat-menu-item [matMenuTriggerFor]="menuOrders">Order</button>   
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -27,6 +27,9 @@
     <button mat-menu-item routerLink="/order/new">Add Order</button>
     <button mat-menu-item routerLink="/order">Order List</button>
   </mat-menu>
+
+
+  
 </mat-toolbar>
 
 <router-outlet></router-outlet>
