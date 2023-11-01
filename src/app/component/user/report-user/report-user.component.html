@@ -22,11 +22,11 @@
        
         
       </mat-form-field>
-      <button (click)="buscar()" mat-stroked-button color="warn" style="margin-left: 20px;">Search</button>
+      <button (click)="buscar()" mat-stroked-button color="primary" style="margin-left: 20px;">Search</button>
     </div>
 
     <div class="container">
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 my-custom-table">
         <!-- Position Column -->
         <ng-container matColumnDef="idUser">
             <th mat-header-cell *matHeaderCellDef> idUser </th>
