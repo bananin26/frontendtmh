@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+    <br/>
     <div><h2 style="text-align: center">Search Users</h2></div>
     <div [formGroup]="fechaForm" class="container">
       <mat-form-field>
@@ -21,7 +22,7 @@
        
         
       </mat-form-field>
-      <button (click)="buscar()" mat-raised-button color="warn">Search</button>
+      <button (click)="buscar()" mat-stroked-button color="warn" style="margin-left: 20px;">Search</button>
     </div>
 
     <div class="container">
