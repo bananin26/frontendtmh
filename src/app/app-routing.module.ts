@@ -1,3 +1,4 @@
+import { ReportUserComponent } from './component/user/report-user/report-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './component/user/user.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     children: [
       { path: 'new', component: CreateditUserComponent },
       { path: 'edition/:id', component: CreateditUserComponent },
+      {path:'search',component:ReportUserComponent}
     ],
   },
   {

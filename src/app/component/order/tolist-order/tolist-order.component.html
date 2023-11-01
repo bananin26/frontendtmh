@@ -12,6 +12,9 @@
 
   </div>
   <div class="container">
+    <mat-form-field>
+      <input matInput (keyup)=filter($event) placeholder="Search"/>
+    </mat-form-field>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 my-custom-table">
 
       <ng-container matColumnDef="idOrder">

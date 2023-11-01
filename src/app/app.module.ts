@@ -31,6 +31,7 @@ import { CreateditOrderComponent } from './component/order/createdit-order/creat
 import { MessageComponent } from './component/message/message.component';
 import { TolistMessageComponent } from './component/message/tolist-message/tolist-message.component';
 import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
+import { ReportUserComponent } from './component/user/report-user/report-user.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { CreateditMessageComponent } from './component/message/createdit-message
     CreateditOrderComponent,
     MessageComponent,
     TolistMessageComponent,
-    CreateditMessageComponent
+    CreateditMessageComponent,
+    ReportUserComponent
   ],
   imports: [
     BrowserModule,

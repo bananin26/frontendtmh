@@ -27,4 +27,7 @@ export class TolistMessageComponent {
       this.dataSource.paginator = this.paginator;
     });
   }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
+  }
 }

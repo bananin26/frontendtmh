@@ -26,4 +26,7 @@ export class TolistOrderComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     });
   }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
+  }
 }
