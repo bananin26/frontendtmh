@@ -5,4 +5,4 @@ export class Role {
     phone: string = '';
     birthday: Date = new Date(Date.now());
     country: string = '';
-  }
+}
