@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Message } from 'src/app/model/message';
 import { MessageService } from 'src/app/service/message.service';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-createdit-message',
@@ -18,9 +20,13 @@ export class CreateditMessageComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   message: Message = new Message();
   mensaje: string = '';
- 
+  listaUsers:User[]=[]
+  idUserSeleccionada1:number=0
+  idUserSeleccionada2:number=0
+
   constructor(
     private mS: MessageService,
+    private uS:UserService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -30,6 +36,11 @@ export class CreateditMessageComponent implements OnInit{
       idMessage: [''],
       title: ['', Validators.required],
       content: ['', [Validators.required]],
+      userSend: ['', [Validators.required]],
+      userReceive: ['', [Validators.required]],
+    });
+    this.uS.list().subscribe((data) => {
+      this.listaUsers = data;
     });
   }
 
@@ -38,6 +49,8 @@ export class CreateditMessageComponent implements OnInit{
       this.message.idMessage = this.form.value.idMessage;
       this.message.title = this.form.value.title;
       this.message.content = this.form.value.content;
+      this.message.userSend.idUser = this.form.value.userSend;
+      this.message.userReceives.idUser = this.form.value.userReceive;
 
       this.mS.insert(this.message).subscribe((data) => {
         this.mS.list().subscribe((data) => {
