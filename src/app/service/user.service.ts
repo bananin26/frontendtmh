@@ -34,6 +34,7 @@ export class UserService {
     return this.http.delete(`${this.url}/${id}`);
   }
   search(fecha: string): Observable<User[]> {
-    return this.http.post<User[]>(`${this.url}/buscar`, { fecha: fecha });
+    return this.http.post<User[]>(`${this.url}/search`, { fecha: fecha });
   }
 }
+
