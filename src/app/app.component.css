@@ -3,7 +3,11 @@
     justify-content: flex-start;
     width: 100%;
   }
-  
+
+  .custom-menu:hover {
+    color: lightskyblue; /* Cambia el color al pasar el cursor por encima */
+  }
+
   .toolbar-text {
     margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
   }

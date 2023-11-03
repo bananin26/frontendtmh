@@ -24,20 +24,22 @@
   <!-- Resto de tu contenido del toolbar -->
 
   <mat-menu #menuIcon="matMenu" class="custom-menu">
-    <button mat-menu-item [matMenuTriggerFor]="menuUser" routerLink="/user">
+    <button class="custom-menu" mat-menu-item [matMenuTriggerFor]="menuUser">
       User
     </button>
     <button
+      class="custom-menu"
       mat-menu-item
       [matMenuTriggerFor]="menuProduct"
       routerLink="/product"
     >
       Product
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="menuOrders" routerLink="/order">
+    <button class="custom-menu" mat-menu-item [matMenuTriggerFor]="menuOrders">
       Order
     </button>
     <button
+      class="custom-menu"
       mat-menu-item
       [matMenuTriggerFor]="menuMessage"
       routerLink="/message"
@@ -47,25 +49,43 @@
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
-    <button mat-menu-item routerLink="/user/new">Add User</button>
-    <button mat-menu-item routerLink="/user">User List</button>
-    <button mat-menu-item routerLink="/user/search">Search User</button>
+    <button mat-menu-item routerLink="/user/new" class="custom-menu">
+      Add User
+    </button>
+    <button mat-menu-item routerLink="/user" class="custom-menu">
+      User List
+    </button>
+    <button mat-menu-item routerLink="/user/search" class="custom-menu">
+      Search User
+    </button>
     <!-- Agrega más elementos de menú para "User" si es necesario -->
   </mat-menu>
 
   <mat-menu #menuProduct="matMenu">
-    <button mat-menu-item routerLink="/product/new">Add Product</button>
-    <button mat-menu-item routerLink="/product">Product List</button>
+    <button mat-menu-item routerLink="/product/new" class="custom-menu">
+      Add Product
+    </button>
+    <button mat-menu-item routerLink="/product" class="custom-menu">
+      Product List
+    </button>
   </mat-menu>
 
   <mat-menu #menuOrders="matMenu">
-    <button mat-menu-item routerLink="/order/new">Add Order</button>
-    <button mat-menu-item routerLink="/order">Order List</button>
+    <button mat-menu-item routerLink="/order/new" class="custom-menu">
+      Add Order
+    </button>
+    <button mat-menu-item routerLink="/order" class="custom-menu">
+      Order List
+    </button>
   </mat-menu>
 
   <mat-menu #menuMessage="matMenu">
-    <button mat-menu-item routerLink="/message/new">Add Message</button>
-    <button mat-menu-item routerLink="/message">Message List</button>
+    <button mat-menu-item routerLink="/message/new" class="custom-menu">
+      Add Message
+    </button>
+    <button mat-menu-item routerLink="/message" class="custom-menu">
+      Message List
+    </button>
   </mat-menu>
 
   <div id="quienesSomos">
@@ -88,17 +108,20 @@
       <p class="p1">Un turista te lo traerá</p>
       <div class="button-container">
         <div class="button-text">
-          <button class="button" style="padding: 15px 25px; margin-right: 80px;">Registrarme</button>
+          <button class="button" style="padding: 15px 25px; margin-right: 80px">
+            Registrarme
+          </button>
           <p class="text-below-button; p2">Soy nuevo no tengo cuenta</p>
         </div>
         <div class="button-text">
-          <button class="button" style="padding: 15px 25px;">Iniciar Sesión</button>
+          <button class="button" style="padding: 15px 25px">
+            Iniciar Sesión
+          </button>
           <p class="text-below-button; p3">Ya tengo cuenta</p>
         </div>
-      </div>      
+      </div>
     </div>
   </div>
-  
 </body>
 
 <router-outlet></router-outlet>
