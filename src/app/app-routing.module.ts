@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       { path: 'new', component: CreateditUserComponent },
       { path: 'edition/:id', component: CreateditUserComponent },
-      {path:'search',component:ReportUserComponent}
+      { path: 'search', component: ReportUserComponent },
     ],
   },
   {

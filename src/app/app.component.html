@@ -1,16 +1,49 @@
 <mat-toolbar class="custom-theme" color="primary">
   <div class="toolbar-content">
-    <span class="toolbar-text">Take Me Home</span>
+    <img
+      src="assets/logo.png"
+      alt="Logo de la aplicación"
+      class="toolbar-image"
+      style="max-width: 150px; max-height: 150px"
+    />
   </div>
-    <button mat-icon-button [matMenuTriggerFor]="menuIcon">
+  <div class="spacer"></div>
+  <!-- Espaciador para empujar los elementos hacia la derecha -->
+  <a class="scroll-link" href="#quienesSomos">Quiénes Somos</a>
+  <span class="space-between"></span>
+  <!-- Espacio en blanco -->
+  <a class="scroll-link" href="#esSimple">Es Simple</a>
+  <span class="space-between"></span>
+  <!-- Espacio en blanco -->
+  <a class="scroll-link" href="#beneficios">Beneficios</a>
+  <span class="space-between"></span>
+  <!-- Espacio en blanco -->
+  <button mat-icon-button [matMenuTriggerFor]="menuIcon">
     <mat-icon>menu</mat-icon>
   </button>
+  <!-- Resto de tu contenido del toolbar -->
 
   <mat-menu #menuIcon="matMenu" class="custom-menu">
-    <button mat-menu-item [matMenuTriggerFor]="menuUser">User</button>
-    <button mat-menu-item [matMenuTriggerFor]="menuProduct">Product</button>
-    <button mat-menu-item [matMenuTriggerFor]="menuOrders">Order</button>   
-    <button mat-menu-item [matMenuTriggerFor]="menuMessage">Message</button>   
+    <button mat-menu-item [matMenuTriggerFor]="menuUser" routerLink="/user">
+      User
+    </button>
+    <button
+      mat-menu-item
+      [matMenuTriggerFor]="menuProduct"
+      routerLink="/product"
+    >
+      Product
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="menuOrders" routerLink="/order">
+      Order
+    </button>
+    <button
+      mat-menu-item
+      [matMenuTriggerFor]="menuMessage"
+      routerLink="/message"
+    >
+      Message
+    </button>
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -34,7 +67,38 @@
     <button mat-menu-item routerLink="/message/new">Add Message</button>
     <button mat-menu-item routerLink="/message">Message List</button>
   </mat-menu>
-  
+
+  <div id="quienesSomos">
+    <!-- Contenido de la sección Quiénes Somos -->
+  </div>
+
+  <div id="esSimple">
+    <!-- Contenido de la sección Es Simple -->
+  </div>
+
+  <div id="beneficios">
+    <!-- Contenido de la sección Beneficios -->
+  </div>
 </mat-toolbar>
+
+<body>
+  <div class="background-image">
+    <div class="centered-content">
+      <h1 class="title">¿Quieres algo del extranjero?</h1>
+      <p class="p1">Un turista te lo traerá</p>
+      <div class="button-container">
+        <div class="button-text">
+          <button class="button" style="padding: 15px 25px; margin-right: 80px;">Registrarme</button>
+          <p class="text-below-button; p2">Soy nuevo no tengo cuenta</p>
+        </div>
+        <div class="button-text">
+          <button class="button" style="padding: 15px 25px;">Iniciar Sesión</button>
+          <p class="text-below-button; p3">Ya tengo cuenta</p>
+        </div>
+      </div>      
+    </div>
+  </div>
+  
+</body>
 
 <router-outlet></router-outlet>
