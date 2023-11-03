@@ -32,6 +32,12 @@ import { MessageComponent } from './component/message/message.component';
 import { TolistMessageComponent } from './component/message/tolist-message/tolist-message.component';
 import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
 import { ReportUserComponent } from './component/user/report-user/report-user.component';
+import { NotificationComponent } from './component/notification/notification.component';
+import { CreateditNotificationComponent } from './component/notification/createdit-notification/createdit-notification.component';
+import { TolistNotificationComponent } from './component/notification/tolist-notification/tolist-notification.component';
+import { CategoryComponent } from './component/category/category.component';
+import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
+import { TolistCategoryComponent } from './component/category/tolist-category/tolist-category.component';
 
 
 @NgModule({
@@ -49,7 +55,13 @@ import { ReportUserComponent } from './component/user/report-user/report-user.co
     MessageComponent,
     TolistMessageComponent,
     CreateditMessageComponent,
-    ReportUserComponent
+    ReportUserComponent,
+    NotificationComponent,
+    CreateditNotificationComponent,
+    TolistNotificationComponent,
+    CategoryComponent,
+    CreateditCategoryComponent,
+    TolistCategoryComponent,
   ],
   imports: [
     BrowserModule,

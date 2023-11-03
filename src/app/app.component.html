@@ -46,6 +46,25 @@
     >
       Message
     </button>
+
+    <button
+      class="custom-menu"
+      mat-menu-item
+      [matMenuTriggerFor]="menuNotification"
+      routerLink="/notification"
+    >
+      Notification
+    </button>
+
+    <button
+      class="custom-menu"
+      mat-menu-item
+      [matMenuTriggerFor]="menuCategory"
+      routerLink="/category"
+    >
+      Category
+    </button>
+
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -86,6 +105,26 @@
     <button mat-menu-item routerLink="/message" class="custom-menu">
       Message List
     </button>
+  </mat-menu>
+
+  <mat-menu #menuNotification="matMenu">
+    <button mat-menu-item routerLink="/notification/new" class="custom-menu">
+      Add Notification
+    </button>
+    <button mat-menu-item routerLink="/notification" class="custom-menu">
+      Notification List
+    </button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
+  </mat-menu>
+
+  <mat-menu #menuCategory="matMenu">
+    <button mat-menu-item routerLink="/category/new" class="custom-menu">
+      Add Category
+    </button>
+    <button mat-menu-item routerLink="/category" class="custom-menu">
+      Category List
+    </button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
   </mat-menu>
 
   <div id="quienesSomos">

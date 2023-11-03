@@ -9,6 +9,10 @@ import { OrderComponent } from './component/order/order.component';
 import { CreateditOrderComponent } from './component/order/createdit-order/createdit-order.component';
 import { MessageComponent } from './component/message/message.component';
 import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
+import { NotificationComponent } from './component/notification/notification.component';
+import { CategoryComponent } from './component/category/category.component';
+import { CreateditNotificationComponent } from './component/notification/createdit-notification/createdit-notification.component';
+import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
 
 const routes: Routes = [
   {
@@ -34,6 +38,16 @@ const routes: Routes = [
     path: 'message',
     component: MessageComponent,
     children: [{ path: 'new', component: CreateditMessageComponent }],
+  },
+  {
+    path: 'notification',
+    component: NotificationComponent,
+    children: [{ path: 'new', component: CreateditNotificationComponent }],
+  },
+  {
+    path: 'category',
+    component: CategoryComponent,
+    children: [{ path: 'new', component: CreateditCategoryComponent }],
   },
 ];
 
