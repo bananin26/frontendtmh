@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/service/message.service';
 })
 export class TolistMessageComponent {
   dataSource: MatTableDataSource<Message> = new MatTableDataSource();
-  displayedColumns: string[] = ['idMessage', 'title','content'];
+  displayedColumns: string[] = ['idMessage', 'title','content', 'User Send','User Receive'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
