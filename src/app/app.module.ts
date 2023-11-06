@@ -38,6 +38,9 @@ import { TolistNotificationComponent } from './component/notification/tolist-not
 import { CategoryComponent } from './component/category/category.component';
 import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
 import { TolistCategoryComponent } from './component/category/tolist-category/tolist-category.component';
+import { RoleComponent } from './component/role/role.component';
+import { TolistRoleComponent } from './component/role/tolist-role/tolist-role.component';
+import { CreateditRoleComponent } from './component/role/createdit-role/createdit-role.component';
 
 
 @NgModule({
@@ -62,6 +65,9 @@ import { TolistCategoryComponent } from './component/category/tolist-category/to
     CategoryComponent,
     CreateditCategoryComponent,
     TolistCategoryComponent,
+    RoleComponent,
+    TolistRoleComponent,
+    CreateditRoleComponent,
   ],
   imports: [
     BrowserModule,

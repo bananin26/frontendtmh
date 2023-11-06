@@ -65,6 +65,15 @@
       Category
     </button>
 
+    <button
+    class="custom-menu"
+    mat-menu-item
+    [matMenuTriggerFor]="menuRole"
+    routerLink="/Role"
+  >
+    Role
+  </button>
+
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -123,6 +132,16 @@
     </button>
     <button mat-menu-item routerLink="/category" class="custom-menu">
       Category List
+    </button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
+  </mat-menu>
+
+  <mat-menu #menuRole="matMenu">
+    <button mat-menu-item routerLink="/Role/new" class="custom-menu">
+      Add Role
+    </button>
+    <button mat-menu-item routerLink="/Role" class="custom-menu">
+      Role List
     </button>
     <!-- Agrega más elementos de menú para "User" si es necesario -->
   </mat-menu>

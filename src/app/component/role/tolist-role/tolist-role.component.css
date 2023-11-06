@@ -49,7 +49,3 @@ table {
   .mat-column-email {
     width: 25%; /* Ajusta el ancho de la columna "IDUSER" */
   }
-  .container{
-    height: 100%;
-    background-color: black;
-  }
