@@ -45,8 +45,8 @@ export class CreateditRoleComponent implements OnInit {
   accept(): void {
     if (this.form.valid) {
       this.role.id = this.form.value.id;
-      this.role.rol = this.form.value.rol;
-      this.role.user = this.form.value.user;
+      this.role.rol = this.form.value.role;
+      this.role.user.idUser = this.form.value.user;
 
       this.rS.insert(this.role).subscribe((data) => {
         this.rS.list().subscribe((data) => {
