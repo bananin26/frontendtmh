@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class TolistProductComponent implements OnInit {
   dataSource: MatTableDataSource<Product> = new MatTableDataSource();
-  displayedColumns: string[] = ['idProduct', 'nameProduct','descriptionProduct','priceProduct','dimensionsProduct'];
+  displayedColumns: string[] = ['idProduct', 'nameProduct','descriptionProduct','priceProduct','dimensionsProduct','order','category'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

@@ -54,7 +54,30 @@
               Las dimensiones son obligatorias.
             </mat-error>
           </mat-form-field>
-          <br />     
+          
+          <br />  
+          <mat-form-field class="example-full-width">
+            <mat-label>Order</mat-label>
+            <input matInput placeholder="Order" formControlName="order" />
+            <mat-error
+              *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
+            >
+              Las dimensiones son obligatorias.
+            </mat-error>
+          </mat-form-field>
+          <br />  
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Category</mat-label>
+            <input matInput placeholder="Dimensions" formControlName="category" />
+            <mat-error
+              *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
+            >
+              Las dimensiones son obligatorias.
+            </mat-error>
+          </mat-form-field>
+          <br />
 
 <br/>
         <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>

@@ -10,6 +10,8 @@ import {
 } from '@angular/forms';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
+import { CategoryService } from 'src/app/service/category.service';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-createdit-product',
@@ -24,6 +26,8 @@ export class CreateditProductComponent implements OnInit {
  
   constructor(
     private pS: ProductService,
+    private cS: CategoryService,
+    private oS: OrderService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -35,6 +39,9 @@ export class CreateditProductComponent implements OnInit {
       descriptionProduct: ['', [Validators.required]],
       priceProduct: ['', Validators.required],
       dimensionsProduct: ['', Validators.required],
+      order: ['', Validators.required],
+      category: ['', Validators.required],
+
     });
   }
 
@@ -45,6 +52,9 @@ export class CreateditProductComponent implements OnInit {
       this.product.descriptionProduct = this.form.value.descriptionProduct;
       this.product.priceProduct = this.form.value.priceProduct;
       this.product.dimensionsProduct = this.form.value.dimensionsProduct;
+      this.product.order = this.form.value.order;
+      this.product.category = this.form.value.category;
+
      
       this.pS.insert(this.product).subscribe((data) => {
         this.pS.list().subscribe((data) => {
