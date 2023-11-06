@@ -22,12 +22,10 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateditUserComponent } from './component/user/createdit-user/createdit-user.component';
-import { CategoryComponent } from './component/category/category.component';
-import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
-import { TolistCategoryComponent } from './component/category/tolist-category/tolist-category.component';
 import { ProductComponent } from './component/product/product.component';
-import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
 import { TolistProductComponent } from './component/product/tolist-product/tolist-product.component';
+import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
+
 
 @NgModule({
   declarations: [
@@ -35,12 +33,10 @@ import { TolistProductComponent } from './component/product/tolist-product/tolis
     UserComponent,
     TolistUserComponent,
     CreateditUserComponent,
-    CategoryComponent,
-    CreateditCategoryComponent,
-    TolistCategoryComponent,
     ProductComponent,
+    TolistProductComponent,
     CreateditProductComponent,
-    TolistProductComponent
+   
   ],
   imports: [
     BrowserModule,
