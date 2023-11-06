@@ -65,7 +65,7 @@ body {
 .background-image {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente si lo deseas */
+  background-color: rgba(255, 255, 255, 0.350  ); /* Fondo semi-transparente si lo deseas */
 }
 
 .centered-content {
@@ -107,19 +107,22 @@ body {
 }
 
 .title {
+  
+  font-weight: 600;
   font-size: 4em; /* Tamaño de fuente grande */
   text-align: center; /* Texto centrado */
   color: black; /* Color de texto blanco o el que desees */
   margin-bottom: 39px; /* Espacio inferior */
   margin-top: 300px; /* Ajusta el margen superior para mover los botones más abajo */
-  font-family: 'Karla', Verdana, Tahoma, sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
 }
 
 .p1 {
+  font-weight: 600;
   font-size: 2em; /* Tamaño de fuente para el subtexto */
   text-align: center; /* Texto centrado */
   color: black; /* Color de texto blanco o el que desees */
-  font-family: 'Karla', Verdana, Tahoma, sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
 }
 
 .button-container {
