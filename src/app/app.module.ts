@@ -25,6 +25,9 @@ import { CreateditUserComponent } from './component/user/createdit-user/createdi
 import { CategoryComponent } from './component/category/category.component';
 import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
 import { TolistCategoryComponent } from './component/category/tolist-category/tolist-category.component';
+import { ProductComponent } from './component/product/product.component';
+import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
+import { TolistProductComponent } from './component/product/tolist-product/tolist-product.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { TolistCategoryComponent } from './component/category/tolist-category/to
     CreateditUserComponent,
     CategoryComponent,
     CreateditCategoryComponent,
-    TolistCategoryComponent
+    TolistCategoryComponent,
+    ProductComponent,
+    CreateditProductComponent,
+    TolistProductComponent
   ],
   imports: [
     BrowserModule,
