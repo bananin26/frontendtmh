@@ -22,13 +22,19 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateditUserComponent } from './component/user/createdit-user/createdit-user.component';
+import { CategoryComponent } from './component/category/category.component';
+import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
+import { TolistCategoryComponent } from './component/category/tolist-category/tolist-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     TolistUserComponent,
-    CreateditUserComponent
+    CreateditUserComponent,
+    CategoryComponent,
+    CreateditCategoryComponent,
+    TolistCategoryComponent
   ],
   imports: [
     BrowserModule,
