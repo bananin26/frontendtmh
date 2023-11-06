@@ -7,22 +7,30 @@ import { ProductService } from 'src/app/service/product.service';
 @Component({
   selector: 'app-tolist-product',
   templateUrl: './tolist-product.component.html',
-  styleUrls: ['./tolist-product.component.css']
+  styleUrls: ['./tolist-product.component.css'],
 })
 export class TolistProductComponent implements OnInit {
   dataSource: MatTableDataSource<Product> = new MatTableDataSource();
-  displayedColumns: string[] = ['idProduct', 'nameProduct','descriptionProduct','priceProduct','dimensionsProduct','order','category'];
+  displayedColumns: string[] = [
+    'idProduct',
+    'nameProduct',
+    'descriptionProduct',
+    'priceProduct',
+    'dimensionsProduct',
+    'order',
+    'category',
+  ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private uS: ProductService) {}
+  constructor(private pS: ProductService) {}
 
   ngOnInit(): void {
-    this.uS.list().subscribe((data) => {
+    this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.uS.getList().subscribe((data) => {
+    this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

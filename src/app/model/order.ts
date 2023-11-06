@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export class Order {
     idOrder: number = 0;
     shippingDate: Date = new Date(Date.now());
@@ -7,4 +9,5 @@ export class Order {
     destinationAddress: string = '';
     originCountry: string = '';
     originCity: string = '';
+    user: User = new User();
 }

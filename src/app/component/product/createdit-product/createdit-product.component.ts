@@ -12,6 +12,8 @@ import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 import { CategoryService } from 'src/app/service/category.service';
 import { OrderService } from 'src/app/service/order.service';
+import { Order } from 'src/app/model/order';
+import { Category } from 'src/app/model/category';
 
 @Component({
   selector: 'app-createdit-product',
@@ -22,7 +24,11 @@ export class CreateditProductComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   product: Product = new Product();
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
+  listaOrder:Order[]=[]
+  listaCategory:Category[]=[]
+  idOrderSeleccionada1:number=0
+  idCategoryrSeleccionada1:number=0
+  
  
   constructor(
     private pS: ProductService,
@@ -41,7 +47,12 @@ export class CreateditProductComponent implements OnInit {
       dimensionsProduct: ['', Validators.required],
       order: ['', Validators.required],
       category: ['', Validators.required],
-
+    });
+    this.oS.list().subscribe((data) => {
+      this.listaOrder = data;
+    });
+    this.cS.list().subscribe((data) => {
+      this.listaCategory = data;
     });
   }
 
@@ -52,10 +63,9 @@ export class CreateditProductComponent implements OnInit {
       this.product.descriptionProduct = this.form.value.descriptionProduct;
       this.product.priceProduct = this.form.value.priceProduct;
       this.product.dimensionsProduct = this.form.value.dimensionsProduct;
-      this.product.order = this.form.value.order;
-      this.product.category = this.form.value.category;
+      this.product.order.idOrder = this.form.value.order;
+      this.product.category.idCategory = this.form.value.category;
 
-     
       this.pS.insert(this.product).subscribe((data) => {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);

@@ -114,7 +114,24 @@
             </mat-error>
           </mat-form-field>
           <br />           
-          <br />           
+          <br />       
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>User</mat-label>
+            <mat-select 
+            [(value)]="idUserSeleccionada1"
+            formControlName="user">
+              <mat-option *ngFor="let l of listaUsers" [value]="l.idUser">
+                {{l.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error
+            *ngIf="obtenerControlCampo('user')?.errors?.['required']"
+          >
+            El usuario es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br/>
 
         <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
         <button mat-stroked-button color="warn" routerLink="/order">

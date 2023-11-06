@@ -10,6 +10,8 @@ import {
 } from '@angular/forms';
 import { Order } from 'src/app/model/order';
 import { OrderService } from 'src/app/service/order.service';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-createdit-order',
@@ -21,9 +23,13 @@ export class CreateditOrderComponent implements OnInit {
   order: Order = new Order();
   mensaje: string = '';
   dueDateOrder = new FormControl(new Date());
+  listaUsers:User[]=[]
+  idUserSeleccionada1:number=0
+  idUserSeleccionada2:number=0
  
   constructor(
     private oS: OrderService,
+    private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -38,6 +44,10 @@ export class CreateditOrderComponent implements OnInit {
       destinationAddress: ['', Validators.required],  
       originCountry: ['', Validators.required],  
       originCity: ['', Validators.required],    
+      user: ['', [Validators.required]],
+    });
+    this.uS.list().subscribe((data) => {
+      this.listaUsers = data;
     });
   }
 
@@ -51,6 +61,7 @@ export class CreateditOrderComponent implements OnInit {
       this.order.destinationAddress = this.form.value.destinationAddress;
       this.order.originCountry = this.form.value.originCountry;
       this.order.originCity = this.form.value.originCity;
+      this.order.user.idUser = this.form.value.user;
      
       this.oS.insert(this.order).subscribe((data) => {
         this.oS.list().subscribe((data) => {

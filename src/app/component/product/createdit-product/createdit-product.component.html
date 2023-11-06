@@ -55,29 +55,40 @@
             </mat-error>
           </mat-form-field>
           
-          <br />  
           <mat-form-field class="example-full-width">
             <mat-label>Order</mat-label>
-            <input matInput placeholder="Order" formControlName="order" />
+            <mat-select 
+            [(value)]="idOrderSeleccionada1"
+            formControlName="order">
+              <mat-option *ngFor="let l of listaOrder" [value]="l.idOrder">
+                {{l.idOrder}}
+              </mat-option>
+            </mat-select>
             <mat-error
-              *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
-            >
-              Las dimensiones son obligatorias.
-            </mat-error>
-          </mat-form-field>
-          <br />  
+            *ngIf="obtenerControlCampo('order')?.errors?.['required']"
+          >
+            El id orden es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br/> 
 
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Category</mat-label>
-            <input matInput placeholder="Dimensions" formControlName="category" />
-            <mat-error
-              *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
-            >
-              Las dimensiones son obligatorias.
-            </mat-error>
-          </mat-form-field>
-          <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Category</mat-label>
+          <mat-select 
+          [(value)]="idCategoryrSeleccionada1"
+          formControlName="category">
+            <mat-option *ngFor="let l of listaCategory" [value]="l.nameCategory">
+              {{l.nameCategory}}
+            </mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="obtenerControlCampo('category')?.errors?.['required']"
+        >
+          La cateogoria es obligatoria.
+        </mat-error>
+      </mat-form-field>
+      <br/> 
 
 <br/>
         <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
