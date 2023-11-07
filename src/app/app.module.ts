@@ -44,6 +44,9 @@ import { CreateditRoleComponent } from './component/role/createdit-role/createdi
 import { ForumComponent } from './component/forum/forum.component';
 import { CreateditForumComponent } from './component/forum/createdit-forum/createdit-forum.component';
 import { TolistForumComponent } from './component/forum/tolist-forum/tolist-forum.component';
+import { RecordComponent } from './component/record/record.component';
+import { TolistRecordComponent } from './component/record/tolist-record/tolist-record.component';
+import { CreateditRecordComponent } from './component/record/createdit-record/createdit-record.component';
 
 
 @NgModule({
@@ -74,6 +77,9 @@ import { TolistForumComponent } from './component/forum/tolist-forum/tolist-foru
     ForumComponent,
     CreateditForumComponent,
     TolistForumComponent,
+    RecordComponent,
+    TolistRecordComponent,
+    CreateditRecordComponent
   ],
   imports: [
     BrowserModule,

@@ -83,6 +83,15 @@
   Forum
 </button>
 
+<button
+class="custom-menu"
+mat-menu-item
+[matMenuTriggerFor]="menuRecord"
+routerLink="/records"
+>
+Records
+</button>
+
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -161,6 +170,16 @@
     </button>
     <button mat-menu-item routerLink="/Forum" class="custom-menu">
       Forum List
+    </button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
+  </mat-menu>
+
+  <mat-menu #menuRecord="matMenu">
+    <button mat-menu-item routerLink="/records/new" class="custom-menu">
+      Add Record
+    </button>
+    <button mat-menu-item routerLink="/records" class="custom-menu">
+      Record List
     </button>
     <!-- Agrega más elementos de menú para "User" si es necesario -->
   </mat-menu>

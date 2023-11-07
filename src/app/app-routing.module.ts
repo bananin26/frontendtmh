@@ -17,6 +17,8 @@ import { RoleComponent } from './component/role/role.component';
 import { CreateditRoleComponent } from './component/role/createdit-role/createdit-role.component';
 import { ForumComponent } from './component/forum/forum.component';
 import { CreateditForumComponent } from './component/forum/createdit-forum/createdit-forum.component';
+import { RecordComponent } from './component/record/record.component';
+import { CreateditRecordComponent } from './component/record/createdit-record/createdit-record.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,11 @@ const routes: Routes = [
     path: 'Forum',
     component: ForumComponent,
     children: [{ path: 'new', component: CreateditForumComponent }],
+  },
+  {
+    path: 'records',
+    component: RecordComponent,
+    children: [{ path: 'new', component: CreateditRecordComponent }],
   },
 ];
 
