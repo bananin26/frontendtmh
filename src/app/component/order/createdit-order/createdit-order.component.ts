@@ -68,7 +68,7 @@ export class CreateditOrderComponent implements OnInit {
           this.oS.setList(data);
         });
       });
-      this.router.navigate(['order']);
+      this.router.navigate(['Orders']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

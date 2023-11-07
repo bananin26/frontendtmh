@@ -63,7 +63,7 @@ export class CreateditNotificationComponent {
           this.nS.setList(data);
         });
       });
-      this.router.navigate(['notification']);
+      this.router.navigate(['Notifications']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

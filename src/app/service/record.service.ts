@@ -12,7 +12,7 @@ const base_url = environment.base;
 
 export class RecordService {
 
-  private url = `${base_url}/records`;
+  private url = `${base_url}/Records`;
   private listaCambio = new Subject<Record[]>();
   constructor(private http: HttpClient) {}
   list() {

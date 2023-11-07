@@ -56,7 +56,7 @@ export class CreateditForumComponent implements OnInit{
           this.fS.setList(data);
         });
       });
-      this.router.navigate(['Forum']);
+      this.router.navigate(['Forums']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

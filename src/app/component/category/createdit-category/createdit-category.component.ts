@@ -44,7 +44,7 @@ export class CreateditCategoryComponent {
           this.cS.setList(data);
         });
       });
-      this.router.navigate(['category']);
+      this.router.navigate(['Categories']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

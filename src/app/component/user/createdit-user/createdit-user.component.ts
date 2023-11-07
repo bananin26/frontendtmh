@@ -64,7 +64,7 @@ export class CreateditUserComponent implements OnInit {
           this.uS.setList(data);
         });
       });
-      this.router.navigate(['user']);
+      this.router.navigate(['Users']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

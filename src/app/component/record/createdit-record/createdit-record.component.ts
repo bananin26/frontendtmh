@@ -68,7 +68,7 @@ export class CreateditRecordComponent implements OnInit{
           this.rS.setList(data);
         });
       });
-      this.router.navigate(['records']);
+      this.router.navigate(['Records']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

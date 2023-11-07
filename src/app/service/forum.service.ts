@@ -10,7 +10,7 @@ const base_url = environment.base;
 })
 
 export class ForumService {
-  private url = `${base_url}/Forum`;
+  private url = `${base_url}/Forums`;
   private listaCambio = new Subject<Forum[]>();
   constructor(private http: HttpClient) {}
   list() {

@@ -10,7 +10,7 @@ const base_url = environment.base;
 })
 
 export class MessageService {
-  private url = `${base_url}/Message`;
+  private url = `${base_url}/Messages`;
   private listaCambio = new Subject<Message[]>();
   constructor(private http: HttpClient) {}
   list() {

@@ -22,7 +22,7 @@ import { CreateditRecordComponent } from './component/record/createdit-record/cr
 
 const routes: Routes = [
   {
-    path: 'user',
+    path: 'Users',
     component: UserComponent,
     children: [
       { path: 'new', component: CreateditUserComponent },
@@ -31,42 +31,42 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'product',
+    path: 'Products',
     component: ProductComponent,
     children: [{ path: 'new', component: CreateditProductComponent }],
   },
   {
-    path: 'order',
+    path: 'Orders',
     component: OrderComponent,
     children: [{ path: 'new', component: CreateditOrderComponent }],
   },
   {
-    path: 'message',
+    path: 'Messages',
     component: MessageComponent,
     children: [{ path: 'new', component: CreateditMessageComponent }],
   },
   {
-    path: 'notification',
+    path: 'Notificactions',
     component: NotificationComponent,
     children: [{ path: 'new', component: CreateditNotificationComponent }],
   },
   {
-    path: 'category',
+    path: 'Categories',
     component: CategoryComponent,
     children: [{ path: 'new', component: CreateditCategoryComponent }],
   },
   {
-    path: 'Role',
+    path: 'Roles',
     component: RoleComponent,
     children: [{ path: 'new', component: CreateditRoleComponent }],
   },
   {
-    path: 'Forum',
+    path: 'Forums',
     component: ForumComponent,
     children: [{ path: 'new', component: CreateditForumComponent }],
   },
   {
-    path: 'records',
+    path: 'Records',
     component: RecordComponent,
     children: [{ path: 'new', component: CreateditRecordComponent }],
   },

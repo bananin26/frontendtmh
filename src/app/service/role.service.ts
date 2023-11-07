@@ -11,7 +11,7 @@ const base_url = environment.base;
 })
 
 export class RoleService {
-  private url = `${base_url}/Role`;
+  private url = `${base_url}/Roles`;
   private listaCambio = new Subject<Role[]>();
   constructor(private http: HttpClient) {}
   list() {

@@ -52,7 +52,7 @@ export class CreateditRoleComponent implements OnInit {
           this.rS.setList(data);
         });
       });
-      this.router.navigate(['Role']);
+      this.router.navigate(['Roles']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

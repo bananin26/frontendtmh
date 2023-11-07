@@ -57,7 +57,7 @@ export class CreateditMessageComponent implements OnInit{
           this.mS.setList(data);
         });
       });
-      this.router.navigate(['message']);
+      this.router.navigate(['Messages']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
