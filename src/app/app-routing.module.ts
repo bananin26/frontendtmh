@@ -15,6 +15,8 @@ import { CreateditNotificationComponent } from './component/notification/created
 import { CreateditCategoryComponent } from './component/category/createdit-category/createdit-category.component';
 import { RoleComponent } from './component/role/role.component';
 import { CreateditRoleComponent } from './component/role/createdit-role/createdit-role.component';
+import { ForumComponent } from './component/forum/forum.component';
+import { CreateditForumComponent } from './component/forum/createdit-forum/createdit-forum.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,11 @@ const routes: Routes = [
     path: 'Role',
     component: RoleComponent,
     children: [{ path: 'new', component: CreateditRoleComponent }],
+  },
+  {
+    path: 'Forum',
+    component: ForumComponent,
+    children: [{ path: 'new', component: CreateditForumComponent }],
   },
 ];
 

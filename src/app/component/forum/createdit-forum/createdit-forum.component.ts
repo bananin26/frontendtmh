@@ -2,29 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormGroup,
+  FormControl,
   Validators,
   FormBuilder,
   AbstractControl,
 } from '@angular/forms';
-import { Role } from 'src/app/model/role';
+import { Forum } from 'src/app/model/forum';
 import { User } from 'src/app/model/user';
-import { RoleService } from 'src/app/service/role.service';
 import { UserService } from 'src/app/service/user.service';
+import { ForumService } from 'src/app/service/forum.service';
 
 @Component({
-  selector: 'app-createdit-role',
-  templateUrl: './createdit-role.component.html',
-  styleUrls: ['./createdit-role.component.css']
+  selector: 'app-createdit-forum',
+  templateUrl: './createdit-forum.component.html',
+  styleUrls: ['./createdit-forum.component.css']
 })
-export class CreateditRoleComponent implements OnInit {
+export class CreateditForumComponent implements OnInit{
   form: FormGroup = new FormGroup({});
-  role: Role = new Role();
+  forum: Forum = new Forum();
   mensaje: string = '';
+  dueDateOrder = new FormControl(new Date());
   listaUsers:User[]=[]
-  idUserSeleccionada1:number=0
-
+  idUserSeleccionada:number=0
+ 
   constructor(
-    private rS: RoleService,
+    private fS: ForumService,
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder
@@ -32,8 +34,9 @@ export class CreateditRoleComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      id: [''],
-      role: ['', Validators.required],
+      idForum: [''],
+      forum: ['', Validators.required],
+      date: ['', [Validators.required]],
       user: ['', [Validators.required]],
     });
     this.uS.list().subscribe((data) => {
@@ -43,16 +46,17 @@ export class CreateditRoleComponent implements OnInit {
 
   accept(): void {
     if (this.form.valid) {
-      this.role.id = this.form.value.id;
-      this.role.rol = this.form.value.role;
-      this.role.user.idUser = this.form.value.user;
-
-      this.rS.insert(this.role).subscribe((data) => {
-        this.rS.list().subscribe((data) => {
-          this.rS.setList(data);
+      this.forum.idForum = this.form.value.idForum;
+      this.forum.forum = this.form.value.forum;
+      this.forum.date = this.form.value.date;
+      this.forum.user.idUser = this.form.value.user;
+     
+      this.fS.insert(this.forum).subscribe((data) => {
+        this.fS.list().subscribe((data) => {
+          this.fS.setList(data);
         });
       });
-      this.router.navigate(['Role']);
+      this.router.navigate(['Forum']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as moment from 'moment';
 import {
   FormGroup,
   FormControl,
@@ -26,8 +25,8 @@ export class CreateditProductComponent implements OnInit {
   mensaje: string = '';
   listaOrder:Order[]=[]
   listaCategory:Category[]=[]
-  idOrderSeleccionada1:number=0
-  idCategoryrSeleccionada1:number=0
+  idOrderSeleccionada:number=0
+  idCategorySeleccionada:number=0
   
  
   constructor(

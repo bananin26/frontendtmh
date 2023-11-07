@@ -74,6 +74,15 @@
     Role
   </button>
 
+  <button
+  class="custom-menu"
+  mat-menu-item
+  [matMenuTriggerFor]="menuForum"
+  routerLink="/Forum"
+>
+  Forum
+</button>
+
   </mat-menu>
 
   <mat-menu #menuUser="matMenu">
@@ -142,6 +151,16 @@
     </button>
     <button mat-menu-item routerLink="/Role" class="custom-menu">
       Role List
+    </button>
+    <!-- Agrega más elementos de menú para "User" si es necesario -->
+  </mat-menu>
+
+  <mat-menu #menuForum="matMenu">
+    <button mat-menu-item routerLink="/Forum/new" class="custom-menu">
+      Add Forum
+    </button>
+    <button mat-menu-item routerLink="/Forum" class="custom-menu">
+      Forum List
     </button>
     <!-- Agrega más elementos de menú para "User" si es necesario -->
   </mat-menu>

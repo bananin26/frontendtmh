@@ -58,7 +58,7 @@
           <mat-form-field class="example-full-width">
             <mat-label>Order</mat-label>
             <mat-select 
-            [(value)]="idOrderSeleccionada1"
+            [(value)]="idOrderSeleccionada"
             formControlName="order">
               <mat-option *ngFor="let l of listaOrder" [value]="l.idOrder">
                 {{l.idOrder}}
@@ -72,20 +72,19 @@
         </mat-form-field>
         <br/> 
 
-
         <mat-form-field class="example-full-width">
           <mat-label>Category</mat-label>
           <mat-select 
-          [(value)]="idCategoryrSeleccionada1"
+          [(value)]="idCategorySeleccionada"
           formControlName="category">
-            <mat-option *ngFor="let l of listaCategory" [value]="l.nameCategory">
+            <mat-option *ngFor="let l of listaCategory" [value]="l.idCategory">
               {{l.nameCategory}}
             </mat-option>
           </mat-select>
           <mat-error
           *ngIf="obtenerControlCampo('category')?.errors?.['required']"
         >
-          La cateogoria es obligatoria.
+          La categoria es obligatoria.
         </mat-error>
       </mat-form-field>
       <br/> 
