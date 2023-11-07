@@ -79,7 +79,7 @@ import { CreateditRecordComponent } from './component/record/createdit-record/cr
     TolistForumComponent,
     RecordComponent,
     TolistRecordComponent,
-    CreateditRecordComponent
+    CreateditRecordComponent,
   ],
   imports: [
     BrowserModule,
