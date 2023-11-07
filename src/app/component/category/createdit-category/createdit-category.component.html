@@ -14,7 +14,11 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Name Category</mat-label>
-          <input matInput placeholder="Name Category" formControlName="nameCategory" />
+          <input
+            matInput
+            placeholder="Name Category"
+            formControlName="nameCategory"
+          />
           <mat-error
             *ngIf="obtenerControlCampo('nameCategory')?.errors?.['required']"
           >
@@ -24,25 +28,30 @@
         <br />
 
         <mat-form-field class="example-full-width">
-            <mat-label>Details</mat-label>
-            <input matInput placeholder="Details" formControlName="detailsCategory" />
-            <mat-error
-              *ngIf="obtenerControlCampo('detailsCategory')?.errors?.['required']"
-            >
-              La descripción es obligatorio.
-            </mat-error>
-          </mat-form-field>
+          <mat-label>Details</mat-label>
+          <input
+            matInput
+            placeholder="Details"
+            formControlName="detailsCategory"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('detailsCategory')?.errors?.['required']"
+          >
+            La descripción es obligatorio.
+          </mat-error>
+        </mat-form-field>
 
-          <br />         
-<br/>
-        <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
+        <br />
+        <br />
+        <button mat-stroked-button color="accent" style="margin-right: 20px">
+          Aceptar
+        </button>
         <button mat-stroked-button color="warn" routerLink="/Categories">
-            Cancel
-          </button>
-<br/>
+          Cancel
+        </button>
+        <br />
         <p>{{ mensaje }}</p>
-        <br/>
-
+        <br />
       </form>
     </div>
   </body>
