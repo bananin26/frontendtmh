@@ -5,7 +5,7 @@
   }
 
   .custom-menu:hover {
-    color: lightskyblue; /* Cambia el color al pasar el cursor por encima */
+    color: rgb(160, 172, 232); /* Cambia el color al pasar el cursor por encima */
   }
 
   .toolbar-text {
@@ -14,7 +14,7 @@
   /* styles.css */
 /* Estilo personalizado para la barra de herramientas */
 .mat-toolbar.mat-primary {
-  background-color: lightblue;
+  background-color: black;
   color: white; /* Cambia el color del texto si es necesario */
 }
 .toolbar-image {
@@ -77,7 +77,7 @@ body {
   
   padding: 30px 60px; /* Aumenta el relleno en la parte superior e inferior y los lados */
   font-size: 16px;
-  background-color: #6e94bd;
+  background-color: black;
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -98,12 +98,12 @@ body {
 /* Estilo para los enlaces del menú */
 .scroll-link {
   text-decoration: none; /* Elimina el subrayado */
-  color: #333; /* Cambia el color del texto a tu preferencia */
+  color: white; /* Cambia el color del texto a tu preferencia */
 }
 
 /* Estilo para los enlaces del menú al pasar el cursor por encima */
 .scroll-link:hover {
-  color: lightseagreen; /* Cambia el color al pasar el cursor por encima */
+  color: lightblue; /* Cambia el color al pasar el cursor por encima */
 }
 
 .title {
