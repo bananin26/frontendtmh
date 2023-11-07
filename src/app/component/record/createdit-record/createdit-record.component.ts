@@ -45,7 +45,6 @@ export class CreateditRecordComponent implements OnInit{
       arriveDate: ['', Validators.required],
       points: ['', Validators.required],
       product: ['', Validators.required],  
-      category: ['', Validators.required],  
     });
     this.pS.list().subscribe((data) => {
       this.listaProduct = data;
@@ -63,7 +62,6 @@ export class CreateditRecordComponent implements OnInit{
       this.record.arriveDate = this.form.value.arriveDate;
       this.record.points = this.form.value.points;
       this.record.product.idProduct = this.form.value.product;
-      this.record.category.idCategory = this.form.value.category;
      
       this.rS.insert(this.record).subscribe((data) => {
         this.rS.list().subscribe((data) => {
