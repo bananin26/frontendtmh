@@ -20,6 +20,7 @@ import { ForumComponent } from './forum/forum.component';
 import { CreateditForumComponent } from './forum/createdit-forum/createdit-forum.component';
 import { CreateditRecordComponent } from './record/createdit-record/createdit-record.component';
 import { RecordComponent } from './record/record.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
     path: 'Records',
     component: RecordComponent,
     children: [{ path: 'new', component: CreateditRecordComponent }],
+  },
+  {
+    path: 'Home',
+    component: HomeComponent,
   },
 ];
 

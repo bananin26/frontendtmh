@@ -46,6 +46,7 @@ import { TolistForumComponent } from './forum/tolist-forum/tolist-forum.componen
 import { TolistRecordComponent } from './record/tolist-record/tolist-record.component';
 import { TolistProductComponent } from './product/tolist-product/tolist-product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CreateditRecordComponent,
     TolistProductComponent,
     DashboardComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,
