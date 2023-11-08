@@ -1,0 +1,45 @@
+.example-form {
+    min-width: 100;
+    max-width: 400;
+    width: 100%;
+  }
+  .header {
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-left: 0px; /* Agrega un margen derecho para desplazarlo hacia la derecha */
+  }
+
+  .example-full-width {
+    width:150%;
+    
+  }
+  .submit-button {
+    text-align: right; /* Alinea el botón a la derecha */
+    margin-right: 0px; /* Agrega un margen derecho para desplazarlo hacia la derecha */
+  }
+    .container {
+        display: flex; /* Utiliza un diseño de caja flexible */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        height: 100vh; /* Ajusta la altura del contenedor al 100% del viewport */
+        padding: 0 20px;
+      }
+  
+      /* Estilos para el formulario */
+      .form-container {
+        padding: 100px;
+        text-align: center;
+      }
+  
+      /* Estilos para el logotipo */
+      .logo {
+        max-width: 700px; /* Establece un ancho máximo para el logotipo */
+      }
+      .card {
+        width: 1000px; /* Ancho deseado del card */
+        height: 400px;
+        margin: 0 auto; /* Centra el card horizontalmente en el contenedor */
+        padding: 20px; /* Espaciado interno del card */
+        border: 1px solid #ccc; /* Borde del card */
+        border-radius: 5px; /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del card */
+      }

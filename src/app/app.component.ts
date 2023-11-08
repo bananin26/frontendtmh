@@ -1,32 +1,31 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'frontend';
+export class AppComponent {
+  title = 'takemehome';
+  role: string = '';
 
-  ngOnInit() {
-    // Este código se ejecutará cuando la página se cargue completamente
-    this.addScrollListener();
+  constructor(private loginService: LoginService) {}
+
+  cerrar() {
+    sessionStorage.clear();
   }
 
-  addScrollListener() {
-    window.addEventListener('scroll', () => {
-      const menu = document.querySelector('.menu');
-      const body = document.querySelector('body');
-      if (menu && body) {
-        if (window.scrollY > 100) {
-          menu.classList.add('scrolled');
-          body.classList.add('scrolled');
-        } else {
-          menu.classList.remove('scrolled');
-          body.classList.remove('scrolled');
-        }
-      }
-    });
+  verificar() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
+  }
+  validarRol() {
+    if (this.role == 'ADMIN' || this.role == 'CUSTOMER' || this.role == 'TRAVELER') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 

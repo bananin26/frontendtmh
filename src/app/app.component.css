@@ -28,7 +28,7 @@
     left: 0;
     right: 0;
     z-index: 1000; /* Ajusta el valor del índice z según sea necesario para que esté por encima de otros elementos */
-  height: 100px; /* Cambia el valor según tus necesidades */
+  height: 60px; /* Cambia el valor según tus necesidades */
 }
 .mat-toolbar button {
   font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
@@ -74,7 +74,7 @@ body {
 
 /* Estilos para los botones */
 .button {
-  padding: 30px 60px; /* Aumenta el relleno en la parte superior e inferior y los lados */
+  padding: 30px 50px; /* Aumenta el relleno en la parte superior e inferior y los lados */
   font-size: 16px;
   background-color: black;
   color: #fff;
@@ -168,6 +168,18 @@ button {
   margin-bottom: 0px; /* Espacio inferior */
 
 }
+
+/* Estilos para centrar el contenido */
+.container-iniciosesion {
+    display: flex;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin-left: 31%;
+    margin-top: 700px;
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    height: 10px; /* Ajusta la altura según tus necesidades */
+}
+
 
 
 
