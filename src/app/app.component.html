@@ -1,40 +1,90 @@
-<mat-toolbar class="custom-theme" color="primary">
-  <div class="toolbar-content">
-    <span class="toolbar-text">Take Me Home</span>
-  </div>
-    <button mat-icon-button [matMenuTriggerFor]="menuIcon">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <mat-menu #menuIcon="matMenu" class="custom-menu">
-    <button mat-menu-item [matMenuTriggerFor]="menuUser">User</button>
-    <button mat-menu-item [matMenuTriggerFor]="menuProduct">Product</button>
-    <button mat-menu-item [matMenuTriggerFor]="menuOrders">Order</button>   
-    <button mat-menu-item [matMenuTriggerFor]="menuMessage">Message</button>   
-  </mat-menu>
-
-  <mat-menu #menuUser="matMenu">
-    <button mat-menu-item routerLink="/user/new">Add User</button>
-    <button mat-menu-item routerLink="/user">User List</button>
-    <button mat-menu-item routerLink="/user/search">Search User</button>
-    <!-- Agrega más elementos de menú para "User" si es necesario -->
-  </mat-menu>
-
-  <mat-menu #menuProduct="matMenu">
-    <button mat-menu-item routerLink="/product/new">Add Product</button>
-    <button mat-menu-item routerLink="/product">Product List</button>
-  </mat-menu>
-
-  <mat-menu #menuOrders="matMenu">
-    <button mat-menu-item routerLink="/order/new">Add Order</button>
-    <button mat-menu-item routerLink="/order">Order List</button>
-  </mat-menu>
-
-  <mat-menu #menuMessage="matMenu">
-    <button mat-menu-item routerLink="/message/new">Add Message</button>
-    <button mat-menu-item routerLink="/message">Message List</button>
-  </mat-menu>
-  
+<mat-toolbar color="primary">
+    
+    <header class="header">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu">
+            <span class="material-icons">menu</span>
+          </label>
+        </div>
+      </div>
+    </header>
+    
+      
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <div class="sidebar">
+                <ul>
+                    <li><a class="menu-item"><span class="menu-icon material-icons">person</span>User<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/user/new">Add User</a></li>
+                            <li><a href="/user">List User</a></li>
+                            <li><a href="/user/search">Search User</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a ><span class="menu-icon material-icons">store</span>Product<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Product</a></li>
+                            <li><a href="/product">List Product</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">local_mall</span>Order<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/order/new">Add Order</a></li>
+                            <li><a href="/order">List Order</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">message</span>Message<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/message/new">Add Message</a></li>
+                            <li><a href="/message">List Message</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">notifications</span>Notification<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Notification</a></li>
+                            <li><a href="/product">List Notification</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">category</span>Category<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Category</a></li>
+                            <li><a href="/product">List Category</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">supervisor_account</span>Role<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Role</a></li>
+                            <li><a href="/product">List Role</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">forum</span>Forum<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Forum</a></li>
+                            <li><a href="/product">List Forum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">description</span>Records<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/product/new">Add Product</a></li>
+                            <li><a href="/product">List Product</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <label for="btn-menu" class="material-icons">menu</label>
+        </div>
+     </div>
+    </div>
 </mat-toolbar>
+
 
 <router-outlet></router-outlet>
