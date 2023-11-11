@@ -1,5 +1,28 @@
+<!-- MENU -->
 <mat-toolbar color="primary">
     
+    <div class="toolbar-content">
+        <img
+          src="assets/logo.png"
+          alt="Logo de la aplicación"
+          class="toolbar-image"
+          style="max-width: 250px; max-height: 250px"
+        />
+      </div>
+
+      <div class="spacer"></div>
+      <!-- Espaciador para empujar los elementos hacia la derecha -->
+      <a class="scroll-link" href="#quienesSomos">Quiénes Somos</a>
+      <span class="space-between"></span>
+      <!-- Espacio en blanco -->
+      <a class="scroll-link" href="#esSimple">Es Simple</a>
+      <span class="space-between"></span>
+      <!-- Espacio en blanco -->
+      <a class="scroll-link" href="#beneficios">Beneficios</a>
+      <span class="space-between"></span>
+      <!-- Espacio en blanco -->
+
+
     <header class="header">
       <div class="container">
         <div class="btn-menu">
@@ -18,9 +41,9 @@
                 <ul>
                     <li><a class="menu-item"><span class="menu-icon material-icons">person</span>User<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
                         <ul class="sub-menu">
-                            <li><a href="/user/new">Add User</a></li>
-                            <li><a href="/user">List User</a></li>
-                            <li><a href="/user/search">Search User</a></li>
+                            <li><a href="/components/Users/new">Add User</a></li>
+                            <li><a href="/components/Users">List User</a></li>
+                            <li><a href="/components/Users/search">Search User</a></li>
                         </ul>
                     </li>
                     <li>
@@ -85,6 +108,7 @@
      </div>
     </div>
 </mat-toolbar>
+
 
 
 <router-outlet></router-outlet>
