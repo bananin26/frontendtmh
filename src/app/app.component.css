@@ -25,17 +25,21 @@ width: 90%;
 max-width: 1200px;
 margin: 0;
 }
+/*--------Inicio - ubicar el icono de menu------------*/
 .container .btn-menu, .logo{
 float: left;
-line-height:100px;
+line-height:125px;
 }
+
+/*--------Fin - ubicar el icono de menu------------*/
+
 .container .btn-menu span{
 color: #ffffff;
 font-size: 2.7rem;
 cursor: pointer;
 }
 
-
+/*
 .container .menu{
 float: right;
 line-height: 100px;
@@ -54,7 +58,7 @@ margin-right: 5px;
 .container .menu a:hover{
 border-bottom: 2px solid #000000;
 padding-bottom: 5px;
-}
+}*/
 /*Fin de Estilos para el encabezado*/
 
 /*Menù lateral*/
@@ -106,18 +110,20 @@ background: #1f1f1f;
 /* Mueve el boton una vez abierto el menu - Controlar las caracteristicas del icono del menú*/
 .cont-menu .sidebar label{ /* Antes era el .cont-menu label*/
 position: absolute;
-left: 15px;
+left: 13px;
 top: 10px;
 margin-top: 5px;
 color: #ffffff;
 cursor: pointer;
 font-size: 2.7rem;
+line-height:65px;
 }
 
 #btn-menu{
 display: none;
 }
 
+/*
 .container-menu{
 position: absolute;
 background: rgba(0,0,0,0.5);
@@ -127,7 +133,7 @@ top: 0; left: 0;
 transition: all 500ms ease;
 opacity: 0;
 visibility: hidden;
-}
+}*/
 
 #btn-menu:checked ~ .container-menu{
 opacity: 1;
@@ -151,7 +157,7 @@ transition: all 400ms ease;
 .cont-menu .sidebar .toolbar-content .toolbar-image {
     width: 200px;
     height: 130px;
-    margin-left: 50px;
+    margin-left: 40px;
     margin-top: -35px;
     }
 
@@ -228,6 +234,7 @@ vertical-align: middle;
 border-left: 5px solid #c7c7c7;
 background: #1f1f1f;
 }
+
 
 .cont-menu label{
 position: absolute;
