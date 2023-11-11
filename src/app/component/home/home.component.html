@@ -1,7 +1,13 @@
-<!-- MENU -->
-<mat-toolbar color="primary">
-
-    <div class="toolbar-content">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="background-image">
+    <mat-toolbar color="primary">
+      <div class="toolbar-content">
         <img
           src="assets/logo2.png"
           alt="Logo de la aplicación"
@@ -10,45 +16,30 @@
         />
       </div>
 
-      <div class="spacer"></div>
-      <!-- Espaciador para empujar los elementos hacia la derecha -->
-      <a class="scroll-link" href="#quienesSomos">Quiénes Somos</a>
-      <span class="space-between"></span>
-      <!-- Espacio en blanco -->
-      <a class="scroll-link" href="#esSimple">Es Simple</a>
-      <span class="space-between"></span>
-      <!-- Espacio en blanco -->
-      <a class="scroll-link" href="#beneficios">Beneficios</a>
-      <span class="space-between"></span>
-      <!-- Espacio en blanco -->
-
-
-    <header class="header">
-      <div class="container">
-        <div class="btn-menu">
-          <label for="btn-menu">
-            <span class="material-icons">menu</span>
-          </label>
-        </div>
-        <div class="toolbar-content">
-            <a  href="/components/Home">
-            <img style="cursor: pointer;"
-              src="assets/logo2.png"
-              alt=""
-              class="toolbar-image"
-              style="max-width: 250px; max-height: 250px"
-            />
+      <header class="header">
+        <div class="container">
+          <div class="btn-menu">
+            <label for="btn-menu">
+              <span class="material-icons">menu</span>
+            </label>
+          </div>
+          <div class="toolbar-content">
+            <a href="/components/Home">
+              <img
+                style="cursor: pointer"
+                src="assets/logo2.png"
+                alt=""
+                class="toolbar-image"
+                style="max-width: 250px; max-height: 250px"
+              />
             </a>
           </div>
-      </div>
-    </header>
-  
-      
-    <input type="checkbox" id="btn-menu">
+        </div>
+      </header>
 
+      <input type="checkbox" id="btn-menu" />
 
-
-    <div class="container-menu">
+      <div class="container-menu">
         <div class="cont-menu">
             <div class="sidebar">
                 <div class="toolbar-content">
@@ -123,56 +114,27 @@
                             <li><a href="/records">List Product</a></li>
                         </ul>
                     </li>
-                    <li>
-                      <a style="cursor: pointer;" routerLink="/login" (click)="cerrar()"><span class="menu-icon material-icons" style="margin-left: 24px;">exit_to_app</span>Cerrar Sesión<span class="submenu-icon9 material-icons" style="visibility: hidden;">keyboard_arrow_down</span></a>
-                    </li>
                 </ul>
 
                 <label for="btn-menu" class="boton2" class="material-icons">menu</label>
         </div>
      </div>
     </div>
-
-
-
 </mat-toolbar>
 
+    <div class="container-nuevo">
+      <header>
+        <h1 class="main-title">TAKE ME HOME</h1>
+        <p class="welcome-message">Bienvenido! Realiza tus consultas, compras de producto o viajes aqui!</p>
+      </header>
+      <!-- ... (resto de tu contenido) ... -->
+      <footer>
+        <p>&copy; 2023 Take Me Home</p>
+      </footer>
+    </div>
+  </body>
+</html>
 
-<div class="container">
-    <header>
-      <h1>Bienvenido a Mi Aplicación</h1>
-    </header>
-    <section class="presentation">
-      <div class="presentation-text">
-        <h2>Descubre un nuevo mundo</h2>
-        <p>Explora nuestras increíbles características y servicios diseñados para ti.</p>
-      </div>
-      <div class="presentation-image">
-        <img src="assets/images/landscape.jpg" alt="Paisaje">
-      </div>
-    </section>
-    <section class="features">
-      <div class="feature">
-        <img src="assets/images/icon1.png" alt="Icono 1">
-        <h3>Característica 1</h3>
-        <p>Descripción de la característica 1.</p>
-      </div>
-      <div class="feature">
-        <img src="assets/images/icon2.png" alt="Icono 2">
-        <h3>Característica 2</h3>
-        <p>Descripción de la característica 2.</p>
-      </div>
-      <div class="feature">
-        <img src="assets/images/icon3.png" alt="Icono 3">
-        <h3>Característica 3</h3>
-        <p>Descripción de la característica 3.</p>
-      </div>
-    </section>
-    <footer>
-      <p>&copy; 2023 Mi Aplicación</p>
-    </footer>
-  </div>
-  
-
+<!-- MENU -->
 
 <router-outlet></router-outlet>
