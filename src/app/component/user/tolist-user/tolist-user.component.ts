@@ -21,6 +21,7 @@ export class TolistUserComponent implements OnInit {
     'actualizar',
     'eliminar',
   ];
+  backgroundImage = 'url("assets/fondo-general.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
