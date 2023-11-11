@@ -13,15 +13,6 @@
 background-color: black;
 color: white; /* Cambia el color del texto si es necesario */
 }
-
-.capa{
-position: fixed;
-width: 100%;
-height: 100vh;
-background: rgba(0,0,0,0.6);
-z-index: -1;
-top: 0;left: 0;
-}
 /*Estilos para el encabezado*/
 .header{
 width: 100%;
@@ -92,34 +83,35 @@ height: 100vh;
 position: relative;
 transition: all 500ms ease;
 transform: translateX(-100%);
-margin: 0;
 }
+
+.cont-menu .sidebar ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 0px;
+  }
+/* Hacer mas alto*/
+
+
+
 #btn-menu:checked ~ .container-menu .cont-menu{
 transform: translateX(0%);
-}
-.cont-menu nav{
-transform: translateY(15%);
-}
-.cont-menu nav a{
-display: block;
-text-decoration: none;
-padding: 10px;
-color: #000000;
-border-left: 5px solid transparent;
-transition: all 400ms ease;
 }
 
 .cont-menu ul li:hover{
 border-left: 5px solid #000000;
 background: #1f1f1f;
 }
-.cont-menu label{
+
+/* Mueve el boton una vez abierto el menu - Controlar las caracteristicas del icono del menú*/
+.cont-menu .sidebar label{ /* Antes era el .cont-menu label*/
 position: absolute;
-right: 5px;
+left: 15px;
 top: 10px;
-color: #000000;
+margin-top: 5px;
+color: #ffffff;
 cursor: pointer;
-font-size: 18px;
+font-size: 2.7rem;
 }
 
 #btn-menu{
@@ -142,48 +134,95 @@ opacity: 1;
 visibility: visible;
 }
 
-.cont-menu{
-width: 100%;
-max-width: 250px;
-background: #1c1c1c;
-height: 100vh;
-position: relative;
-transition: all 500ms ease;
-}
 
-
-
+/*------------Esto también influye en las filas del menú - Sirve para organizar el contenido de cada fila-------*/
 .cont-menu .sidebar ul li{
 display: block;
 text-decoration: none;
-padding: 10%;
+padding: 6%;
 color: #c7c7c7;
 border-left: 5px solid transparent;
 transition: all 400ms ease;
-
 }
+/*------------Fin - Esto también influye en las filas del menú - Sirve para organizar el contenido de cada fila-------*/
 
-.cont-menu ul li span{
-display: inline-block;
-margin-right: 50px;
-vertical-align: middle;
+/*---------Imagen una vez abierto el contenedor--------*/
 
-}
+.cont-menu .sidebar .toolbar-content .toolbar-image {
+    width: 200px;
+    height: 130px;
+    margin-left: 50px;
+    margin-top: -35px;
+    }
 
-.cont-menu ul li a span span{
+/*---------Fin - Imagen una vez abierto el contenedor--------*/
+
+/*---------texto dentro de cada fila--------*/
+.cont-menu ul li a{
   display: inline-block;
-  margin-right: 50px;
   vertical-align: middle;
-  text-align: right;
   }
 
+/*---------fin de texto dentro de cada fila--------*/
 
-.sidebar ul li span .submenu-icon {
-    margin-left: auto; /* Coloca la flecha al final del elemento */
-    align-items: center;
-    display: flex;
-  }
 
+.cont-menu ul li a span{
+display: inline-block;
+vertical-align: middle;
+}
+
+/*---------iconos--------*/
+.menu-icon.material-icons{
+  font-size: 35px;
+  margin-right: 30px;
+}
+
+.submenu-icon.material-icons{
+  font-size: 35px;
+  margin-left: 62px;
+}
+
+.submenu-icon2.material-icons{
+  font-size: 35px;
+  margin-left: 39px;
+}
+
+.submenu-icon3.material-icons{
+  font-size: 35px;
+  margin-left: 60px;
+}
+
+.submenu-icon4.material-icons{
+  font-size: 35px;
+  margin-left: 27px;
+}
+
+.submenu-icon5.material-icons{
+  font-size: 35px;
+  margin-left: 5px;
+}
+
+.submenu-icon6.material-icons{
+  font-size: 35px;
+  margin-left: 30px;
+}
+
+.submenu-icon7.material-icons{
+  font-size: 35px;
+  margin-left: 73px;
+}
+
+.submenu-icon8.material-icons{
+  font-size: 35px;
+  margin-left: 53px;
+}
+
+.submenu-icon9.material-icons{
+  font-size: 35px;
+  margin-left: 37px;
+}
+
+/*---------fin de iconos--------*/
 
 .cont-menu .sidebar ul li:hover{
 border-left: 5px solid #c7c7c7;
@@ -258,7 +297,6 @@ body {
   color: #fff;
   display: block;
   text-align: center;
-  
 }
 
 /* Estilos del menú desplegable */
@@ -269,6 +307,7 @@ body {
 
 .sidebar li:hover .sub-menu {
   display: block;
+  margin-top: 10px;
 }
 
 /* Estilos al pasar el mouse sobre los enlaces */
@@ -453,4 +492,9 @@ margin-left: 19px;
 margin-right: 20px;
 margin-bottom: 0px; /* Espacio inferior */
 
+}
+
+
+.textoli{
+  margin-top: 100px;
 }
