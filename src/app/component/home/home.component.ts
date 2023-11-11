@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   backgroundImage = 'url("assets/fondo-home.jpeg")';
 
+
+
+  cerrar() {
+    sessionStorage.clear();
+  }
 }
