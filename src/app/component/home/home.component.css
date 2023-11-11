@@ -330,26 +330,6 @@ body {
 
 
 /* ----------------------------------------------DASHBOARD------------------------------------------------------ */
-
-.toolbar-content {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.custom-menu:hover {
-  color: lightskyblue; /* Cambia el color al pasar el cursor por encima */
-}
-
-.toolbar-text {
-  margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
-}
-/* styles.css */
-/* Estilo personalizado para la barra de herramientas */
-.mat-toolbar.mat-primary {
-background-color: black;
-color: white; /* Cambia el color del texto si es necesario */
-}
 .toolbar-image {
 width: 130px;
 height: 130px;
@@ -373,9 +353,6 @@ max-height: 150px;
 margin-top: -185px;
 margin-right: 80px;
 }
-
-
-
 
 /* Para el título o texto en el toolbar (por ejemplo, "Quienes somos" y "Beneficios") */
 .mat-toolbar .mat-button-wrapper {
