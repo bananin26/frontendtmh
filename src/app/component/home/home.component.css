@@ -353,7 +353,7 @@ color: white; /* Cambia el color del texto si es necesario */
 .toolbar-image {
 width: 130px;
 height: 130px;
-margin-left: 40px;
+margin-left: 80px;
 }
 .mat-toolbar {
   position: fixed;
@@ -371,6 +371,7 @@ font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
 max-width: 150px;
 max-height: 150px;
 margin-top: -185px;
+margin-right: 80px;
 }
 
 
@@ -505,7 +506,6 @@ margin-left: 19px;
 margin-right: 20px;
 margin-bottom: 0px; /* Espacio inferior */
 
-<<<<<<< HEAD
 }
 
 .container-nuevo {
@@ -553,6 +553,3 @@ footer {
   padding: 10px;
   background-color: #eee;
 }
-=======
-}
->>>>>>> 7b3d84ea21314fda0992a05fe8b5e1f90237120d
