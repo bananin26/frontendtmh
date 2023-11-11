@@ -92,7 +92,6 @@ transform: translateX(-100%);
 .cont-menu .sidebar ul li a{
     display: block;
     text-decoration: none;
-    padding: 0px;
   }
 /* Hacer mas alto*/
 
@@ -117,6 +116,7 @@ color: #ffffff;
 cursor: pointer;
 font-size: 2.7rem;
 line-height:65px;
+margin-left: -1px;
 }
 
 #btn-menu{
@@ -149,13 +149,14 @@ padding: 6%;
 color: #c7c7c7;
 border-left: 5px solid transparent;
 transition: all 400ms ease;
+padding: 6px; /*Esto es para aumentar el tamaño de las filas*/
 }
 /*------------Fin - Esto también influye en las filas del menú - Sirve para organizar el contenido de cada fila-------*/
 
 /*---------Imagen una vez abierto el contenedor--------*/
 
 .cont-menu .sidebar .toolbar-content .toolbar-image {
-    width: 200px;
+    width: 130px;
     height: 130px;
     margin-left: 40px;
     margin-top: -35px;
@@ -167,6 +168,7 @@ transition: all 400ms ease;
 .cont-menu ul li a{
   display: inline-block;
   vertical-align: middle;
+  font-size: 17px;
   }
 
 /*---------fin de texto dentro de cada fila--------*/
@@ -179,53 +181,53 @@ vertical-align: middle;
 
 /*---------iconos--------*/
 .menu-icon.material-icons{
-  font-size: 35px;
-  margin-right: 30px;
+  font-size: 25px;
+  margin-right: 50px;
 }
 
 .submenu-icon.material-icons{
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 62px;
 }
 
 .submenu-icon2.material-icons{
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 39px;
 }
 
 .submenu-icon3.material-icons{
-  font-size: 35px;
-  margin-left: 60px;
+  font-size: 25px;
+  margin-left: 56px;
 }
 
 .submenu-icon4.material-icons{
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 27px;
 }
 
 .submenu-icon5.material-icons{
-  font-size: 35px;
+  font-size: 25px;
   margin-left: 5px;
 }
 
 .submenu-icon6.material-icons{
-  font-size: 35px;
-  margin-left: 30px;
+  font-size: 25px;
+  margin-left: 25px;
 }
 
 .submenu-icon7.material-icons{
-  font-size: 35px;
-  margin-left: 73px;
+  font-size: 25px;
+  margin-left: 61px;
 }
 
 .submenu-icon8.material-icons{
-  font-size: 35px;
-  margin-left: 53px;
+  font-size: 25px;
+  margin-left: 47px;
 }
 
 .submenu-icon9.material-icons{
-  font-size: 35px;
-  margin-left: 37px;
+  font-size: 25px;
+  margin-left: 31px;
 }
 
 /*---------fin de iconos--------*/
@@ -349,9 +351,9 @@ background-color: black;
 color: white; /* Cambia el color del texto si es necesario */
 }
 .toolbar-image {
-object-fit: contain;
-width: 200px;
+width: 130px;
 height: 130px;
+margin-left: 40px;
 }
 .mat-toolbar {
   position: fixed;
@@ -359,7 +361,7 @@ height: 130px;
   left: 0;
   right: 0;
   z-index: 1000; /* Ajusta el valor del índice z según sea necesario para que esté por encima de otros elementos */
-height: 100px; /* Cambia el valor según tus necesidades */
+  height: 100px; /* Cambia el valor según tus necesidades */
 }
 .mat-toolbar button {
 font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
@@ -368,7 +370,11 @@ font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
 .mat-toolbar img.toolbar-image {
 max-width: 150px;
 max-height: 150px;
+margin-top: -185px;
 }
+
+
+
 
 /* Para el título o texto en el toolbar (por ejemplo, "Quienes somos" y "Beneficios") */
 .mat-toolbar .mat-button-wrapper {
@@ -499,6 +505,7 @@ margin-left: 19px;
 margin-right: 20px;
 margin-bottom: 0px; /* Espacio inferior */
 
+<<<<<<< HEAD
 }
 
 .container-nuevo {
@@ -546,3 +553,6 @@ footer {
   padding: 10px;
   background-color: #eee;
 }
+=======
+}
+>>>>>>> 7b3d84ea21314fda0992a05fe8b5e1f90237120d
