@@ -1,466 +1,502 @@
 .toolbar-content {
-    display: flex;
-    justify-content: 100px;
-    width: 100%;
-  }
-  
-  .toolbar-text {
-    margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
-  }
-  /* styles.css */
-  /* Estilo personalizado para la barra de herramientas */
-  .mat-toolbar.mat-primary {
-  background-color: black;
-  color: white; /* Cambia el color del texto si es necesario */
-  }
-  
-  .capa{
-  position: fixed;
+  display: flex;
+  justify-content: 100px;
   width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  z-index: -1;
-  top: 0;left: 0;
-  }
-  /*Estilos para el encabezado*/
-  .header{
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0;left: 0;
-  }
-  .container{
-  width: 90%;
-  max-width: 1200px;
-  margin: 0;
-  }
-  .container .btn-menu, .logo{
-  float: left;
-  line-height:100px;
-  }
-  .container .btn-menu span{
-  color: #ffffff;
-  font-size: 2.7rem;
-  cursor: pointer;
-  }
-  
-  
-  .container .menu{
-  float: right;
-  line-height: 100px;
-  }
-  .container .menu a{
-  display: inline-block;
-  padding: 15px;
-  line-height: normal;
-  text-decoration: none;
-  color: #000000;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
-  font-size: 15px;
-  margin-right: 5px;
-  }
-  .container .menu a:hover{
-  border-bottom: 2px solid #000000;
-  padding-bottom: 5px;
-  }
-  /*Fin de Estilos para el encabezado*/
-  
-  /*Menù lateral*/
-  #btn-menu{
-  display: none;
-  }
-  .container-menu{
-  position: absolute;
-  background: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100vh;
-  top: 0;left: 0;
-  transition: all 500ms ease;
-  opacity: 0;
-  visibility: hidden;
-  }
-  #btn-menu:checked ~ .container-menu{
-  opacity: 1;
-  visibility: visible;
-  }
-  .cont-menu{
-  width: 100%;
-  max-width: 250px;
-  background: #1c1c1c;
-  height: 100vh;
-  position: relative;
-  transition: all 500ms ease;
-  transform: translateX(-100%);
-  margin: 0;
-  }
-  #btn-menu:checked ~ .container-menu .cont-menu{
-  transform: translateX(0%);
-  }
-  .cont-menu nav{
-  transform: translateY(15%);
-  }
-  .cont-menu nav a{
-  display: block;
-  text-decoration: none;
-  padding: 10px;
-  color: #000000;
-  border-left: 5px solid transparent;
-  transition: all 400ms ease;
-  }
-  
-  .cont-menu ul li:hover{
-  border-left: 5px solid #000000;
-  background: #1f1f1f;
-  }
-  .cont-menu label{
-  position: absolute;
-  right: 5px;
-  top: 10px;
-  color: #000000;
-  cursor: pointer;
-  font-size: 18px;
-  }
-  
-  #btn-menu{
-  display: none;
-  }
-  
-  .container-menu{
-  position: absolute;
-  background: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100vh;
-  top: 0; left: 0;
-  transition: all 500ms ease;
-  opacity: 0;
-  visibility: hidden;
-  }
-  
-  #btn-menu:checked ~ .container-menu{
-  opacity: 1;
-  visibility: visible;
-  }
-  
-  .cont-menu{
-  width: 100%;
-  max-width: 250px;
-  background: #1c1c1c;
-  height: 100vh;
-  position: relative;
-  transition: all 500ms ease;
-  }
-  
-  
-  
-  .cont-menu .sidebar ul li{
-  display: block;
-  text-decoration: none;
-  padding: 10%;
-  color: #c7c7c7;
-  border-left: 5px solid transparent;
-  transition: all 400ms ease;
-  
-  }
-  
-  .cont-menu ul li span{
-  display: inline-block;
-  margin-right: 50px;
-  vertical-align: middle;
-  
-  }
-  
-  .cont-menu ul li a span span{
-    display: inline-block;
-    margin-right: 50px;
-    vertical-align: middle;
-    text-align: right;
-    }
-  
-  
-  .sidebar ul li span .submenu-icon {
-      margin-left: auto; /* Coloca la flecha al final del elemento */
-      align-items: center;
-      display: flex;
-    }
-  
-  
-  .cont-menu .sidebar ul li:hover{
-  border-left: 5px solid #c7c7c7;
-  background: #1f1f1f;
-  }
-  
-  .cont-menu label{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 2.7rem;
-  }
-  
-  
-  .submenu {
-  display: none;
-  background-color: #333;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  min-width: 150px;
-  z-index: 1;
-  }
-  
-  .menu-item:hover .submenu {
-  display: block;
-  }
-  
-  .menu-item:hover .submenu a {
-  color: #000000;
-  padding: 10px;
-  text-decoration: none;
-  display: block;
-  }
-  
-  .menu-item:hover .submenu a:hover {
-  background-color: #555;
-  }
-  
-  
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  .sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    color: #fff;
-    padding-top: 20px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    position: relative;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    text-align: center;
-    
-  }
-  
-  /* Estilos del menú desplegable */
-  .sub-menu {
-    display: none;
-    background-color: #1c1c1c;
-  }
-  
-  .sidebar li:hover .sub-menu {
-    display: block;
-  }
-  
-  /* Estilos al pasar el mouse sobre los enlaces */
-  
-  /* Estilos para los submenús */
-  .sub-menu li {
-    padding: 3px 0;
-    margin-left: 30px;
-  }
+}
 
-
-
-/* ----------------------------------------------DASHBOARD------------------------------------------------------ */
-
-  .toolbar-content {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .custom-menu:hover {
-    color: lightskyblue; /* Cambia el color al pasar el cursor por encima */
-  }
-
-  .toolbar-text {
-    margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
-  }
-  /* styles.css */
+.toolbar-text {
+  margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
+}
+/* styles.css */
 /* Estilo personalizado para la barra de herramientas */
 .mat-toolbar.mat-primary {
-  background-color: black;
-  color: white; /* Cambia el color del texto si es necesario */
+background-color: black;
+color: white; /* Cambia el color del texto si es necesario */
 }
-.toolbar-image {
-  object-fit: contain;
-  width: 200px;
-  height: 130px;
+/*Estilos para el encabezado*/
+.header{
+width: 100%;
+height: 100px;
+position: fixed;
+top: 0;left: 0;
 }
-.mat-toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ajusta el valor del índice z según sea necesario para que esté por encima de otros elementos */
-  height: 100px; /* Cambia el valor según tus necesidades */
+.container{
+width: 90%;
+max-width: 1200px;
+margin: 0;
 }
-.mat-toolbar button {
-  font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
-}
-
-.mat-toolbar img.toolbar-image {
-  max-width: 150px;
-  max-height: 150px;
+/*--------Inicio - ubicar el icono de menu------------*/
+.container .btn-menu, .logo{
+float: left;
+line-height:125px;
 }
 
-/* Para el título o texto en el toolbar (por ejemplo, "Quienes somos" y "Beneficios") */
-.mat-toolbar .mat-button-wrapper {
-  font-size: 100px; /* Ajusta el valor según el tamaño de fuente deseado */
+/*--------Fin - ubicar el icono de menu------------*/
+
+.container .btn-menu span{
+color: #ffffff;
+font-size: 2.7rem;
+cursor: pointer;
 }
 
-.space-between {
-  margin: 0 40px; 
+/*
+.container .menu{
+float: right;
+line-height: 100px;
+}
+.container .menu a{
+display: inline-block;
+padding: 15px;
+line-height: normal;
+text-decoration: none;
+color: #000000;
+transition: all 0.3s ease;
+border-bottom: 2px solid transparent;
+font-size: 15px;
+margin-right: 5px;
+}
+.container .menu a:hover{
+border-bottom: 2px solid #000000;
+padding-bottom: 5px;
+}*/
+/*Fin de Estilos para el encabezado*/
+
+/*Menù lateral*/
+#btn-menu{
+display: none;
+}
+.container-menu{
+position: absolute;
+background: rgba(0,0,0,0.5);
+width: 100%;
+height: 100vh;
+top: 0;left: 0;
+transition: all 500ms ease;
+opacity: 0;
+visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+opacity: 1;
+visibility: visible;
+}
+.cont-menu{
+width: 100%;
+max-width: 250px;
+background: #1c1c1c;
+height: 100vh;
+position: relative;
+transition: all 500ms ease;
+transform: translateX(-100%);
+}
+
+.cont-menu .sidebar ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 0px;
+  }
+/* Hacer mas alto*/
+
+
+
+#btn-menu:checked ~ .container-menu .cont-menu{
+transform: translateX(0%);
+}
+
+.cont-menu ul li:hover{
+border-left: 5px solid #000000;
+background: #1f1f1f;
+}
+
+/* Mueve el boton una vez abierto el menu - Controlar las caracteristicas del icono del menú*/
+.cont-menu .sidebar label{ /* Antes era el .cont-menu label*/
+position: absolute;
+left: 13px;
+top: 10px;
+margin-top: 5px;
+color: #ffffff;
+cursor: pointer;
+font-size: 2.7rem;
+line-height:65px;
+}
+
+#btn-menu{
+display: none;
+}
+
+/*
+.container-menu{
+position: absolute;
+background: rgba(0,0,0,0.5);
+width: 100%;
+height: 100vh;
+top: 0; left: 0;
+transition: all 500ms ease;
+opacity: 0;
+visibility: hidden;
+}*/
+
+#btn-menu:checked ~ .container-menu{
+opacity: 1;
+visibility: visible;
+}
+
+
+/*------------Esto también influye en las filas del menú - Sirve para organizar el contenido de cada fila-------*/
+.cont-menu .sidebar ul li{
+display: block;
+text-decoration: none;
+padding: 6%;
+color: #c7c7c7;
+border-left: 5px solid transparent;
+transition: all 400ms ease;
+}
+/*------------Fin - Esto también influye en las filas del menú - Sirve para organizar el contenido de cada fila-------*/
+
+/*---------Imagen una vez abierto el contenedor--------*/
+
+.cont-menu .sidebar .toolbar-content .toolbar-image {
+    width: 200px;
+    height: 130px;
+    margin-left: 40px;
+    margin-top: -35px;
+    }
+
+/*---------Fin - Imagen una vez abierto el contenedor--------*/
+
+/*---------texto dentro de cada fila--------*/
+.cont-menu ul li a{
+  display: inline-block;
+  vertical-align: middle;
+  }
+
+/*---------fin de texto dentro de cada fila--------*/
+
+
+.cont-menu ul li a span{
+display: inline-block;
+vertical-align: middle;
+}
+
+/*---------iconos--------*/
+.menu-icon.material-icons{
+  font-size: 35px;
+  margin-right: 30px;
+}
+
+.submenu-icon.material-icons{
+  font-size: 35px;
+  margin-left: 62px;
+}
+
+.submenu-icon2.material-icons{
+  font-size: 35px;
+  margin-left: 39px;
+}
+
+.submenu-icon3.material-icons{
+  font-size: 35px;
+  margin-left: 60px;
+}
+
+.submenu-icon4.material-icons{
+  font-size: 35px;
+  margin-left: 27px;
+}
+
+.submenu-icon5.material-icons{
+  font-size: 35px;
+  margin-left: 5px;
+}
+
+.submenu-icon6.material-icons{
+  font-size: 35px;
+  margin-left: 30px;
+}
+
+.submenu-icon7.material-icons{
+  font-size: 35px;
+  margin-left: 73px;
+}
+
+.submenu-icon8.material-icons{
+  font-size: 35px;
+  margin-left: 53px;
+}
+
+.submenu-icon9.material-icons{
+  font-size: 35px;
+  margin-left: 37px;
+}
+
+/*---------fin de iconos--------*/
+
+.cont-menu .sidebar ul li:hover{
+border-left: 5px solid #c7c7c7;
+background: #1f1f1f;
+}
+
+
+.cont-menu label{
+position: absolute;
+left: 0px;
+top: 0px;
+color: #fff;
+cursor: pointer;
+font-size: 2.7rem;
+}
+
+
+.submenu {
+display: none;
+background-color: #333;
+position: absolute;
+top: 40px;
+left: 0;
+min-width: 150px;
+z-index: 1;
+}
+
+.menu-item:hover .submenu {
+display: block;
+}
+
+.menu-item:hover .submenu a {
+color: #000000;
+padding: 10px;
+text-decoration: none;
+display: block;
+}
+
+.menu-item:hover .submenu a:hover {
+background-color: #555;
 }
 
 
 body {
   margin: 0;
   padding: 0;
-  background-image: url('/assets/fondo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  position: relative;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+
+/* Estilos del menú desplegable */
+.sub-menu {
+  display: none;
+  background-color: #1c1c1c;
+}
+
+.sidebar li:hover .sub-menu {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Estilos al pasar el mouse sobre los enlaces */
+
+/* Estilos para los submenús */
+.sub-menu li {
+  padding: 3px 0;
+  margin-left: 30px;
+}
+
+
+
+/* ----------------------------------------------DASHBOARD------------------------------------------------------ */
+
+.toolbar-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.custom-menu:hover {
+  color: lightskyblue; /* Cambia el color al pasar el cursor por encima */
+}
+
+.toolbar-text {
+  margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
+}
+/* styles.css */
+/* Estilo personalizado para la barra de herramientas */
+.mat-toolbar.mat-primary {
+background-color: black;
+color: white; /* Cambia el color del texto si es necesario */
+}
+.toolbar-image {
+object-fit: contain;
+width: 200px;
+height: 130px;
+}
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ajusta el valor del índice z según sea necesario para que esté por encima de otros elementos */
+height: 100px; /* Cambia el valor según tus necesidades */
+}
+.mat-toolbar button {
+font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
+}
+
+.mat-toolbar img.toolbar-image {
+max-width: 150px;
+max-height: 150px;
+}
+
+/* Para el título o texto en el toolbar (por ejemplo, "Quienes somos" y "Beneficios") */
+.mat-toolbar .mat-button-wrapper {
+font-size: 100px; /* Ajusta el valor según el tamaño de fuente deseado */
+}
+
+.space-between {
+margin: 0 40px; 
+}
+
+
+body {
+margin: 0;
+padding: 0;
+background-image: url('/assets/fondo.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .background-image {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5 ); /* Fondo semi-transparente si lo deseas */
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.5 ); /* Fondo semi-transparente si lo deseas */
 }
 
 .centered-content {
-  text-align: center;
+text-align: center;
 }
 
 /* Estilos para los botones */
 .button {
-  
-  padding: 30px 60px; /* Aumenta el relleno en la parte superior e inferior y los lados */
-  font-size: 16px;
-  background-color: #6e94bd;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  margin: 5px;
-  margin-top: 100px; /* Ajusta el margen superior para mover los botones más abajo */
-  font-size: 20px;
-  font-family: 'Tahoma', 'Segoe UI', Tahoma, Verdana, sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
-  width: 200px; /* Ajusta el ancho del botón según tus preferencias */
+
+padding: 30px 60px; /* Aumenta el relleno en la parte superior e inferior y los lados */
+font-size: 16px;
+background-color: #6e94bd;
+color: #fff;
+border: none;
+border-radius: 30px;
+cursor: pointer;
+margin: 5px;
+margin-top: 100px; /* Ajusta el margen superior para mover los botones más abajo */
+font-size: 20px;
+font-family: 'Tahoma', 'Segoe UI', Tahoma, Verdana, sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
+width: 200px; /* Ajusta el ancho del botón según tus preferencias */
 }
 
 /* Estilos para el contenedor de los botones */
 .centered-content {
-  text-align: center;
-  margin-top: 80px; /* Ajusta el margen superior para mover el contenido más abajo */
+text-align: center;
+margin-top: 80px; /* Ajusta el margen superior para mover el contenido más abajo */
 }
 
 /* Estilo para los enlaces del menú */
 .scroll-link {
-  text-decoration: none; /* Elimina el subrayado */
-  color: white; /* Cambia el color del texto a tu preferencia */
+text-decoration: none; /* Elimina el subrayado */
+color: white; /* Cambia el color del texto a tu preferencia */
 }
 
 /* Estilo para los enlaces del menú al pasar el cursor por encima */
 .scroll-link:hover {
-  color: lightseagreen; /* Cambia el color al pasar el cursor por encima */
+color: lightseagreen; /* Cambia el color al pasar el cursor por encima */
 }
 
 .title {
-  
-  font-weight: 600;
-  font-size: 4em; /* Tamaño de fuente grande */
-  text-align: center; /* Texto centrado */
-  color: black; /* Color de texto blanco o el que desees */
-  margin-bottom: 39px; /* Espacio inferior */
-  margin-top: 300px; /* Ajusta el margen superior para mover los botones más abajo */
-  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
+
+font-weight: 600;
+font-size: 4em; /* Tamaño de fuente grande */
+text-align: center; /* Texto centrado */
+color: black; /* Color de texto blanco o el que desees */
+margin-bottom: 39px; /* Espacio inferior */
+margin-top: 300px; /* Ajusta el margen superior para mover los botones más abajo */
+font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
 }
 
 .p1 {
-  font-weight: 600;
-  font-size: 2em; /* Tamaño de fuente para el subtexto */
-  text-align: center; /* Texto centrado */
-  color: black; /* Color de texto blanco o el que desees */
-  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
+font-weight: 600;
+font-size: 2em; /* Tamaño de fuente para el subtexto */
+text-align: center; /* Texto centrado */
+color: black; /* Color de texto blanco o el que desees */
+font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif; /* Utilizando la fuente Roboto de Google Fonts */
 }
 
 .button-container {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .button-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0 10px;
 }
 
 button {
-  margin-bottom: 0px;
+margin-bottom: 0px;
 }
 
 .text-below-button {
-  margin-bottom: 10px; /* Ajusta el margen como desees */
-  font-size: 1em;
-  color: black;
-  text-align: center;
+margin-bottom: 10px; /* Ajusta el margen como desees */
+font-size: 1em;
+color: black;
+text-align: center;
 }
 
 .p2 {
-  font-weight: 450;
-  font-size: 1em;
-  color: black;
-  text-align: center;
-  margin-left: 0px;
-  margin-right: 75px;
-  margin-bottom: 0px; /* Espacio inferior */
+font-weight: 450;
+font-size: 1em;
+color: black;
+text-align: center;
+margin-left: 0px;
+margin-right: 75px;
+margin-bottom: 0px; /* Espacio inferior */
 
 }
 
 .p3 {
-  font-weight: 450;
-  font-size: 1em;
-  color: black;
-  text-align: center;
-  margin-left: 19px;
-  margin-right: 20px;
-  margin-bottom: 0px; /* Espacio inferior */
+font-weight: 450;
+font-size: 1em;
+color: black;
+text-align: center;
+margin-left: 19px;
+margin-right: 20px;
+margin-bottom: 0px; /* Espacio inferior */
 
 }
-
-
-
-
-
-
-
-  
-  
-    
