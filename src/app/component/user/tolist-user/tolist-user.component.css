@@ -48,4 +48,8 @@ table {
 .mat-column-email {
   width: 25%; /* Ajusta el ancho de la columna "IDUSER" */
 }
-  
+
+
+.container{
+  margin-top: 80px;
+}

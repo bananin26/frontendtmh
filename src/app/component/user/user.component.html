@@ -1,93 +1,113 @@
-<mat-toolbar color="primary">
+<!-- MENU -->
+<<mat-toolbar color="primary">
     
-  <header class="header">
-    <div class="container">
-      <div class="btn-menu">
-        <label for="btn-menu">
-          <span class="material-icons">menu</span>
-        </label>
+    <div class="toolbar-content">
+        <a  href="/components/Home">
+        <img style="cursor: pointer;"
+          src="assets/logo.png"
+          alt=""
+          class="toolbar-image"
+          style="max-width: 250px; max-height: 250px"
+        />
+        </a>
       </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="btn-menu">
+          <label for="btn-menu">
+            <span class="material-icons">menu</span>
+          </label>
+        </div>
+      </div>
+    </header>
+    
+      
+    <input type="checkbox" id="btn-menu">
+
+
+
+    <div class="container-menu">
+        <div class="cont-menu">
+            <div class="sidebar">
+                <div class="toolbar-content">
+                    <img
+                      src="assets/logo.png"
+                      alt="Logo de la aplicación"
+                      class="toolbar-image"
+                    />
+                  </div>
+                <ul>
+                    <li style="margin-top: -20px;" ><a><span class="mover1"class="menu-icon material-icons">person</span> User<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/components/Users/new">Add User</a></li>
+                            <li><a href="/components/Users">List User</a></li>
+                            <li><a href="/components/Users/search">Search User</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a ><span class="menu-icon material-icons">store</span>Product<span class="submenu-icon2 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/components/Products/new">Add Product</a></li>
+                            <li><a href="/components/Products">List Product</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">local_mall</span>Order<span class="submenu-icon3 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/order/new">Add Order</a></li>
+                            <li><a href="/order">List Order</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">message</span>Message<span class="submenu-icon4 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/message/new">Add Message</a></li>
+                            <li><a href="/message">List Message</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">notifications</span>Notification<span class="submenu-icon5 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/notification/new">Add Notification</a></li>
+                            <li><a href="/notification">List Notification</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">category</span>Category<span class="submenu-icon6 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/category/new">Add Category</a></li>
+                            <li><a href="/category">List Category</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">supervisor_account</span>Role<span class="submenu-icon7 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/Role/new">Add Role</a></li>
+                            <li><a href="/Role">List Role</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">forum</span>Forum<span class="submenu-icon8 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/Forum/new">Add Forum</a></li>
+                            <li><a href="/Forum">List Forum</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><span class="menu-icon material-icons">description</span>Records<span class="submenu-icon9 material-icons">keyboard_arrow_down</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="/records/new">Add Product</a></li>
+                            <li><a href="/records">List Product</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <label for="btn-menu" class="boton2" class="material-icons">menu</label>
+        </div>
+     </div>
     </div>
-  </header>
-  
-    
-  <input type="checkbox" id="btn-menu">
-  <div class="container-menu">
-      <div class="cont-menu">
-          <div class="sidebar">
-              <ul>
-                  <li><a class="menu-item"><span class="menu-icon material-icons">person</span>User<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/components/Users/new">Add User</a></li>
-                          <li><a href="/components/Users">List User</a></li>
-                          <li><a href="/components/Users/search">Search User</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a ><span class="menu-icon material-icons">store</span>Product<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/product/new">Add Product</a></li>
-                          <li><a href="/product">List Product</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">local_mall</span>Order<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/order/new">Add Order</a></li>
-                          <li><a href="/order">List Order</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">message</span>Message<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/message/new">Add Message</a></li>
-                          <li><a href="/message">List Message</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">notifications</span>Notification<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/notification/new">Add Notification</a></li>
-                          <li><a href="/notification">List Notification</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">category</span>Category<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/category/new">Add Category</a></li>
-                          <li><a href="/category">List Category</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">supervisor_account</span>Role<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/Role/new">Add Role</a></li>
-                          <li><a href="/Role">List Role</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">forum</span>Forum<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/Forum/new">Add Forum</a></li>
-                          <li><a href="/Forum">List Forum</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a><span class="menu-icon material-icons">description</span>Records<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
-                      <ul class="sub-menu">
-                          <li><a href="/records/new">Add Product</a></li>
-                          <li><a href="/records">List Product</a></li>
-                      </ul>
-                  </li>
-              </ul>
-              <label for="btn-menu" class="material-icons">menu</label>
-      </div>
-   </div>
-  </div>
 </mat-toolbar>
-
-
-
 
 <router-outlet></router-outlet>
 <div [hidden]="route.children.length !== 0">
