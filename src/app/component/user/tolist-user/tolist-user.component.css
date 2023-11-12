@@ -1,21 +1,31 @@
 table {
   width: 100%;
+  border-radius: 8px;
+
 }
      
   .my-custom-table th, .my-custom-table td {
     padding: 8px; /* Añade un espacio de relleno a las celdas */
     text-align: center; /* Centra el contenido de las celdas */
+    border-radius: 8px;
+
   }
   
   /* Reduce el espacio entre las filas */
   .mat-row {
     margin: 0;
+    
   }
   
   /* Reduce el espacio entre las celdas de encabezado */
   .mat-header-cell {
     padding: 3px;
   }
+
+  .mat-paginator {
+    background-color: transparent;
+  }
+  
   
   /* Reduce el espacio entre las celdas de datos */
   .mat-cell {

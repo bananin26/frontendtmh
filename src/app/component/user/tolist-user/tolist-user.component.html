@@ -76,10 +76,13 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-
+    <br/>
+    <br/>
     <mat-paginator
     [pageSizeOptions]="[10, 50, 100]"
     showFirstLastButtons
+    style="  border-radius: 10px;"
+    class="mat-paginator"
   ></mat-paginator>
     
   </div>

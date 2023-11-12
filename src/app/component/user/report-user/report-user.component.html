@@ -6,7 +6,8 @@
     <title>Document</title>
   </head>
   <body>
-    <br/>
+    <div class="background-image" [ngStyle]="{'background-image': backgroundImage}">
+      <br/>
     <div style="margin-top: 105px;"><h2 style="text-align: center">Search Users</h2></div>
     <div [formGroup]="fechaForm" class="container">
       <mat-form-field>
@@ -22,7 +23,7 @@
        
         
       </mat-form-field>
-      <button (click)="buscar()" mat-stroked-button color="primary" style="margin-left: 20px;">Search</button>
+      <button (click)="buscar()" mat-raised-button color="black" style="margin-left: 20px;">Search</button>
     </div>
 
     <div class="container">
@@ -67,7 +68,7 @@
         <!-- ... tu código existente ... -->
         <div *ngIf="mensaje" style="color: red; margin-top: 10px;">{{ mensaje }}</div>
       </div>
-     
+    </div>
   </body>
 </html>
 

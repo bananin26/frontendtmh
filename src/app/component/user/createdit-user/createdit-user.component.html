@@ -6,87 +6,109 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container" style="text-align: center">
-      <h2>User Register</h2>
-      <form [formGroup]="form" (submit)="accept()" class="example-form">
-        <br />
+    <div class="container">
+      <!-- Contenedor del logotipo -->
+      <div class="logo">
+        <img src="assets/usuario.png" alt="Logo de la empresa" />
+      </div>
+      <div class="form-container">
+        <div class="container" style="text-align: center">
+          <div class="body-inicio">
+            <h2 class="header">User Register</h2>
+            <form [formGroup]="form" (submit)="accept()" class="example-form">
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Name" formControlName="name" />
-          <mat-error
-            *ngIf="obtenerControlCampo('name')?.errors?.['required']"
-          >
-            El nombre es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" />
+                <mat-error
+                  *ngIf="obtenerControlCampo('name')?.errors?.['required']"
+                >
+                  El nombre es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" formControlName="email" />
-            <mat-error
-              *ngIf="obtenerControlCampo('email')?.errors?.['required']"
-            >
-              El e-mail es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />           
-          <mat-form-field class="example-full-width">
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="Phone" formControlName="phone" />
-            <mat-error
-              *ngIf="obtenerControlCampo('phone')?.errors?.['required']"
-            >
-              El teléfono es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />           
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email" />
+                <mat-error
+                  *ngIf="obtenerControlCampo('email')?.errors?.['required']"
+                >
+                  El e-mail es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Phone" formControlName="phone" />
+                <mat-error
+                  *ngIf="obtenerControlCampo('phone')?.errors?.['required']"
+                >
+                  El teléfono es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <input
-            matInput
-            placeholder="Date"
-            [matDatepicker]="picker"
-            formControlName="birthday"
-            [max]="maxFecha"
-          />
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle
-            matIconSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-error
-            *ngIf="obtenerControlCampo('birthday')?.errors?.['required']"
-          >
-            La fecha es obligatoria.
-          </mat-error>
-        </mat-form-field>
-        <br />
-        <br/>
+              <mat-form-field appearance="fill" class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Date"
+                  [matDatepicker]="picker"
+                  formControlName="birthday"
+                  [max]="maxFecha"
+                />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error
+                  *ngIf="obtenerControlCampo('birthday')?.errors?.['required']"
+                >
+                  La fecha es obligatoria.
+                </mat-error>
+              </mat-form-field>
+              <br />
+              <br />
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Country</mat-label>
-            <input matInput placeholder="Country" formControlName="country" />
-            <mat-error
-              *ngIf="obtenerControlCampo('country')?.errors?.['required']"
-            >
-              El país es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />     
+              <mat-form-field class="example-full-width">
+                <mat-label>Country</mat-label>
+                <input
+                  matInput
+                  placeholder="Country"
+                  formControlName="country"
+                />
+                <mat-error
+                  *ngIf="obtenerControlCampo('country')?.errors?.['required']"
+                >
+                  El país es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-
-        <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
-        <button mat-stroked-button color="warn" routerLink="/components/Users">
-            Cancel
-          </button>
-<br/>
-        <p>{{ mensaje }}</p>
-        <br/>
-
-      </form>
+              <button
+                mat-stroked-button
+                color="accent"
+                style="margin-right: 20px"
+              >
+                Aceptar
+              </button>
+              <button
+                mat-stroked-button
+                color="warn"
+                routerLink="/components/Users"
+              >
+                Cancel
+              </button>
+              <br />
+              <p>{{ mensaje }}</p>
+              <br />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

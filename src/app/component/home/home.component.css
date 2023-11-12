@@ -327,14 +327,14 @@ body {
   margin-left: 30px;
 }
 
-
+.toolbar-image {
+  width: 130px;
+  height: 130px;
+  margin-left: 80px;
+  }
 
 /* ----------------------------------------------DASHBOARD------------------------------------------------------ */
-.toolbar-image {
-width: 130px;
-height: 130px;
-margin-left: 80px;
-}
+
 .mat-toolbar {
   position: fixed;
   top: 0;

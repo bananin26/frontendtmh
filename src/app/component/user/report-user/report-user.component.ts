@@ -24,6 +24,7 @@ export class ReportUserComponent {
     'birthday',
     'country',
   ];
+  backgroundImage = 'url("assets/fondo-general.jpg")';
 
   constructor(private pS: UserService, private formBuilder: FormBuilder) {}
 
