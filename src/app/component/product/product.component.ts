@@ -10,4 +10,7 @@ export class ProductComponent {
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {}
+  cerrar() {
+    sessionStorage.clear();
+  } 
 }
