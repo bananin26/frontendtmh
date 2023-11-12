@@ -48,7 +48,7 @@ const routes: Routes = [
     children: [{ path: 'new', component: CreateditMessageComponent }],
   },
   {
-    path: 'Notificactions',
+    path: 'Notifications',
     component: NotificationComponent,
     children: [{ path: 'new', component: CreateditNotificationComponent }],
   },

@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../model/category';
 
 const base_url = environment.base;
@@ -13,18 +13,37 @@ export class CategoryService {
   private listaCambio = new Subject<Category[]>();
   constructor(private http: HttpClient) {}
   list() {
-    return this.http.get<Category[]>(this.url);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Category[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
-  insert(or: Category) {
-    return this.http.post(this.url, or);
+
+  insert(category: Category) {
+    let token = sessionStorage.getItem('token');
+    return this.http.post(this.url, category, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
-  listId(id:number){
-    return this.http.get<Category>(`${this.url}/${id}`);
-  }
+
   setList(listaNueva: Category[]) {
     this.listaCambio.next(listaNueva);
   }
+
   getList() {
     return this.listaCambio.asObservable();
+  }
+
+  listId(id: number) {
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Category>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }
