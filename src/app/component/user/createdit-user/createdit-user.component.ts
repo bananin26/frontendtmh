@@ -25,7 +25,16 @@ export class CreateditUserComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   dueDateUser = new FormControl(new Date());
   edition: boolean = false;
- 
+  paises: { value: string; viewValue: string }[] = [
+    { value: 'United States', viewValue: 'United States' },
+    { value: 'Perú', viewValue: 'Perú' },
+  ];
+  numero = [
+    { value: 'US', viewValue: 'Estados Unidos (+1)' },
+    { value: 'PE', viewValue: 'Perú (+51)' },
+  ];
+
+
   constructor(
     private uS: UserService,
     private router: Router,
