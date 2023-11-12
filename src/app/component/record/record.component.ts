@@ -9,4 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class RecordComponent {
   constructor(public route: ActivatedRoute) {}
   ngOnInit(): void {}
+
+  cerrar() {
+    sessionStorage.clear();
+  } 
 }

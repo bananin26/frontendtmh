@@ -11,4 +11,7 @@ export class ForumComponent {
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {}
+  cerrar() {
+    sessionStorage.clear();
+  } 
 }

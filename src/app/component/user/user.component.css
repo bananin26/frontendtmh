@@ -330,31 +330,11 @@ body {
 .toolbar-image {
   width: 130px;
   height: 130px;
-  margin-left: 90px;
+  margin-left: 80px;
   }
 
 /* ----------------------------------------------DASHBOARD------------------------------------------------------ */
 
-.toolbar-content {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.toolbar-text {
-  margin-left: 20px; /* Ajusta el margen derecho según tus necesidades */
-}
-/* styles.css */
-/* Estilo personalizado para la barra de herramientas */
-.mat-toolbar.mat-primary {
-background-color: black;
-color: white; /* Cambia el color del texto si es necesario */
-}
-.toolbar-image {
-width: 130px;
-height: 130px;
-margin-left: 40px;
-}
 .mat-toolbar {
   position: fixed;
   top: 0;
@@ -371,11 +351,69 @@ font-size: 18px; /* Ajusta el valor según el tamaño de fuente deseado */
 max-width: 150px;
 max-height: 150px;
 margin-top: -185px;
+margin-right: 80px;
+}
+
+/* Para el título o texto en el toolbar (por ejemplo, "Quienes somos" y "Beneficios") */
+.mat-toolbar .mat-button-wrapper {
+font-size: 100px; /* Ajusta el valor según el tamaño de fuente deseado */
 }
 
 
+body {
+margin: 0;
+padding: 0;
+background-image: url('/assets/fondo-home.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
+.background-image {
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.5 ); /* Fondo semi-transparente si lo deseas */
+}
+.container-nuevo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  margin-top: 150px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
 
+.main-title {
+  font-size: 100px;
+  margin-bottom: 70px;
+  margin-top: 190px;
+  font-weight: bold; /* Hace las letras más gruesas */
 
+}
 
+.welcome-message {
+  font-size: 20px;
+  margin-bottom: 100px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  font-weight: bold; /* Hace las letras más gruesas */
+}
 
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
