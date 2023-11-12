@@ -38,7 +38,23 @@
   max-width: 150px;
   max-height: 150px;
   margin-top: -320px;
-  margin-right: 280px;
+  margin-right: 380px;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  animation: moveImage 5s linear infinite; /* 5s es la duración, puedes ajustar según tus necesidades */
+}
+
+
+@keyframes moveImage {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%); /* Cambia el 100% según el desplazamiento que desees */
+  }
 }
 
 .header {
@@ -49,14 +65,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("/assets/fondo-product.jpg");
+  background-image: url("/assets/producto.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 120vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+
 }
 
 .background-image {

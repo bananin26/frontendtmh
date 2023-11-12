@@ -20,6 +20,7 @@ export class TolistProductComponent implements OnInit {
     'order',
     'category',
   ];
+  backgroundImage = 'url("assets/producto.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
