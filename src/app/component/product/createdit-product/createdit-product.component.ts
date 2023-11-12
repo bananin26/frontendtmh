@@ -70,7 +70,7 @@ export class CreateditProductComponent implements OnInit {
           this.pS.setList(data);
         });
       });
-      this.router.navigate(['Products']);
+      this.router.navigate(['components/Products']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

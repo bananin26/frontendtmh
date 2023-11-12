@@ -53,14 +53,17 @@
                 <mat-label>Price</mat-label>
                 <input
                   matInput
+                  type="number"
                   placeholder="Price"
                   formControlName="priceProduct"
+                  min="0"
+                  max="5000"
                 />
-                <mat-error
-                  *ngIf="obtenerControlCampo('priceProduct')?.errors?.['required']"
-                >
-                  El precio es obligatorio.
-                </mat-error>
+                
+                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['required']">El precio es obligatorio.</mat-error>
+                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['min']">El precio debe ser mayor o igual a 0.</mat-error>
+                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['max']">El precio debe ser menor o igual a 5000.</mat-error>
+
               </mat-form-field>
               <br />
 
