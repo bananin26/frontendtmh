@@ -10,4 +10,7 @@ export class OrderComponent {
   constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {}
+  cerrar() {
+    sessionStorage.clear();
+  } 
 }

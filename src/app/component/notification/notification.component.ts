@@ -9,4 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class NotificationComponent {
   constructor(public route: ActivatedRoute) {}
   ngOnInit(): void {}
+  cerrar() {
+    sessionStorage.clear();
+  } 
 }
