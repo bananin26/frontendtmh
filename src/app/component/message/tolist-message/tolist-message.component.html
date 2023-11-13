@@ -7,11 +7,15 @@
 </head>
 <body>
   <div>
-    <br/>
-    <h2 style="text-align: center;"> Message List </h2>
-
-  </div>
-  <div class="container">
+    <div
+      class="background-image"
+      [ngStyle]="{ 'background-image': backgroundImage }"
+    >
+      <div>
+        <br />
+        <h2 style="text-align: center">Product List</h2>
+      </div>
+      <div class="container">
     <mat-form-field>
       <input matInput (keyup)=filter($event) placeholder="Search"/>
     </mat-form-field>
@@ -48,11 +52,19 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-    <mat-paginator
-    [pageSizeOptions]="[10, 50, 100]"
-    showFirstLastButtons
-  ></mat-paginator>
+    <br />
+    <br />
+    <div class="mat">
+      <mat-paginator
+        [pageSizeOptions]="[10, 50, 100]"
+        showFirstLastButtons
+        style="border-radius: 10px"
+        class="mat-paginator"
+      ></mat-paginator>
+    </div>
     
   </div>
+</div>
+</div>
 </body>
 </html>

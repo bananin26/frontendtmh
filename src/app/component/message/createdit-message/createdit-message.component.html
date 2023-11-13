@@ -31,17 +31,19 @@
               <br />
 
               <mat-form-field class="example-full-width">
-                <mat-label>Content</mat-label>
+                <mat-label>Message</mat-label>
                 <textarea
                   matInput
-                  placeholder="Ex. It makes me feel..."
+                  placeholder="Message"
+                  formControlName="content"
                 ></textarea>
                 <mat-error
                   *ngIf="obtenerControlCampo('content')?.errors?.['required']"
                 >
-                  El contenido es obligatorio.
+                  El mensaje es obligatorio.
                 </mat-error>
               </mat-form-field>
+              <br />
               <br />
 
               <mat-form-field class="example-full-width">
@@ -83,13 +85,17 @@
               <br />
 
               <button
-                mat-stroked-button
-                color="primary"
+                mat-raised-button
+                color="basic"
                 style="margin-right: 20px"
               >
                 Enviar mensaje
               </button>
-              <button mat-stroked-button color="warn" routerLink="/Messages">
+              <button
+                mat-raised-button
+                color="accent"
+                routerLink="/components/Messages"
+              >
                 Cancelar mensaje
               </button>
               <br />

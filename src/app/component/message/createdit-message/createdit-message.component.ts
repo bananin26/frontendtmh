@@ -14,7 +14,7 @@ import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-createdit-message',
   templateUrl: './createdit-message.component.html',
-  styleUrls: ['./createdit-message.component.css']
+  styleUrls: ['./createdit-message.component.css'],
 })
 export class CreateditMessageComponent implements OnInit{
   form: FormGroup = new FormGroup({});
@@ -23,8 +23,6 @@ export class CreateditMessageComponent implements OnInit{
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
   idUserSeleccionada2:number=0
-  messages: { content: string; sentByMe: boolean }[] = [];
-  newMessage = '';
 
   constructor(
     private mS: MessageService,
@@ -59,7 +57,7 @@ export class CreateditMessageComponent implements OnInit{
           this.mS.setList(data);
         });
       });
-      this.router.navigate(['Messages']);
+      this.router.navigate(['/components/Messages']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

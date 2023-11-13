@@ -12,6 +12,7 @@ import { MessageService } from 'src/app/service/message.service';
 export class TolistMessageComponent implements OnInit {
   dataSource: MatTableDataSource<Message> = new MatTableDataSource();
   displayedColumns: string[] = ['idMessage', 'title','content', 'userSend','userReceives'];
+  backgroundImage = 'url("assets/mensaje.png")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
