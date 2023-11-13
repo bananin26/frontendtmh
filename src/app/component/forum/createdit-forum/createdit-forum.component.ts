@@ -37,7 +37,7 @@ export class CreateditForumComponent implements OnInit{
       idForum: [''],
       forum: ['', Validators.required],
       date: [''],
-      iduser: ['', [Validators.required]],
+      user: ['', [Validators.required]],
     });
     this.uS.list().subscribe((data) => {
       this.listaUsers = data;
@@ -49,14 +49,14 @@ export class CreateditForumComponent implements OnInit{
       this.forum.idForum = this.form.value.idForum;
       this.forum.forum = this.form.value.forum;
       this.forum.date = new Date();
-      this.forum.idUser.idUser = this.form.value.iduser;
+      this.forum.user.idUser = this.form.value.user;
      
       this.fS.insert(this.forum).subscribe((data) => {
         this.fS.list().subscribe((data) => {
           this.fS.setList(data);
         });
       });
-      this.router.navigate(['Forums']);
+      this.router.navigate(['/components/Forums']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
