@@ -49,7 +49,7 @@ export class CreateditForumComponent implements OnInit{
       this.forum.idForum = this.form.value.idForum;
       this.forum.forum = this.form.value.forum;
       this.forum.date = this.form.value.date;
-      this.forum.user.idUser = this.form.value.user;
+      this.forum.iduser.idUser = this.form.value.iduser;
      
       this.fS.insert(this.forum).subscribe((data) => {
         this.fS.list().subscribe((data) => {
