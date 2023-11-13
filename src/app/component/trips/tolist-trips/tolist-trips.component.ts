@@ -22,6 +22,7 @@ export class TolistTripsComponent {
     'originCity',
     'user'
   ];
+  backgroundImage = 'url("assets/trips.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

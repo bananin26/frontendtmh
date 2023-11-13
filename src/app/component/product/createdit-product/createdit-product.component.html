@@ -82,17 +82,17 @@
               </mat-form-field>
 
               <mat-form-field class="example-full-width">
-                <mat-label>Order</mat-label>
+                <mat-label>Trips</mat-label>
                 <mat-select
                   [(value)]="idOrderSeleccionada"
-                  formControlName="order"
+                  formControlName="trips"
                 >
                   <mat-option *ngFor="let l of listaTrips" [value]="l.idTrips">
                     {{ l.idTrips }}
                   </mat-option>
                 </mat-select>
                 <mat-error
-                  *ngIf="obtenerControlCampo('order')?.errors?.['required']"
+                  *ngIf="obtenerControlCampo('trips')?.errors?.['required']"
                 >
                   El id orden es obligatorio.
                 </mat-error>

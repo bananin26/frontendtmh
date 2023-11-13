@@ -10,9 +10,9 @@ import {
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/service/product.service';
 import { CategoryService } from 'src/app/service/category.service';
-import { TripsService } from 'src/app/service/trips.service';
-import { Trips } from 'src/app/model/trips';
 import { Category } from 'src/app/model/category';
+import { Trips } from 'src/app/model/trips';
+import { TripsService } from 'src/app/service/trips.service';
 
 @Component({
   selector: 'app-createdit-product',
@@ -44,7 +44,7 @@ export class CreateditProductComponent implements OnInit {
       descriptionProduct: ['', [Validators.required]],
       priceProduct: ['', Validators.required],
       dimensionsProduct: ['', Validators.required],
-      order: ['', Validators.required],
+      trips: ['', Validators.required],
       category: ['', Validators.required],
     });
     this.tS.list().subscribe((data) => {

@@ -22,7 +22,8 @@ export class CreateditTripsComponent {
   form: FormGroup = new FormGroup({});
   trips: Trips = new Trips();
   mensaje: string = '';
-  minFecha: Date = moment().add(-1, 'days').toDate();
+  fechaActual: Date = new Date();
+  fechaMaxima: Date = moment(this.fechaActual).add(15, 'days').toDate();
   dueDateOrder = new FormControl(new Date());
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
@@ -34,7 +35,7 @@ export class CreateditTripsComponent {
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
   ];
-  backgroundImage = 'url("assets/fondo-general.jpg")';
+  backgroundImage = 'url("assets/trips.jpg")';
  
   constructor(
     private tS: TripsService,
