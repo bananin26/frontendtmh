@@ -69,6 +69,7 @@ const routes: Routes = [
     component: CategoryComponent,
     children: [
       { path: 'new', component: CreateditCategoryComponent },
+      { path: 'edition/:id', component: CreateditCategoryComponent },
   ],
   },
   {
