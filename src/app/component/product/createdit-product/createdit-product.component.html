@@ -56,7 +56,7 @@
                   type="number"
                   placeholder="Price"
                   formControlName="priceProduct"
-                  min="0"
+                  min="10"
                   max="5000"
                 />
                 
@@ -87,8 +87,8 @@
                   [(value)]="idOrderSeleccionada"
                   formControlName="order"
                 >
-                  <mat-option *ngFor="let l of listaOrder" [value]="l.idOrder">
-                    {{ l.idOrder }}
+                  <mat-option *ngFor="let l of listaTrips" [value]="l.idTrips">
+                    {{ l.idTrips }}
                   </mat-option>
                 </mat-select>
                 <mat-error
@@ -128,7 +128,7 @@
               >
                 Aceptar
               </button>
-              <button mat-stroked-button color="warn" routerLink="/Products">
+              <button mat-stroked-button color="warn" routerLink="/components/Products">
                 Cancel
               </button>
               <br />
@@ -140,4 +140,5 @@
       </div>
     </div>
   </body>
+  <body></body>
 </html>

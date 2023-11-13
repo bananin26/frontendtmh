@@ -38,7 +38,7 @@
                   El e-mail es obligatorio.
                 </mat-error>
               </mat-form-field>
-              
+
               <br />
               <mat-form-field class="example-full-width">
                 <mat-label>Phone</mat-label>
@@ -78,10 +78,12 @@
                 <mat-label>País</mat-label>
                 <mat-select formControlName="country">
                   <mat-option *ngFor="let p of paises" [value]="p.value">
-                    {{p.viewValue}}
+                    {{ p.viewValue }}
                   </mat-option>
                 </mat-select>
-                <mat-error *ngIf="obtenerControlCampo('country')?.errors?.['required']">
+                <mat-error
+                  *ngIf="obtenerControlCampo('country')?.errors?.['required']"
+                >
                   El país es obligatorio.
                 </mat-error>
               </mat-form-field>
@@ -110,4 +112,5 @@
       </div>
     </div>
   </body>
+  <body></body>
 </html>

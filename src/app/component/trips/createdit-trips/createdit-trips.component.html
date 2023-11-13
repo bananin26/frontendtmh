@@ -6,33 +6,39 @@
     <title>Document</title>
   </head>
   <body>
+      <!-- Contenedor del logotipo -->
+      <div class="logo">
+        <img src="assets/usuario.png" alt="Logo de la empresa" />
+      </div>
+      <div class="form-container">
     <div class="container" style="text-align: center">
+      <div class="body-inicio">
       <br />
-      <h2>Order Register</h2>
+      <h2>Trips Register</h2>
       <form [formGroup]="form" (submit)="accept()" class="example-form">
         <br />
-
         <mat-form-field appearance="fill" class="example-full-width">
-          <input
-            matInput
-            placeholder="Shipping Date"
-            [matDatepicker]="picker1"
-            formControlName="shippingDate"
-          />
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle
-            matIconSuffix
-            [for]="picker1"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-          <mat-error
-            *ngIf="obtenerControlCampo('shippingDate')?.errors?.['required']"
-          >
-            La fecha de envío es obligatoria.
-          </mat-error>
-        </mat-form-field>
-        <br />
-        <br />
+            <input
+              matInput
+              placeholder="Shipping Date"
+              [matDatepicker]="picker1"
+              formControlName="shippingDate"
+              [min]="minFecha"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('shippingDate')?.errors?.['required']"
+            >
+              La fecha de entrega es obligatoria.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <br />
 
         <mat-form-field appearance="fill" class="example-full-width">
           <input
@@ -40,6 +46,7 @@
             placeholder="Arrive Date"
             [matDatepicker]="picker2"
             formControlName="arriveDate"
+            [min]="minFecha"
           />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
@@ -58,15 +65,13 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Destination Country</mat-label>
-          <input
-            matInput
-            placeholder="Destination Country"
-            formControlName="destinationCountry"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('destinationCountry')?.errors?.['required']"
-          >
-            El destino del país es obligatorio.
+          <mat-select formControlName="destinationCountry">
+            <mat-option *ngFor="let p of paises" [value]="p.value">
+              {{p.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('destinationCountry')?.errors?.['required']">
+            El destino es obligatorio.
           </mat-error>
         </mat-form-field>
         <br />
@@ -106,11 +111,11 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Origin Country</mat-label>
-          <input
-            matInput
-            placeholder="Origin Country"
-            formControlName="originCountry"
-          />
+          <mat-select formControlName="destinationCountry">
+            <mat-option *ngFor="let p of paises2" [value]="p.value">
+              {{p.viewValue}}
+            </mat-option>
+          </mat-select>
           <mat-error
             *ngIf="obtenerControlCampo('originCountry')?.errors?.['required']"
           >
@@ -152,7 +157,7 @@
         <button mat-stroked-button color="accent" style="margin-right: 20px">
           Aceptar
         </button>
-        <button mat-stroked-button color="warn" routerLink="/Orders">
+        <button mat-stroked-button color="warn" routerLink="/components/Trips">
           Cancel
         </button>
         <br />
@@ -160,5 +165,8 @@
         <br />
       </form>
     </div>
+    </div>
+  </div>
   </body>
+  <body></body>
 </html>

@@ -1,18 +1,18 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { Order } from 'src/app/model/order';
-import { OrderService } from 'src/app/service/order.service';
+import { Trips } from 'src/app/model/trips';
+import { TripsService } from 'src/app/service/trips.service';
 
 @Component({
-  selector: 'app-tolist-order',
-  templateUrl: './tolist-order.component.html',
-  styleUrls: ['./tolist-order.component.css'],
+  selector: 'app-tolist-trips',
+  templateUrl: './tolist-trips.component.html',
+  styleUrls: ['./tolist-trips.component.css']
 })
-export class TolistOrderComponent implements OnInit {
-  dataSource: MatTableDataSource<Order> = new MatTableDataSource();
+export class TolistTripsComponent {
+  dataSource: MatTableDataSource<Trips> = new MatTableDataSource();
   displayedColumns: string[] = [
-    'idOrder',
+    'idTrips',
     'shippingDate',
     'arriveDate',
     'destinationCountry',
@@ -25,14 +25,14 @@ export class TolistOrderComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private oS: OrderService) {}
+  constructor(private tS: TripsService) {}
 
   ngOnInit(): void {
-    this.oS.list().subscribe((data) => {
+    this.tS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.oS.getList().subscribe((data) => {
+    this.tS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

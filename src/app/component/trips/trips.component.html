@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 <div [hidden]="route.children.length !== 0">
-  <app-tolist-order></app-tolist-order>
+  <app-tolist-trips></app-tolist-trips>
 </div>
 <mat-toolbar color="primary">
   <div class="toolbar-content">
@@ -62,10 +62,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a><span class="menu-icon material-icons">local_mall</span>Order<span class="submenu-icon3 material-icons">keyboard_arrow_down</span></a>
+                    <a><span class="menu-icon material-icons">flight</span>Trips<span class="submenu-icon3 material-icons">keyboard_arrow_down</span></a>
                     <ul class="sub-menu">
-                        <li><a href="/components/Orders/new">Add Order</a></li>
-                        <li><a href="/components/Orders">List Order</a></li>
+                        <li><a href="/components/Trips/new">Add Trips</a></li>
+                        <li><a href="/components/Trips">List Trips</a></li>
                     </ul>
                 </li>
                 <li>

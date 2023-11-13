@@ -6,8 +6,6 @@ import { UserComponent } from './user/user.component';
 import { ReportUserComponent } from './user/report-user/report-user.component';
 import { ProductComponent } from './product/product.component';
 import { CreateditProductComponent } from './product/createdit-product/createdit-product.component';
-import { OrderComponent } from './order/order.component';
-import { CreateditOrderComponent } from './order/createdit-order/createdit-order.component';
 import { MessageComponent } from './message/message.component';
 import { CreateditMessageComponent } from './message/createdit-message/createdit-message.component';
 import { NotificationComponent } from './notification/notification.component';
@@ -21,6 +19,8 @@ import { CreateditForumComponent } from './forum/createdit-forum/createdit-forum
 import { CreateditRecordComponent } from './record/createdit-record/createdit-record.component';
 import { RecordComponent } from './record/record.component';
 import { HomeComponent } from './home/home.component';
+import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
+import { TripsComponent } from './trips/trips.component';
 
 const routes: Routes = [
   {
@@ -38,9 +38,9 @@ const routes: Routes = [
     children: [{ path: 'new', component: CreateditProductComponent }],
   },
   {
-    path: 'Orders',
-    component: OrderComponent,
-    children: [{ path: 'new', component: CreateditOrderComponent }],
+    path: 'Trips',
+    component: TripsComponent,
+    children: [{ path: 'new', component: CreateditTripsComponent }],
   },
   {
     path: 'Messages',

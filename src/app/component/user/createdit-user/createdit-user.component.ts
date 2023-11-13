@@ -29,10 +29,7 @@ export class CreateditUserComponent implements OnInit {
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
   ];
-  numero = [
-    { value: 'US', viewValue: 'Estados Unidos (+1)' },
-    { value: 'PE', viewValue: 'Perú (+51)' },
-  ];
+
 
 
   constructor(

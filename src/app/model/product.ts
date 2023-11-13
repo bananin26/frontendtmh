@@ -1,5 +1,5 @@
 import { Category } from './category';
-import { Order } from './order';
+import { Trips } from './trips';
 
 export class Product {
   idProduct: number = 0;
@@ -7,6 +7,6 @@ export class Product {
   descriptionProduct: string = '';
   priceProduct: number = 0;
   dimensionsProduct: string = '';
-  order: Order = new Order();
+  trips: Trips = new Trips();
   category: Category = new Category();
 }
