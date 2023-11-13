@@ -27,6 +27,8 @@ export class CreateditTripsComponent {
   dueDateOrder = new FormControl(new Date());
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
+  edition: boolean = false;
+  id: number = 0;
   paises: { value: string; viewValue: string }[] = [
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
@@ -92,6 +94,24 @@ export class CreateditTripsComponent {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.tS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idTrips: new FormControl(data.idTrips),
+          shippingDate: new FormControl(data.shippingDate),
+          arriveDate: new FormControl(data.arriveDate),
+          destinationCountry: new FormControl(data.destinationCountry),
+          destinationCity: new FormControl(data.destinationCity),
+          destinationAddress: new FormControl(data.destinationAddress),
+          originCountry: new FormControl(data.originCountry),
+          originCity: new FormControl(data.originCity),
+          user: new FormControl(data.user),   
+        });
+      });
+    }
+  }  
 
 
 }

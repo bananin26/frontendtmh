@@ -8,7 +8,7 @@
   <body>
     <div class="container" style="text-align: center">
       <br />
-      <h2>Forum Register</h2>
+      <h2 style="margin-top: 100px;">Forum Register</h2>
       <form [formGroup]="form" (submit)="accept()" class="example-form">
         <br />
 
@@ -27,28 +27,6 @@
         </mat-form-field>
         <br />
         <br />
-
-        <mat-form-field appearance="fill" class="example-full-width">
-            <input
-              matInput
-              placeholder="Date"
-              [matDatepicker]="picker"
-              formControlName="date"
-            />
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle
-              matIconSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            <mat-error
-              *ngIf="obtenerControlCampo('date')?.errors?.['required']"
-            >
-              La fecha es obligatoria.
-            </mat-error>
-          </mat-form-field>
-          <br />
-          <br />
 
         <mat-form-field class="example-full-width">
           <mat-label>User</mat-label>

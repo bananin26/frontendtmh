@@ -20,7 +20,9 @@ export class TolistTripsComponent {
     'destinationAddress',
     'originCountry',
     'originCity',
-    'user'
+    'user',
+    'actualizar',
+    'eliminar'
   ];
   backgroundImage = 'url("assets/trips.jpg")';
 
@@ -36,6 +38,13 @@ export class TolistTripsComponent {
     this.tS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.tS.delete(id).subscribe((data) => {
+      this.tS.list().subscribe((data) => {
+        this.tS.setList(data);
+      });
     });
   }
   filter(en: any) {
