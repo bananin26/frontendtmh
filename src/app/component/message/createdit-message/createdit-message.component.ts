@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {
   FormGroup,
+  FormControl,
   Validators,
   FormBuilder,
   AbstractControl,
@@ -23,15 +24,24 @@ export class CreateditMessageComponent implements OnInit{
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
   idUserSeleccionada2:number=0
-
+  edition: boolean = false;
+  id: number = 0;
+  
   constructor(
     private mS: MessageService,
     private uS:UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idMessage: [''],
       title: ['', Validators.required],
@@ -71,4 +81,17 @@ export class CreateditMessageComponent implements OnInit{
     return control;
   }
 
+  init() {
+    if (this.edition) {
+      this.mS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idMessage: new FormControl(data.idMessage),
+          title: new FormControl(data.title),
+          content: new FormControl(data.content),
+          userSend: new FormControl(data.userSend.idUser),
+          userReceive: new FormControl(data.userReceives.idUser),
+        });
+      });
+    }
+  }  
 }

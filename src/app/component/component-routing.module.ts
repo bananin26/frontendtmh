@@ -35,44 +35,66 @@ const routes: Routes = [
   {
     path: 'Products',
     component: ProductComponent,
-    children: [{ path: 'new', component: CreateditProductComponent }],
+    children: [
+      { path: 'new', component: CreateditProductComponent },
+      { path: 'edition/:id', component: CreateditProductComponent },
+    ],
   },
   {
     path: 'Trips',
     component: TripsComponent,
-    children: [{ path: 'new', component: CreateditTripsComponent }],
+    children: [
+      { path: 'new', component: CreateditTripsComponent },
+      { path: 'edition/:id', component: CreateditTripsComponent },
+  ],
   },
   {
     path: 'Messages',
     component: MessageComponent,
     children: [
       { path: 'new', component: CreateditMessageComponent },
+      { path: 'edition/:id', component: CreateditMessageComponent },
     ],
   },
   {
     path: 'Notifications',
     component: NotificationComponent,
-    children: [{ path: 'new', component: CreateditNotificationComponent }],
+    children: [
+      { path: 'new', component: CreateditNotificationComponent },
+      { path: 'edition/:id', component: CreateditNotificationComponent },
+    ],
   },
   {
     path: 'Categories',
     component: CategoryComponent,
-    children: [{ path: 'new', component: CreateditCategoryComponent }],
+    children: [
+      { path: 'new', component: CreateditCategoryComponent },
+      { path: 'edition/:id', component: CreateditCategoryComponent },
+  ],
   },
   {
     path: 'Roles',
     component: RoleComponent,
-    children: [{ path: 'new', component: CreateditRoleComponent }],
+    children: [
+      { path: 'new', component: CreateditRoleComponent },
+      { path: 'edition/:id', component: CreateditRoleComponent },
+  ],
   },
   {
     path: 'Forums',
     component: ForumComponent,
-    children: [{ path: 'new', component: CreateditForumComponent }],
+    children: [
+      { path: 'new', component: CreateditForumComponent },
+      { path: 'edition/:id', component: CreateditForumComponent },
+  ],
   },
   {
     path: 'Records',
     component: RecordComponent,
-    children: [{ path: 'new', component: CreateditRecordComponent }],
+    children: [
+      { path: 'new', component: CreateditRecordComponent },
+      { path: 'edition/:id', component: CreateditRecordComponent },
+    ],
   },
   {
     path: 'Home',

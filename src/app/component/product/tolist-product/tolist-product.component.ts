@@ -17,8 +17,10 @@ export class TolistProductComponent implements OnInit {
     'descriptionProduct',
     'priceProduct',
     'dimensionsProduct',
-    'order',
+    'trips',
     'category',
+    'actualizar',
+    'eliminar'
   ];
   backgroundImage = 'url("assets/producto.jpg")';
 
@@ -34,6 +36,13 @@ export class TolistProductComponent implements OnInit {
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.pS.delete(id).subscribe((data) => {
+      this.pS.list().subscribe((data) => {
+        this.pS.setList(data);
+      });
     });
   }
   filter(en: any) {

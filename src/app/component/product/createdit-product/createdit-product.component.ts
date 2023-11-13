@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -27,6 +27,8 @@ export class CreateditProductComponent implements OnInit {
   listaCategory:Category[]=[]
   idOrderSeleccionada:number=0
   idCategorySeleccionada:number=0
+  edition: boolean = false;
+  id: number = 0;
   
  
   constructor(
@@ -34,10 +36,17 @@ export class CreateditProductComponent implements OnInit {
     private cS: CategoryService,
     private tS: TripsService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idProduct: [''],
       nameProduct: ['', Validators.required],
@@ -70,7 +79,7 @@ export class CreateditProductComponent implements OnInit {
           this.pS.setList(data);
         });
       });
-      this.router.navigate(['components/Products']);
+      this.router.navigate(['/components/Products']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
@@ -83,4 +92,20 @@ export class CreateditProductComponent implements OnInit {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.pS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idProduct: new FormControl(data.idProduct),
+          nameProduct: new FormControl(data.nameProduct),
+          descriptionProduct: new FormControl(data.descriptionProduct),
+          priceProduct: new FormControl(data.priceProduct),
+          dimensionsProduct: new FormControl(data.dimensionsProduct),
+          trips: new FormControl(data.trips.idTrips),
+          category: new FormControl(data.category.idCategory), 
+        });
+      });
+    }
+  }  
 }

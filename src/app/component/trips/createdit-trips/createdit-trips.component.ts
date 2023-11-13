@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Params, ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import {
   FormGroup,
@@ -18,7 +18,7 @@ import { UserService } from 'src/app/service/user.service';
   templateUrl: './createdit-trips.component.html',
   styleUrls: ['./createdit-trips.component.css']
 })
-export class CreateditTripsComponent {
+export class CreateditTripsComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   trips: Trips = new Trips();
   mensaje: string = '';
@@ -43,10 +43,17 @@ export class CreateditTripsComponent {
     private tS: TripsService,
     private uS: UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idTrips: [''],
       shippingDate: ['', [Validators.required]],
@@ -107,7 +114,7 @@ export class CreateditTripsComponent {
           destinationAddress: new FormControl(data.destinationAddress),
           originCountry: new FormControl(data.originCountry),
           originCity: new FormControl(data.originCity),
-          user: new FormControl(data.user),   
+          user: new FormControl(data.user.idUser),   
         });
       });
     }

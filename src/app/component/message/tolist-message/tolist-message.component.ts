@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/service/message.service';
 })
 export class TolistMessageComponent implements OnInit {
   dataSource: MatTableDataSource<Message> = new MatTableDataSource();
-  displayedColumns: string[] = ['idMessage', 'title','content', 'userSend','userReceives'];
+  displayedColumns: string[] = ['idMessage', 'title','content', 'userSend','userReceives','actualizar','eliminar'];
   backgroundImage = 'url("assets/mensaje.png")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,6 +26,13 @@ export class TolistMessageComponent implements OnInit {
     this.mS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.mS.delete(id).subscribe((data) => {
+      this.mS.list().subscribe((data) => {
+        this.mS.setList(data);
+      });
     });
   }
   filter(en: any) {
