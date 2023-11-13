@@ -37,7 +37,7 @@ export class CreateditForumComponent implements OnInit{
       idForum: [''],
       forum: ['', Validators.required],
       date: [''],
-      idUser: ['', [Validators.required]],
+      iduser: ['', [Validators.required]],
     });
     this.uS.list().subscribe((data) => {
       this.listaUsers = data;
@@ -49,7 +49,7 @@ export class CreateditForumComponent implements OnInit{
       this.forum.idForum = this.form.value.idForum;
       this.forum.forum = this.form.value.forum;
       this.forum.date = new Date();
-      this.forum.idUser.idUser = this.form.value.idUser;
+      this.forum.idUser.idUser = this.form.value.iduser;
      
       this.fS.insert(this.forum).subscribe((data) => {
         this.fS.list().subscribe((data) => {
