@@ -15,7 +15,7 @@ export class TolistForumComponent implements OnInit{
     'idForum',
     'forum',
     'date',
-    'iduser',
+    'idUser',
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
