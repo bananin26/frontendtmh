@@ -34,8 +34,7 @@
                 <mat-label>Message</mat-label>
                 <textarea
                   matInput
-                  placeholder="Message"
-                  formControlName="content"
+                  placeholder="Ex. It makes me feel..."
                 ></textarea>
                 <mat-error
                   *ngIf="obtenerControlCampo('content')?.errors?.['required']"

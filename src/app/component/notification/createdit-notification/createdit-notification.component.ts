@@ -23,8 +23,8 @@ export class CreateditNotificationComponent {
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
   view: { value: string; viewValue: string }[] = [
-    { value: 'true', viewValue: 'true' },
-    { value: 'false', viewValue: 'false' },
+    { value: 'true', viewValue: 'Visto' },
+    { value: 'false', viewValue: 'No visto' },
   ];
  
   constructor(
@@ -36,10 +36,10 @@ export class CreateditNotificationComponent {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      idCategory: [''],
+      idNotification: [''],
       title: ['', Validators.required],
       description: ['', [Validators.required]],
-      date: ['', [Validators.required]],
+      date: [''],
       viewed: ['', [Validators.required]],
       user: ['', [Validators.required]],
     });
@@ -53,7 +53,7 @@ export class CreateditNotificationComponent {
       this.notification.idNotification = this.form.value.idNotification;
       this.notification.title = this.form.value.title;
       this.notification.description = this.form.value.description;
-      this.notification.date = this.form.value.date;
+      this.notification.date = new Date();
       this.notification.viewed = this.form.value.viewed;
       this.notification.user.idUser = this.form.value.user;
       
@@ -63,7 +63,7 @@ export class CreateditNotificationComponent {
           this.nS.setList(data);
         });
       });
-      this.router.navigate(['Notifications']);
+      this.router.navigate(['/components/Notifications']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
