@@ -37,7 +37,7 @@ export class CreateditForumComponent implements OnInit{
       idForum: [''],
       forum: ['', Validators.required],
       date: [''],
-      user: ['', [Validators.required]],
+      idUser: ['', [Validators.required]],
     });
     this.uS.list().subscribe((data) => {
       this.listaUsers = data;
