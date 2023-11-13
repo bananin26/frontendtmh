@@ -23,7 +23,6 @@
               placeholder="Shipping Date"
               [matDatepicker]="picker1"
               formControlName="shippingDate"
-              [min]="minFecha"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle
@@ -34,7 +33,7 @@
             <mat-error
               *ngIf="obtenerControlCampo('shippingDate')?.errors?.['required']"
             >
-              La fecha de entrega es obligatoria.
+              La fecha de envío es obligatoria.
             </mat-error>
           </mat-form-field>
           <br />
@@ -111,7 +110,7 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Origin Country</mat-label>
-          <mat-select formControlName="destinationCountry">
+          <mat-select formControlName="originCountry">
             <mat-option *ngFor="let p of paises2" [value]="p.value">
               {{p.viewValue}}
             </mat-option>
