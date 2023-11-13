@@ -11,7 +11,7 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class TolistNotificationComponent {
   dataSource: MatTableDataSource<Notification> = new MatTableDataSource();
-  displayedColumns: string[] = ['idNotification', 'title','description','date','viewed','user'];
+  displayedColumns: string[] = ['idNotification', 'title','description','date','viewed','user','actualizar','eliminar'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -27,6 +27,15 @@ export class TolistNotificationComponent {
       this.dataSource.paginator = this.paginator;
     });
   }
+
+  eliminar(id: number) {
+    this.nS.delete(id).subscribe((data) => {
+      this.nS.list().subscribe((data) => {
+        this.nS.setList(data);
+      });
+    });
+  }
+
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }

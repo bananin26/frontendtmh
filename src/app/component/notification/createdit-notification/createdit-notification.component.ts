@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {
   FormGroup,
   Validators,
   FormBuilder,
+  FormControl,
   AbstractControl,
 } from '@angular/forms';
 import { Notification } from 'src/app/model/notification';
@@ -22,6 +23,8 @@ export class CreateditNotificationComponent {
   mensaje: string = '';
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
+  edition: boolean = false;
+  id: number = 0;
   view: { value: string; viewValue: string }[] = [
     { value: 'true', viewValue: 'Visto' },
     { value: 'false', viewValue: 'No visto' },
@@ -31,10 +34,17 @@ export class CreateditNotificationComponent {
     private nS: NotificationService,
     private uS:UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idNotification: [''],
       title: ['', Validators.required],
@@ -76,4 +86,19 @@ export class CreateditNotificationComponent {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.nS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idNotification: new FormControl(data.idNotification),
+          title: new FormControl(data.title),
+          description: new FormControl(data.description),
+          date: new FormControl(data.date),
+          viewed: new FormControl(data.viewed),
+          user: new FormControl(data.user.idUser),
+        });
+      });
+    }
+  }  
 }
