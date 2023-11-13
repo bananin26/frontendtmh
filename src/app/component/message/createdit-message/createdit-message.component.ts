@@ -23,6 +23,8 @@ export class CreateditMessageComponent implements OnInit{
   listaUsers:User[]=[]
   idUserSeleccionada1:number=0
   idUserSeleccionada2:number=0
+  messages: { content: string; sentByMe: boolean }[] = [];
+  newMessage = '';
 
   constructor(
     private mS: MessageService,
@@ -70,4 +72,5 @@ export class CreateditMessageComponent implements OnInit{
     }
     return control;
   }
+
 }
