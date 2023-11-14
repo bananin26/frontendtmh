@@ -26,12 +26,9 @@ export class CreateditNotificationComponent {
   listaUsers:User[]=[]
   listaMessage:Message[]=[]
   idUserSeleccionada1:number=0
-<<<<<<< HEAD
-  idMessage:number=0
-=======
+  idMessage: number = 0 
   edition: boolean = false;
   id: number = 0;
->>>>>>> da0a27b60a2b8b0b693c16134856097413408db6
   view: { value: string; viewValue: string }[] = [
     { value: 'true', viewValue: 'Visto' },
     { value: 'false', viewValue: 'No visto' },
@@ -110,6 +107,7 @@ export class CreateditNotificationComponent {
           date: new FormControl(data.date),
           viewed: new FormControl(data.viewed),
           user: new FormControl(data.user.idUser),
+          message: new FormControl(data.message.idMessage),
         });
       });
     }
