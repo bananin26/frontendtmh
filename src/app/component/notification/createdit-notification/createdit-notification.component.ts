@@ -10,6 +10,8 @@ import { Notification } from 'src/app/model/notification';
 import { NotificationService } from 'src/app/service/notification.service';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { Message } from 'src/app/model/message';
+import { MessageService } from 'src/app/service/message.service';
 
 @Component({
   selector: 'app-createdit-notification',
@@ -21,7 +23,9 @@ export class CreateditNotificationComponent {
   notification: Notification = new Notification();
   mensaje: string = '';
   listaUsers:User[]=[]
+  listaMessage:Message[]=[]
   idUserSeleccionada1:number=0
+  idMessage:number=0
   view: { value: string; viewValue: string }[] = [
     { value: 'true', viewValue: 'Visto' },
     { value: 'false', viewValue: 'No visto' },
@@ -30,6 +34,7 @@ export class CreateditNotificationComponent {
   constructor(
     private nS: NotificationService,
     private uS:UserService,
+    private mS:MessageService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -42,9 +47,13 @@ export class CreateditNotificationComponent {
       date: [''],
       viewed: ['', [Validators.required]],
       user: ['', [Validators.required]],
+      message: ['', [Validators.required]],
     });
     this.uS.list().subscribe((data) => {
       this.listaUsers = data;
+    });
+    this.mS.list().subscribe((data) => {
+      this.listaMessage = data;
     });
   }
 
@@ -56,6 +65,7 @@ export class CreateditNotificationComponent {
       this.notification.date = new Date();
       this.notification.viewed = this.form.value.viewed;
       this.notification.user.idUser = this.form.value.user;
+      this.notification.message.idMessage = this.form.value.message;
       
      
       this.nS.insert(this.notification).subscribe((data) => {

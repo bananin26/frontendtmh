@@ -12,12 +12,12 @@
         <img src="assets/usuario.png" alt="Logo de la empresa" />
       </div>
       <div class="form-container">
-        <div class="container" style="text-align: center">
+        <div class="container" style="text-align: center" style="margin-top: 100px;">
           <div class="body-inicio">
+            <br/>
             <h2 class="header">User Register</h2>
             <form [formGroup]="form" (submit)="accept()" class="example-form">
               <br />
-
               <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
                 <input matInput placeholder="Name" formControlName="name" />
@@ -88,18 +88,21 @@
                 </mat-error>
               </mat-form-field>
               <br />
+              <br />
 
+              <button
+              mat-stroked-button
+              color="primary"
+              style="margin-right: 50px"
+              class="mat-elevation-z4"
+            >
+              Aceptar
+            </button>
               <button
                 mat-stroked-button
                 color="accent"
-                style="margin-right: 20px"
-              >
-                Aceptar
-              </button>
-              <button
-                mat-stroked-button
-                color="warn"
                 routerLink="/components/Users"
+                class="mat-elevation-z4"
               >
                 Cancel
               </button>

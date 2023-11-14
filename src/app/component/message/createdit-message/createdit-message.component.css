@@ -14,7 +14,7 @@
   display: flex; /* Utiliza un diseño de caja flexible */
   justify-content: center; /* Centra horizontalmente el contenido */
   align-items: center; /* Centra verticalmente el contenido */
-  height: 110vh; /* Ajusta la altura del contenedor al 100% del viewport */
+  height: 100vh; /* Ajusta la altura del contenedor al 100% del viewport */
   padding: 20px;
   position: relative; /* Agregado para posicionar el icono */
 }

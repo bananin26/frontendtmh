@@ -11,7 +11,9 @@ import { NotificationService } from 'src/app/service/notification.service';
 })
 export class TolistNotificationComponent {
   dataSource: MatTableDataSource<Notification> = new MatTableDataSource();
-  displayedColumns: string[] = ['idNotification', 'title','description','date','viewed','user'];
+  displayedColumns: string[] = ['idNotification', 'title','description','date','viewed','user','message'];
+  backgroundImage = 'url("assets/fondo-notification.png")';
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

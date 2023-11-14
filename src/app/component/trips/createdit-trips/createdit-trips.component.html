@@ -13,7 +13,8 @@
     <div class="form-container">
       <div class="container" style="text-align: center">
         <div class="body-inicio">
-          <br />
+          <br/>
+          <br/>
           <h2>Trips Register</h2>
           <form [formGroup]="form" (submit)="accept()" class="example-form">
             <br />
@@ -162,18 +163,21 @@
               </mat-error>
             </mat-form-field>
             <br />
+            <br />
 
+            <button
+            mat-stroked-button
+            color="primary"
+            style="margin-right: 50px"
+            class="mat-elevation-z4"
+          >
+            Aceptar
+          </button>
             <button
               mat-stroked-button
               color="accent"
-              style="margin-right: 20px"
-            >
-              Aceptar
-            </button>
-            <button
-              mat-stroked-button
-              color="warn"
               routerLink="/components/Trips"
+              class="mat-elevation-z4"
             >
               Cancel
             </button>

@@ -1,3 +1,4 @@
+import { Message } from "./message";
 import { User } from "./user";
 
 export class Notification {
@@ -6,5 +7,6 @@ export class Notification {
     description: string = '';
     date: Date = new Date(Date.now());
     viewed: boolean = false;
-    user:User=new User()
+    user:User=new User();
+    message:Message=new Message();
 }

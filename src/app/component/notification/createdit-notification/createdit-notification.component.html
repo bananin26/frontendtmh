@@ -6,75 +6,126 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container" style="text-align: center">
+    <div class="container" style="text-align: center" style="margin-top: 20px;">
       <br />
-      <h2 style="margin-top: 100px;">Notification Register</h2>
-      <form [formGroup]="form" (submit)="accept()" class="example-form">
-        <br />
+      <!-- Contenedor del logotipo -->
+      <div class="logo">
+        <img src="assets/notification.png" alt="Logo de la empresa" />
+      </div>
+      <div class="form-container">
+        <div class="container" style="text-align: center">
+          <div class="body-inicio">
+            <br />
+            <h2 class="header">Notification</h2>
+            <form [formGroup]="form" (submit)="accept()" class="example-form">
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Title</mat-label>
-          <input matInput placeholder="Title" formControlName="title" />
-          <mat-error
-            *ngIf="obtenerControlCampo('title')?.errors?.['required']"
-          >
-            El título es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" formControlName="title" />
+                <mat-error
+                  *ngIf="obtenerControlCampo('title')?.errors?.['required']"
+                >
+                  El título es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Description</mat-label>
-            <input matInput placeholder="Description" formControlName="description" />
-            <mat-error
-              *ngIf="obtenerControlCampo('description')?.errors?.['required']"
-            >
-              La descripción es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />
-        
-          <mat-form-field class="example-full-width">
-            <mat-label>Viewed</mat-label>
-            <mat-select formControlName="viewed">
-              <mat-option *ngFor="let v of view" [value]="v.value">
-                {{v.viewValue}}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="obtenerControlCampo('viewed')?.errors?.['required']">
-              El visto es obligatorio.
-            </mat-error>
-          </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <input
+                  matInput
+                  placeholder="Description"
+                  formControlName="description"
+                />
+                <mat-error
+                  *ngIf="obtenerControlCampo('description')?.errors?.['required']"
+                >
+                  La descripción es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-          <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Viewed</mat-label>
+                <mat-select formControlName="viewed">
+                  <mat-option *ngFor="let v of view" [value]="v.value">
+                    {{ v.viewValue }}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="obtenerControlCampo('viewed')?.errors?.['required']"
+                >
+                  El visto es obligatorio.
+                </mat-error>
+              </mat-form-field>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>User</mat-label>
-            <mat-select 
-            [(value)]="idUserSeleccionada1"
-            formControlName="user">
-              <mat-option *ngFor="let p of listaUsers" [value]="p.idUser">
-                {{p.name}}
-              </mat-option>
-            </mat-select>
-            <mat-error
-            *ngIf="obtenerControlCampo('user')?.errors?.['required']"
-          >
-            El usuario es obligatorio.
-          </mat-error>
-        </mat-form-field>
+              <br />
 
-          <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>User</mat-label>
+                <mat-select
+                  [(value)]="idUserSeleccionada1"
+                  formControlName="user"
+                >
+                  <mat-option *ngFor="let p of listaUsers" [value]="p.idUser">
+                    {{ p.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="obtenerControlCampo('user')?.errors?.['required']"
+                >
+                  El usuario es obligatorio.
+                </mat-error>
+              </mat-form-field>
 
-        <button mat-stroked-button color="accent" style="margin-right: 20px;">Aceptar</button>
-        <button mat-stroked-button color="warn" routerLink="/Notifications">
-            Cancel
-          </button>
-<br/>
-        <p>{{ mensaje }}</p>
-        <br/>
+              <br />
 
-      </form>
+              <mat-form-field class="example-full-width">
+                <mat-label>Message</mat-label>
+                <mat-select [(value)]="idMessage" formControlName="message">
+                  <mat-option
+                    *ngFor="let m of listaMessage"
+                    [value]="m.idMessage"
+                  >
+                    {{ m.content }}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="obtenerControlCampo('message')?.errors?.['required']"
+                >
+                  El mensaje es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
+              <br />
+
+              <button
+                mat-stroked-button
+                color="accent"
+                style="margin-right: 50px"
+                class="mat-elevation-z4"
+
+              >
+                Aceptar
+              </button>
+              <button
+                mat-stroked-button
+                color="warn"
+                routerLink="/components/Notifications"
+                class="mat-elevation-z4"
+
+              >
+                Cancel
+              </button>
+              <br />
+              <p>{{ mensaje }}</p>
+              <br />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+  <body></body>
 </html>
