@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -24,15 +24,24 @@ export class CreateditForumComponent implements OnInit{
   dueDateOrder = new FormControl(new Date());
   listaUsers:User[]=[]
   idUserSeleccionada:number=0
+  edition: boolean = false;
+  id: number = 0;
  
   constructor(
     private fS: ForumService,
     private uS: UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idForum: [''],
       forum: ['', Validators.required],
@@ -69,4 +78,17 @@ export class CreateditForumComponent implements OnInit{
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.fS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idForum: new FormControl(data.idForum),
+          forum: new FormControl(data.forum),
+          date: new FormControl(data.date),
+          user: new FormControl(data.user.idUser)
+        });
+      });
+    }
+  } 
 }

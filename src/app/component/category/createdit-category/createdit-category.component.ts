@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {
   FormGroup,
   Validators,
   FormBuilder,
+  FormControl,
   AbstractControl,
 } from '@angular/forms';
 import { Category } from 'src/app/model/category';
@@ -14,15 +15,18 @@ import { CategoryService } from 'src/app/service/category.service';
   templateUrl: './createdit-category.component.html',
   styleUrls: ['./createdit-category.component.css']
 })
-export class CreateditCategoryComponent {
+export class CreateditCategoryComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   category: Category = new Category();
   mensaje: string = '';
+  edition: boolean = false;
+  id: number = 0;
  
   constructor(
     private cS: CategoryService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +38,12 @@ export class CreateditCategoryComponent {
   }
 
   accept(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     if (this.form.valid) {
       this.category.idCategory = this.form.value.idCategory;
       this.category.nameCategory = this.form.value.nameCategory;
@@ -44,7 +54,7 @@ export class CreateditCategoryComponent {
           this.cS.setList(data);
         });
       });
-      this.router.navigate(['Categories']);
+      this.router.navigate(['/components/Categories']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
@@ -57,4 +67,16 @@ export class CreateditCategoryComponent {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.cS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idCategory: new FormControl(data.idCategory),
+          nameCategory: new FormControl(data.nameCategory),
+          detailsCategory: new FormControl(data.detailsCategory),
+        });
+      });
+    }
+  }  
 }

@@ -88,8 +88,8 @@
                   [(value)]="idOrderSeleccionada"
                   formControlName="trips"
                 >
-                  <mat-option *ngFor="let l of listaTrips" [value]="l.idTrips">
-                    {{ l.idTrips }}
+                  <mat-option *ngFor="let lt of listaTrips" [value]="lt.idTrips">
+                    {{ lt.idTrips }}
                   </mat-option>
                 </mat-select>
                 <mat-error

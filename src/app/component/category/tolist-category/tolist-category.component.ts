@@ -11,7 +11,7 @@ import { CategoryService } from 'src/app/service/category.service';
 })
 export class TolistCategoryComponent {
   dataSource: MatTableDataSource<Category> = new MatTableDataSource();
-  displayedColumns: string[] = ['idCategory', 'nameCategory','detailsCategory'];
+  displayedColumns: string[] = ['idCategory', 'nameCategory','detailsCategory','actualizar','eliminar'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -25,6 +25,13 @@ export class TolistCategoryComponent {
     this.cS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.cS.delete(id).subscribe((data) => {
+      this.cS.list().subscribe((data) => {
+        this.cS.setList(data);
+      });
     });
   }
   filter(en: any) {

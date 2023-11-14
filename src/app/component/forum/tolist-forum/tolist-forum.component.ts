@@ -16,6 +16,8 @@ export class TolistForumComponent implements OnInit{
     'forum',
     'date',
     'user',
+    'actualizar',
+    'eliminar'
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -30,6 +32,13 @@ export class TolistForumComponent implements OnInit{
     this.fS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.fS.delete(id).subscribe((data) => {
+      this.fS.list().subscribe((data) => {
+        this.fS.setList(data);
+      });
     });
   }
   filter(en: any) {

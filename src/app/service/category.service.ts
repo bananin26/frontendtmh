@@ -46,7 +46,6 @@ export class CategoryService {
         .set('Content-Type', 'application/json'),
     });
   }
-
   update(c: Category) {
     let token = sessionStorage.getItem('token');
     return this.http.put(this.url, c, {
