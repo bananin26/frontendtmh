@@ -11,7 +11,7 @@ import { RoleService } from 'src/app/service/role.service';
 })
 export class TolistRoleComponent implements OnInit{
   dataSource: MatTableDataSource<Role> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'role','user'];
+  displayedColumns: string[] = ['id', 'role'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
