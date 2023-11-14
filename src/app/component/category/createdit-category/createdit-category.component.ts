@@ -55,6 +55,7 @@ export class CreateditCategoryComponent implements OnInit{
           this.cS.setList(data);
         });
       });
+      
       this.router.navigate(['/components/Categories']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
