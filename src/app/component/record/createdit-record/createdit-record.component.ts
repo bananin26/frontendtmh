@@ -23,6 +23,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./createdit-record.component.css'],
 })
 export class CreateditRecordComponent implements OnInit {
+  
   form: FormGroup = new FormGroup({});
   record: Record = new Record();
   mensaje: string = '';
@@ -80,6 +81,7 @@ export class CreateditRecordComponent implements OnInit {
     this.uS.list().subscribe((data) => {
       this.listaUser = data;
     });
+    
   }
   
   accept(): void {
@@ -88,10 +90,10 @@ export class CreateditRecordComponent implements OnInit {
       this.record.payment = this.form.value.payment;
       this.record.paymentDate = this.form.value.paymentDate;
       this.record.arriveDate = this.form.value.arriveDate;
-      this.record.points = this.form.value.points;
       this.record.product.idProduct = this.form.value.product;
       this.record.product.priceProduct = this.form.value.priceProduct;
       this.record.user.idUser = this.form.value.user;
+      this.record.points = this.form.value.points;
 
       this.rS.insert(this.record).subscribe((data) => {
         this.rS.list().subscribe((data) => {
@@ -111,5 +113,4 @@ export class CreateditRecordComponent implements OnInit {
     }
     return control;
   }
-
 }

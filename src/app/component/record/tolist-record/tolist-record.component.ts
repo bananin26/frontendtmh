@@ -22,6 +22,8 @@ export class TolistRecordComponent implements OnInit{
     'product',
     'user'
   ];
+  backgroundImage = 'url("assets/fondo-record.jpg")';
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
