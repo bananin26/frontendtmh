@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import {
   FormGroup,
   FormControl,
@@ -34,6 +34,8 @@ export class CreateditRecordComponent implements OnInit {
   idProductSeleccionada: number = 0;
   idCategorySeleccionada: number = 0;
   idUserSeleccionada: number = 0;
+  edition: boolean = false;
+  id: number = 0;
   payment: { value: string; viewValue: string }[] = [
     { value: 'Efectivo', viewValue: 'Efectivo' },
     { value: 'Visa', viewValue: 'Visa' },
@@ -59,10 +61,17 @@ export class CreateditRecordComponent implements OnInit {
     private rS: RecordService,
     private uS: UserService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idRecord: [''],
       payment: ['', Validators.required],
@@ -113,4 +122,20 @@ export class CreateditRecordComponent implements OnInit {
     }
     return control;
   }
+
+  init() {
+    if (this.edition) {
+      this.rS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idRecord: new FormControl(data.idRecord),
+          payment: new FormControl(data.payment),
+          paymentDate: new FormControl(data.paymentDate),
+          arriveDate: new FormControl(data.arriveDate),
+          product: new FormControl(data.product.idProduct),
+          user: new FormControl(data.user.idUser),
+          points: new FormControl(data.points),
+        });
+      });
+    }
+  } 
 }
