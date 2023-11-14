@@ -8,25 +8,26 @@
   <body>
     <div class="container" style="text-align: center">
       <br />
-      <h2>Order Register</h2>
+      <h2 style="margin-top: 100px;">Record Register</h2>
       <form [formGroup]="form" (submit)="accept()" class="example-form">
         <br />
 
         <mat-form-field class="example-full-width">
-            <mat-label>Payment</mat-label>
-            <input
-              matInput
-              placeholder="Payment"
-              formControlName="payment"
-            />
-            <mat-error
-              *ngIf="obtenerControlCampo('payment')?.errors?.['required']"
-            >
-              El pago es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />
-          <br />
+          <mat-label>Payment</mat-label>
+          <mat-select formControlName="payment">
+            <mat-option *ngFor="let p of payment" [value]="p.value">
+              {{ p.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('payment')?.errors?.['required']"
+          >
+            El tipo de pago es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <br />
+
 
         <mat-form-field appearance="fill" class="example-full-width">
           <input
@@ -34,6 +35,8 @@
             placeholder="Payment Date"
             [matDatepicker]="picker1"
             formControlName="paymentDate"
+            [min]="fechaActual"
+            [max]="fechaMaxima"
           />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
@@ -56,6 +59,8 @@
             placeholder="Arrive Date"
             [matDatepicker]="picker2"
             formControlName="arriveDate"
+            [min]="fechaActual"
+            [max]="fechaMaxima2"
           />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
@@ -75,15 +80,15 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Points</mat-label>
-          <input
-            matInput
-            placeholder="Points"
-            formControlName="points"
-          />
+          <mat-select formControlName="points">
+            <mat-option *ngFor="let p of puntos" [value]="p.value">
+              {{ p.viewValue }}
+            </mat-option>
+          </mat-select>
           <mat-error
             *ngIf="obtenerControlCampo('points')?.errors?.['required']"
           >
-            Los puntos son obligatorios.
+            El tipo de pago es obligatorio.
           </mat-error>
         </mat-form-field>
         <br />
@@ -103,10 +108,38 @@
         <br />
         <br />
 
+        <mat-form-field class="example-full-width">
+          <mat-label>Precio del Producto</mat-label>
+          <mat-select [(value)]="idProductSeleccionada" formControlName="product">
+            <mat-option *ngFor="let l of listaProduct" [value]="l.idProduct">
+              {{ l.priceProduct }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('product')?.errors?.['required']">
+            El producto es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>User</mat-label>
+          <mat-select [(value)]="idUserSeleccionada" formControlName="user">
+            <mat-option *ngFor="let l of listaUser" [value]="l.idUser">
+              {{ l.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
+            El usuario es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <br />
+
         <button mat-stroked-button color="accent" style="margin-right: 20px">
           Aceptar
         </button>
-        <button mat-stroked-button color="warn" routerLink="/Records">
+        <button mat-stroked-button color="warn" routerLink="/components/Records">
           Cancel
         </button>
         <br />

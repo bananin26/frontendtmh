@@ -20,6 +20,7 @@ export class TolistRecordComponent implements OnInit{
     'arriveDate',
     'points',
     'product',
+    'user'
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
