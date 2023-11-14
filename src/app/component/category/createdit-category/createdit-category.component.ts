@@ -30,6 +30,12 @@ export class CreateditCategoryComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edition = data['id'] != null;
+      this.init();
+    });
+
     this.form = this.formBuilder.group({
       idCategory: [''],
       nameCategory: ['', Validators.required],
@@ -38,11 +44,6 @@ export class CreateditCategoryComponent implements OnInit{
   }
 
   accept(): void {
-    this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
-      this.edition = data['id'] != null;
-      this.init();
-    });
 
     if (this.form.valid) {
       this.category.idCategory = this.form.value.idCategory;
