@@ -19,6 +19,7 @@ export class TolistForumComponent implements OnInit{
     'actualizar',
     'eliminar'
   ];
+  backgroundImage = 'url("assets/fondo-forum.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

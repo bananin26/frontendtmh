@@ -6,52 +6,80 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container" style="text-align: center">
+    <div class="container" style="text-align: center" style="margin-top: 20px">
       <br />
-      <h2 style="margin-top: 100px;">Forum Register</h2>
-      <form [formGroup]="form" (submit)="accept()" class="example-form">
-        <br />
+      <!-- Contenedor del logotipo -->
+      <div class="logo">
+        <img src="assets/forum.png" alt="Logo de la empresa" />
+      </div>
+      <div class="form-container">
+        <div class="container" style="text-align: center">
+          <div class="body-inicio">
+            <br />
+            <h2 class="header">Register Forum</h2>
+            <form [formGroup]="form" (submit)="accept()" class="example-form">
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Forum</mat-label>
-          <input
-            matInput
-            placeholder="Forum"
-            formControlName="forum"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('forum')?.errors?.['required']"
-          >
-            El forum es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
-        <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Forum</mat-label>
+                <textarea
+                  matInput
+                  placeholder="Ex. reclamo aplicado..."
+                  formControlName="forum"
+                ></textarea>                <mat-error
+                  *ngIf="obtenerControlCampo('forum')?.errors?.['required']"
+                >
+                  El forum es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>User</mat-label>
-          <mat-select [(value)]="idUserSeleccionada" formControlName="user">
-            <mat-option *ngFor="let l of listaUsers" [value]="l.idUser">
-              {{ l.name }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
-            El usuario es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
-        <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>User</mat-label>
+                <mat-select
+                  [(value)]="idUserSeleccionada"
+                  formControlName="user"
+                >
+                  <mat-option *ngFor="let l of listaUsers" [value]="l.idUser">
+                    {{ l.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="obtenerControlCampo('user')?.errors?.['required']"
+                >
+                  El usuario es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
+              <br />
 
-        <button mat-stroked-button color="accent" style="margin-right: 20px">
-          Aceptar
-        </button>
-        <button mat-stroked-button color="warn" routerLink="/Forums">
-          Cancel
-        </button>
-        <br />
-        <p>{{ mensaje }}</p>
-        <br />
-      </form>
+              <button
+                mat-stroked-button
+                color="primary"
+                style="margin-right: 50px"
+                class="mat-elevation-z4"
+
+              >
+                Aceptar
+              </button>
+              <button
+                mat-stroked-button
+                color="accent"
+                routerLink="/components/Forums"
+                class="mat-elevation-z4"
+
+              >
+                Cancel
+              </button>
+              <br />
+              <p>{{ mensaje }}</p>
+              <br />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+  <body></body>
 </html>
