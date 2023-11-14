@@ -12,6 +12,7 @@ import { CategoryService } from 'src/app/service/category.service';
 export class TolistCategoryComponent {
   dataSource: MatTableDataSource<Category> = new MatTableDataSource();
   displayedColumns: string[] = ['idCategory', 'nameCategory','detailsCategory','actualizar','eliminar'];
+  backgroundImage = 'url("assets/fondo-category.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

@@ -7,52 +7,74 @@
   </head>
   <body>
     <div class="container" style="text-align: center">
-      <br />
-      <h2 style="margin-top: 100px;">Category Register</h2>
-      <form [formGroup]="form" (submit)="accept()" class="example-form">
-        <br />
+      <!-- Contenedor del logotipo -->
+      <div class="logo">
+        <img src="assets/category.png" alt="Logo de la empresa" />
+      </div>
+      <div class="form-container">
+        <div class="container" style="text-align: center">
+          <div class="body-inicio">
+            <br />
+            <h2 class="header">Register Category</h2>
+            <form [formGroup]="form" (submit)="accept()" class="example-form">
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Name Category</mat-label>
-          <input
-            matInput
-            placeholder="Name Category"
-            formControlName="nameCategory"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('nameCategory')?.errors?.['required']"
-          >
-            El nombre es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
+              <mat-form-field class="example-full-width">
+                <mat-label>Name Category</mat-label>
+                <input
+                  matInput
+                  placeholder="Name Category"
+                  formControlName="nameCategory"
+                />
+                <mat-error
+                  *ngIf="obtenerControlCampo('nameCategory')?.errors?.['required']"
+                >
+                  El nombre es obligatorio.
+                </mat-error>
+              </mat-form-field>
+              <br />
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Details</mat-label>
-          <input
-            matInput
-            placeholder="Details"
-            formControlName="detailsCategory"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('detailsCategory')?.errors?.['required']"
-          >
-            La descripción es obligatorio.
-          </mat-error>
-        </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>Details</mat-label>
+                <textarea
+                  matInput
+                  placeholder="Detalla la categoría..."
+                  formControlName="detailsCategory"
+                ></textarea>
+                <mat-error
+                  *ngIf="obtenerControlCampo('detailsCategory')?.errors?.['required']"
+                >
+                  La descripción es obligatorio.
+                </mat-error>
+              </mat-form-field>
 
-        <br />
-        <br />
-        <button mat-stroked-button color="accent" style="margin-right: 20px">
-          Aceptar
-        </button>
-        <button mat-stroked-button color="warn" routerLink="/components/Categories">
-          Cancel
-        </button>
-        <br />
-        <p>{{ mensaje }}</p>
-        <br />
-      </form>
+              <br />
+              <br />
+
+              <button
+                mat-stroked-button
+                color="primary"
+                style="margin-right: 50px"
+                class="mat-elevation-z4"
+
+              >
+                Aceptar
+              </button>
+              <button
+                mat-stroked-button
+                color="accent"
+                routerLink="/components/Categories"
+                class="mat-elevation-z4"
+              >
+                Cancel
+              </button>
+              <br />    
+              <br />                    
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
+ <body> </body> 
 </html>
