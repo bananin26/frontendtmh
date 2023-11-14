@@ -12,6 +12,7 @@ import { RoleService } from 'src/app/service/role.service';
 export class TolistRoleComponent implements OnInit{
   dataSource: MatTableDataSource<Role> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'role'];
+  backgroundImage = 'url("assets/fondo-role.jpg")';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
