@@ -47,9 +47,7 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
 import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
-
 import { GoogleMapsModule } from '@angular/google-maps';
-
 import { MatCardModule } from '@angular/material/card';
 
 
