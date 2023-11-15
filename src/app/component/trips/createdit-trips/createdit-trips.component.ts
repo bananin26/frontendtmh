@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import * as moment from 'moment';
 import {
   FormGroup,
@@ -12,6 +13,7 @@ import { Trips } from 'src/app/model/trips';
 import { User } from 'src/app/model/user';
 import { TripsService } from 'src/app/service/trips.service';
 import { UserService } from 'src/app/service/user.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-trips',
@@ -44,7 +46,8 @@ export class CreateditTripsComponent implements OnInit {
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -87,11 +90,25 @@ export class CreateditTripsComponent implements OnInit {
         this.tS.list().subscribe((data) => {
           this.tS.setList(data);
         });
+        this.openDialog('Trip Registrado Exitosamente', 'El trip se ha registrado satisfactoriamente.');
       });
       this.router.navigate(['/components/Trips']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(title: string, message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { title, message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.form.reset();
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {

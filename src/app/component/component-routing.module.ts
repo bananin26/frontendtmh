@@ -101,6 +101,10 @@ const routes: Routes = [
     path: 'Home',
     component: HomeComponent,
   },
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee8686010d9a1f0a9c28b773bd046e685458d2f3
   {
     path: 'Map',
     component: MapachevereComponent,

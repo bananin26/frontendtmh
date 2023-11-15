@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   FormControl,
@@ -13,6 +14,7 @@ import { CategoryService } from 'src/app/service/category.service';
 import { Category } from 'src/app/model/category';
 import { Trips } from 'src/app/model/trips';
 import { TripsService } from 'src/app/service/trips.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-product',
@@ -37,7 +39,8 @@ export class CreateditProductComponent implements OnInit {
     private tS: TripsService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -78,11 +81,25 @@ export class CreateditProductComponent implements OnInit {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
         });
+        this.openDialog('Producto Registrado Exitosamente', 'El producto se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Products']);
+      this.router.navigate(['/components/Products/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(title: string, message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { title, message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.form.reset();
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {
