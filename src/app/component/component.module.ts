@@ -21,7 +21,6 @@ import { ForumComponent } from './forum/forum.component';
 import { CreateditForumComponent } from './forum/createdit-forum/createdit-forum.component';
 import { CreateditRecordComponent } from './record/createdit-record/createdit-record.component';
 import { RecordComponent } from './record/record.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -44,17 +43,16 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
-
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { NgChartsModule } from 'ng2-charts';
 
 import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatCardModule } from '@angular/material/card';
 import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
+
 
 @NgModule({
   declarations: [
@@ -109,10 +107,9 @@ import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-tr
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatCardModule,
     NgChartsModule,
-    MatDialogModule,
-    GoogleMapsModule,
-    MatCardModule
+    GoogleMapsModule
   ],
   providers: [CreateditUserComponent],
 })
