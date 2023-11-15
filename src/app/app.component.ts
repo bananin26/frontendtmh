@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LoginService } from './service/login.service';
 
 @Component({
@@ -20,6 +20,7 @@ export class AppComponent {
     this.role = this.loginService.showRole();
     return this.loginService.verificar();
   }
+  
   validarRol() {
     if (this.role == 'ADMIN' || this.role == 'CUSTOMER' || this.role == 'TRAVELER') {
       return true;
