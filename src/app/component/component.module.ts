@@ -44,27 +44,14 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
-<<<<<<< HEAD
-=======
-
->>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { NgChartsModule } from 'ng2-charts';
 import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
-<<<<<<< HEAD
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { GoogleMap } from '@angular/google-maps';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
-=======
-
-import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MapachevereComponent } from './mapachevere/mapachevere.component';
-import { GoogleMapsModule } from '@angular/google-maps';
-import { MatCardModule } from '@angular/material/card';
->>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
 
 @NgModule({
   declarations: [
@@ -101,12 +88,7 @@ import { MatCardModule } from '@angular/material/card';
     ReportComponent,
     TotalProductForUserComponent,
     TotalPurchasesByUserDTOComponent,
-<<<<<<< HEAD
     MapachevereComponent
-=======
-    DialogConfirmComponent,
-    MapachevereComponent,
->>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
   ],
   imports: [
     CommonModule,
@@ -123,16 +105,9 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-<<<<<<< HEAD
     MatCardModule,
     NgChartsModule,
     GoogleMapsModule
-=======
-    NgChartsModule,
-    MatDialogModule,
-    GoogleMapsModule,
-    MatCardModule
->>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
   ],
   providers: [CreateditUserComponent],
 })
