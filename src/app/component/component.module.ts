@@ -23,17 +23,15 @@ import { CreateditRecordComponent } from './record/createdit-record/createdit-re
 import { RecordComponent } from './record/record.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MAT_DATEPICKER_VALIDATORS, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { TolistMessageComponent } from './message/tolist-message/tolist-message.component';
 import { TolistNotificationComponent } from './notification/tolist-notification/tolist-notification.component';
@@ -47,6 +45,7 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -97,7 +96,8 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [CreateditUserComponent],
 })
 export class ComponentModule {}

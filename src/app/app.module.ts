@@ -20,6 +20,8 @@ import{MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './component/login/login.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateditUserComponent } from './component/user/createdit-user/createdit-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatIconModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

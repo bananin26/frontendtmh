@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/model/user';
 import { LoginService } from 'src/app/service/login.service';
+import { CreateditUserComponent } from './createdit-user/createdit-user.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +14,8 @@ export class UserComponent {
   role: string = '';
   constructor(
     public route: ActivatedRoute,
-    private loginService: LoginService
+    private loginService: LoginService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {}
@@ -33,4 +37,6 @@ export class UserComponent {
       return false;
     }
   }
+
+
 }

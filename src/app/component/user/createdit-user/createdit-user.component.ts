@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
 import {
@@ -29,15 +29,13 @@ export class CreateditUserComponent implements OnInit {
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
   ];
-
-
-
   constructor(
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
+
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -70,7 +68,7 @@ export class CreateditUserComponent implements OnInit {
           this.uS.setList(data);
         });
       });
-      this.router.navigate(['/components/Users']);
+      this.router.navigate(['/components/Users/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
