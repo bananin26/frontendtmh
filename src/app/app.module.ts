@@ -22,10 +22,23 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateditUserComponent } from './component/user/createdit-user/createdit-user.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ShopSingleComponent } from './pages/shop-single/shop-single.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { StartComponent } from './pages/start/start.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    DashboardComponent,
+    AboutComponent,
+    ContactComponent,
+    ShopSingleComponent,
+    ShopComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,

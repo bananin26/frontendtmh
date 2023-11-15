@@ -101,10 +101,14 @@ const routes: Routes = [
     path: 'Home',
     component: HomeComponent,
   },
+<<<<<<< HEAD
+
+=======
   {
     path: 'Map',
     component: MapachevereComponent,
   },
+>>>>>>> 03beda004c49ea783bed8d470bbd9a6422c89d14
 ];
 
 @NgModule({
