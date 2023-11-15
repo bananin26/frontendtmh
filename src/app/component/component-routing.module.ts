@@ -100,6 +100,7 @@ const routes: Routes = [
     path: 'Home',
     component: HomeComponent,
   },
+
 ];
 
 @NgModule({

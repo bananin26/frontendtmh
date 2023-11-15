@@ -40,14 +40,13 @@ import { TolistRoleComponent } from './role/tolist-role/tolist-role.component';
 import { TolistForumComponent } from './forum/tolist-forum/tolist-forum.component';
 import { TolistRecordComponent } from './record/tolist-record/tolist-record.component';
 import { TolistProductComponent } from './product/tolist-product/tolist-product.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
 import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -77,12 +76,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     TolistRecordComponent,
     CreateditRecordComponent,
     TolistProductComponent,
-    DashboardComponent,
     HomeComponent,
     TripsComponent,
     TolistTripsComponent,
     CreateditTripsComponent,
     DialogConfirmComponent,
+
   ],
   imports: [
     CommonModule,
