@@ -27,6 +27,7 @@ import { TotalProductForUserComponent } from './report/total-product-for-user/to
 
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
+import { PointsByUserComponent } from './report/points-by-user/points-by-user.component';
 
 const routes: Routes = [
   {
@@ -112,6 +113,7 @@ const routes: Routes = [
     children:[
       { path: 'query01', component: TotalProductForUserComponent },
       { path: 'query02', component: TotalTripsByUserComponent },
+      { path: 'query03', component: PointsByUserComponent },
     ],
 
   },

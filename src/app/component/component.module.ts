@@ -52,6 +52,7 @@ import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatCardModule } from '@angular/material/card';
 import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
+import { PointsByUserComponent } from './report/points-by-user/points-by-user.component';
 
 
 @NgModule({
@@ -91,6 +92,7 @@ import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-tr
     DialogConfirmComponent,
     MapachevereComponent,
     TotalTripsByUserComponent,
+    PointsByUserComponent,
   ],
   imports: [
     CommonModule,
