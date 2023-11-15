@@ -26,6 +26,7 @@ import { ProductComponent } from './component/product/product.component';
 import { TolistProductComponent } from './component/product/tolist-product/tolist-product.component';
 import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
 import { ReportComponent } from './component/report/report.component';
+import { TotalProductForUserComponent } from './component/report/total-product-for-user/total-product-for-user.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ReportComponent } from './component/report/report.component';
     TolistProductComponent,
     CreateditProductComponent,
     ReportComponent,
+    TotalProductForUserComponent,
    
   ],
   imports: [
