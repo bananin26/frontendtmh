@@ -53,8 +53,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MatCardModule } from '@angular/material/card';
 import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
 import { PointsByUserComponent } from './report/points-by-user/points-by-user.component';
+
 import { QuantityMessageSendByUserComponent } from './report/quantity-message-send-by-user/quantity-message-send-by-user.component';
 import { QuantityMessageReceiveByUserComponent } from './report/quantity-message-receive-by-user/quantity-message-receive-by-user.component';
+
+import { ListPricesGreaterThan1000Component } from './report/list-prices-greater-than1000/list-prices-greater-than1000.component';
+
 
 
 @NgModule({
@@ -97,6 +101,7 @@ import { QuantityMessageReceiveByUserComponent } from './report/quantity-message
     PointsByUserComponent,
     QuantityMessageSendByUserComponent,
     QuantityMessageReceiveByUserComponent,
+    ListPricesGreaterThan1000Component,
   ],
   imports: [
     CommonModule,
