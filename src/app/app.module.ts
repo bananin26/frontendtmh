@@ -25,6 +25,7 @@ import { CreateditUserComponent } from './component/user/createdit-user/createdi
 import { ProductComponent } from './component/product/product.component';
 import { TolistProductComponent } from './component/product/tolist-product/tolist-product.component';
 import { CreateditProductComponent } from './component/product/createdit-product/createdit-product.component';
+import { ReportComponent } from './component/report/report.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { CreateditProductComponent } from './component/product/createdit-product
     ProductComponent,
     TolistProductComponent,
     CreateditProductComponent,
+    ReportComponent,
    
   ],
   imports: [
