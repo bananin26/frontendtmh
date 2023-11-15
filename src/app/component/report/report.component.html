@@ -1,1 +1,4 @@
-<p>report works!</p>
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length !== 0">
+  <app-total-product-for-user></app-total-product-for-user>
+</div>
