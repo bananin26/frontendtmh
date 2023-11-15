@@ -116,7 +116,7 @@ const routes: Routes = [
     children:[
       { path: 'query01', component: TotalProductForUserComponent },
       { path: 'query02', component: TotalTripsByUserComponent },
-      { path: 'query03', component: PointsByUserComponent },
+      { path: 'queery03', component: PointsByUserComponent },
       { path: 'query04', component: ListPricesGreaterThan1000Component },
       { path: 'query05', component: QuantityMessageReceiveByUserComponent },
       { path: 'query06', component: QuantityMessageSendByUserComponent },
@@ -124,7 +124,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'Map',
+    path: 'maps',
     component: MapachevereComponent,
   },
 ];
