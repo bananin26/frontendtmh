@@ -92,7 +92,7 @@ export class CreateditTripsComponent implements OnInit {
         });
         this.openDialog('El trip se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Trips']);
+      this.router.navigate(['/components/Trips/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
