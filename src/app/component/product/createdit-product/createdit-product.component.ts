@@ -16,6 +16,7 @@ import { Trips } from 'src/app/model/trips';
 import { TripsService } from 'src/app/service/trips.service';
 import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-createdit-product',
@@ -40,6 +41,7 @@ export class CreateditProductComponent implements OnInit {
     private pS: ProductService,
     private cS: CategoryService,
     private tS: TripsService,
+    private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -61,12 +63,16 @@ export class CreateditProductComponent implements OnInit {
       dimensionsProduct: ['', Validators.required],
       trips: ['', Validators.required],
       category: ['', Validators.required],
+      user: ['', Validators.required]
     });
     this.tS.list().subscribe((data) => {
       this.listaTrips = data;
     });
     this.cS.list().subscribe((data) => {
       this.listaCategory = data;
+    });
+    this.uS.list().subscribe((data) => {
+      this.listaUser = data;
     });
   }
 
