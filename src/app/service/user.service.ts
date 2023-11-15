@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../model/user';
+import { QuantityMessageSendByUserDTO } from './../model/QuantityMessageSendByUserDTO';
+import { QuantityMessageReceiveByUserDTO } from './../model/QuantityMessageReceiveByUserDTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -77,5 +79,25 @@ export class UserService {
           .set('Content-Type', 'application/json'),
       }
     );
+  }
+
+  getReceive():Observable<QuantityMessageReceiveByUserDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<QuantityMessageReceiveByUserDTO[]>(`${this.url}/QuantityMessageReceiveByUser`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
+    });
+  }
+
+  getSend():Observable<QuantityMessageSendByUserDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<QuantityMessageSendByUserDTO[]>(`${this.url}/QuantityMessageSendByUser`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
+    });
   }
 }
