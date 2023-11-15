@@ -21,6 +21,7 @@ import { RecordComponent } from './record/record.component';
 import { HomeComponent } from './home/home.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
 import { TripsComponent } from './trips/trips.component';
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
 
 const routes: Routes = [
   {
@@ -100,7 +101,14 @@ const routes: Routes = [
     path: 'Home',
     component: HomeComponent,
   },
+<<<<<<< HEAD
 
+=======
+  {
+    path: 'Map',
+    component: MapachevereComponent,
+  },
+>>>>>>> 03beda004c49ea783bed8d470bbd9a6422c89d14
 ];
 
 @NgModule({

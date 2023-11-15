@@ -46,6 +46,11 @@ import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.componen
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
 import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
+
+import { GoogleMapsModule } from '@angular/google-maps';
+
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -81,7 +86,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     TolistTripsComponent,
     CreateditTripsComponent,
     DialogConfirmComponent,
+<<<<<<< HEAD
 
+=======
+    MapachevereComponent,
+>>>>>>> 03beda004c49ea783bed8d470bbd9a6422c89d14
   ],
   imports: [
     CommonModule,
@@ -98,7 +107,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    GoogleMapsModule,
+    MatCardModule
   ],
   providers: [CreateditUserComponent],
 })
