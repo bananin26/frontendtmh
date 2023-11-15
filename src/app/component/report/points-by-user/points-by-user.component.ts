@@ -25,7 +25,7 @@ export class PointsByUserComponent {
       this.barChartData = [
         {
           data: data.map(item => item.points), label: 'Total Puntos por persona',
-          backgroundColor:'rgba(50,0,0,0.79)'
+          backgroundColor:'rgba(255,0,0,0.79)'
         }
       ]
 

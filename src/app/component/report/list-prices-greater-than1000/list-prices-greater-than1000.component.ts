@@ -12,7 +12,7 @@ export class ListPricesGreaterThan1000Component implements OnInit {
     responsive: true,
   };
   barChartLabels: string[] = [];
-  barChartType: ChartType = 'pie';
+  barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
   constructor(private pS: ProductService) { }
@@ -23,7 +23,7 @@ export class ListPricesGreaterThan1000Component implements OnInit {
       this.barChartData = [
         {
           data: data.map(item => item.priceProduct), label: 'Total Dificultad asignada',
-          backgroundColor:'rgba(30,0,0,0.79)'
+          backgroundColor:'rgba(173, 216, 230, 0.5)'
         }
       ]
 
