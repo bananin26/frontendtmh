@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   FormControl,
@@ -11,6 +12,7 @@ import { Message } from 'src/app/model/message';
 import { MessageService } from 'src/app/service/message.service';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-message',
@@ -32,7 +34,8 @@ export class CreateditMessageComponent implements OnInit{
     private uS:UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -66,11 +69,24 @@ export class CreateditMessageComponent implements OnInit{
         this.mS.list().subscribe((data) => {
           this.mS.setList(data);
         });
+        this.openDialog('El mensaje se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Messages']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog( message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.router.navigate(['/components/Messages']); 
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {

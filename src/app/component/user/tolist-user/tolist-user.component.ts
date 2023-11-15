@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-tolist-user',
@@ -47,4 +49,5 @@ export class TolistUserComponent implements OnInit {
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }
+
 }

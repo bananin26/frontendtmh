@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   username: string = ""
   password: string = ""
   mensaje: string = ""
-  backgroundImage = 'url("assets/fondo-inicio.jpeg")';
+  backgroundImage = 'url("assets/fondo-inicio.jpg")';
   ngOnInit(): void {
   }
   login() {

@@ -23,17 +23,15 @@ import { CreateditRecordComponent } from './record/createdit-record/createdit-re
 import { RecordComponent } from './record/record.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MAT_DATEPICKER_VALIDATORS, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { TolistMessageComponent } from './message/tolist-message/tolist-message.component';
 import { TolistNotificationComponent } from './notification/tolist-notification/tolist-notification.component';
@@ -42,15 +40,23 @@ import { TolistRoleComponent } from './role/tolist-role/tolist-role.component';
 import { TolistForumComponent } from './forum/tolist-forum/tolist-forum.component';
 import { TolistRecordComponent } from './record/tolist-record/tolist-record.component';
 import { TolistProductComponent } from './product/tolist-product/tolist-product.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
+<<<<<<< HEAD
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { NgChartsModule } from 'ng2-charts';
 import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
+=======
+import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MatCardModule } from '@angular/material/card';
+
+>>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
 
 @NgModule({
   declarations: [
@@ -80,14 +86,18 @@ import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-us
     TolistRecordComponent,
     CreateditRecordComponent,
     TolistProductComponent,
-    DashboardComponent,
     HomeComponent,
     TripsComponent,
     TolistTripsComponent,
     CreateditTripsComponent,
+<<<<<<< HEAD
     ReportComponent,
     TotalProductForUserComponent,
     TotalPurchasesByUserDTOComponent,
+=======
+    DialogConfirmComponent,
+    MapachevereComponent,
+>>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
   ],
   imports: [
     CommonModule,
@@ -104,8 +114,14 @@ import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-us
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+<<<<<<< HEAD
     NgChartsModule
+=======
+    MatDialogModule,
+    GoogleMapsModule,
+    MatCardModule
+>>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
   ],
-  providers: [],
+  providers: [CreateditUserComponent],
 })
 export class ComponentModule {}

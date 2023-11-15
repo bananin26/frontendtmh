@@ -20,7 +20,12 @@ export class TolistRecordComponent implements OnInit{
     'arriveDate',
     'points',
     'product',
+    'user',
+    'actualizar',
+    'eliminar'
   ];
+  backgroundImage = 'url("assets/fondo-record.jpg")';
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -34,6 +39,13 @@ export class TolistRecordComponent implements OnInit{
     this.rS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.rS.delete(id).subscribe((data) => {
+      this.rS.list().subscribe((data) => {
+        this.rS.setList(data);
+      });
     });
   }
   filter(en: any) {

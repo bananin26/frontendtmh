@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   FormControl,
@@ -13,6 +14,9 @@ import { CategoryService } from 'src/app/service/category.service';
 import { Category } from 'src/app/model/category';
 import { Trips } from 'src/app/model/trips';
 import { TripsService } from 'src/app/service/trips.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-createdit-product',
@@ -25,7 +29,9 @@ export class CreateditProductComponent implements OnInit {
   mensaje: string = '';
   listaTrips:Trips[]=[]
   listaCategory:Category[]=[]
+  listaUser:User[]=[]
   idOrderSeleccionada:number=0
+  idUserSeleccionada:number=0
   idCategorySeleccionada:number=0
   edition: boolean = false;
   id: number = 0;
@@ -35,9 +41,11 @@ export class CreateditProductComponent implements OnInit {
     private pS: ProductService,
     private cS: CategoryService,
     private tS: TripsService,
+    private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -55,12 +63,16 @@ export class CreateditProductComponent implements OnInit {
       dimensionsProduct: ['', Validators.required],
       trips: ['', Validators.required],
       category: ['', Validators.required],
+      user: ['', Validators.required]
     });
     this.tS.list().subscribe((data) => {
       this.listaTrips = data;
     });
     this.cS.list().subscribe((data) => {
       this.listaCategory = data;
+    });
+    this.uS.list().subscribe((data) => {
+      this.listaUser = data;
     });
   }
 
@@ -73,16 +85,32 @@ export class CreateditProductComponent implements OnInit {
       this.product.dimensionsProduct = this.form.value.dimensionsProduct;
       this.product.trips.idTrips = this.form.value.trips;
       this.product.category.idCategory = this.form.value.category;
+      this.product.user.idUser = this.form.value.user;
+
 
       this.pS.insert(this.product).subscribe((data) => {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
         });
+        this.openDialog('El producto se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Products']);
+      this.router.navigate(['/components/Products/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.form.reset();
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {
@@ -104,6 +132,7 @@ export class CreateditProductComponent implements OnInit {
           dimensionsProduct: new FormControl(data.dimensionsProduct),
           trips: new FormControl(data.trips.idTrips),
           category: new FormControl(data.category.idCategory), 
+          user: new FormControl(data.user.idUser), 
         });
       });
     }

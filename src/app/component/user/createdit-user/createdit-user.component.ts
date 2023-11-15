@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import * as moment from 'moment';
 import {
   FormGroup,
@@ -10,6 +11,7 @@ import {
 } from '@angular/forms';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { DialogConfirmComponent } from '../dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-user',
@@ -29,15 +31,16 @@ export class CreateditUserComponent implements OnInit {
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
   ];
-
-
-
   constructor(
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
+
+
   ) {}
+
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -49,7 +52,7 @@ export class CreateditUserComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: [''],
       name: ['', Validators.required],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       birthday: ['', Validators.required],
       country: ['', Validators.required],    
@@ -69,11 +72,25 @@ export class CreateditUserComponent implements OnInit {
         this.uS.list().subscribe((data) => {
           this.uS.setList(data);
         });
+        this.openDialog('El usuario se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Users']);
+      this.router.navigate(['/components/Users/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.form.reset();
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {

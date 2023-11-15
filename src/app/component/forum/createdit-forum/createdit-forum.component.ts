@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   FormControl,
@@ -11,6 +12,7 @@ import { Forum } from 'src/app/model/forum';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
 import { ForumService } from 'src/app/service/forum.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-forum',
@@ -32,7 +34,8 @@ export class CreateditForumComponent implements OnInit{
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -64,11 +67,24 @@ export class CreateditForumComponent implements OnInit{
         this.fS.list().subscribe((data) => {
           this.fS.setList(data);
         });
+        this.openDialog('El forum se ha registrado satisfactoriamente.');
       });
-      this.router.navigate(['/components/Forums']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.router.navigate(['/components/Forums']);
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {

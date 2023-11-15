@@ -19,6 +19,7 @@ export class TolistProductComponent implements OnInit {
     'dimensionsProduct',
     'trips',
     'category',
+    'user',
     'actualizar',
     'eliminar'
   ];

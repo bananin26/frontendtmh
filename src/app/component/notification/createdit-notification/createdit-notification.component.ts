@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   Validators,
@@ -13,6 +14,7 @@ import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
 import { Message } from 'src/app/model/message';
 import { MessageService } from 'src/app/service/message.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-notification',
@@ -40,7 +42,8 @@ export class CreateditNotificationComponent {
     private mS:MessageService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -82,11 +85,25 @@ export class CreateditNotificationComponent {
         this.nS.list().subscribe((data) => {
           this.nS.setList(data);
         });
+        this.openDialog('La notificación se ha registrado satisfactoriamente.');
+        this.form.reset();
       });
       this.router.navigate(['/components/Notifications']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '400px',
+      height: '200px',
+      data: { message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {

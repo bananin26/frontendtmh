@@ -1,5 +1,5 @@
-import { Category } from './category';
 import { Product } from './product';
+import { User } from './user';
 
 export class Record {
   idRecord: number = 0;
@@ -8,5 +8,5 @@ export class Record {
   arriveDate: Date = new Date(Date.now());
   points: number = 0;
   product: Product = new Product();
-  category: Category = new Category();
+  user: User = new User();
 }
