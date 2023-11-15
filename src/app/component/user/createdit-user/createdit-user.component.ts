@@ -72,7 +72,7 @@ export class CreateditUserComponent implements OnInit {
         this.uS.list().subscribe((data) => {
           this.uS.setList(data);
         });
-        this.openDialog('Usuario Registrado Exitosamente', 'El usuario se ha registrado satisfactoriamente.');
+        this.openDialog('El usuario se ha registrado satisfactoriamente.');
       });
       this.router.navigate(['/components/Users/new']);
     } else {
@@ -80,11 +80,11 @@ export class CreateditUserComponent implements OnInit {
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {

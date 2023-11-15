@@ -67,18 +67,18 @@ export class CreateditForumComponent implements OnInit{
         this.fS.list().subscribe((data) => {
           this.fS.setList(data);
         });
-        this.openDialog('Forum Registrado Exitosamente', 'El forum se ha registrado satisfactoriamente.');
+        this.openDialog('El forum se ha registrado satisfactoriamente.');
       });
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {

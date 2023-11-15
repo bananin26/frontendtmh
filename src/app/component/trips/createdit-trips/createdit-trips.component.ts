@@ -90,7 +90,7 @@ export class CreateditTripsComponent implements OnInit {
         this.tS.list().subscribe((data) => {
           this.tS.setList(data);
         });
-        this.openDialog('Trip Registrado Exitosamente', 'El trip se ha registrado satisfactoriamente.');
+        this.openDialog('El trip se ha registrado satisfactoriamente.');
       });
       this.router.navigate(['/components/Trips']);
     } else {
@@ -98,11 +98,11 @@ export class CreateditTripsComponent implements OnInit {
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {

@@ -69,18 +69,18 @@ export class CreateditMessageComponent implements OnInit{
         this.mS.list().subscribe((data) => {
           this.mS.setList(data);
         });
-        this.openDialog('Mensaje Registrado Exitosamente', 'El mensaje se ha registrado satisfactoriamente.');
+        this.openDialog('El mensaje se ha registrado satisfactoriamente.');
       });
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog( message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {
