@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../model/product';
 import { TotalProductForUserDTO } from '../model/TotalProductForUserDTO';
+import { ListPricesGrearterThan1000DTO } from '../model/ListPricesGreaterThan1000DTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -75,6 +76,17 @@ export class ProductService {
         .set('Content-Type', 'application/json'),
 
     });
+  }
+  getListPrice():Observable<ListPricesGrearterThan1000DTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<ListPricesGrearterThan1000DTO[]>(`${this.url}/ListPricesGreaterThan1000`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
+    });
+
+
   }
   
 
