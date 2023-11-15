@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import * as moment from 'moment';
@@ -31,16 +31,16 @@ export class CreateditUserComponent implements OnInit {
     { value: 'United States', viewValue: 'United States' },
     { value: 'Perú', viewValue: 'Perú' },
   ];
-
-
-
   constructor(
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private dialog: MatDialog 
+
+
   ) {}
+
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
