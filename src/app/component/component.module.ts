@@ -52,6 +52,8 @@ import { MapachevereComponent } from './mapachevere/mapachevere.component';
 
 import { GoogleMapsModule } from '@angular/google-maps';
 
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     UserComponent,
@@ -104,7 +106,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatIconModule,
     MatToolbarModule,
     MatDialogModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatCardModule
   ],
   providers: [CreateditUserComponent],
 })
