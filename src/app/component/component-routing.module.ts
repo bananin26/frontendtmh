@@ -101,7 +101,6 @@ const routes: Routes = [
     path: 'Home',
     component: HomeComponent,
   },
-
   {
     path: 'Map',
     component: MapachevereComponent,
