@@ -70,9 +70,7 @@ export class CreateditMessageComponent implements OnInit{
           this.mS.setList(data);
         });
         this.openDialog('Mensaje Registrado Exitosamente', 'El mensaje se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
-      this.router.navigate(['/components/Messages']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
@@ -87,6 +85,7 @@ export class CreateditMessageComponent implements OnInit{
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.router.navigate(['/components/Messages']); 
     });
   }
 

@@ -91,7 +91,6 @@ export class CreateditTripsComponent implements OnInit {
           this.tS.setList(data);
         });
         this.openDialog('Trip Registrado Exitosamente', 'El trip se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
       this.router.navigate(['/components/Trips']);
     } else {
@@ -108,6 +107,7 @@ export class CreateditTripsComponent implements OnInit {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.form.reset();
     });
   }
 

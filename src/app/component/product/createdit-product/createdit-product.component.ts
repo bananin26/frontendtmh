@@ -82,7 +82,6 @@ export class CreateditProductComponent implements OnInit {
           this.pS.setList(data);
         });
         this.openDialog('Producto Registrado Exitosamente', 'El producto se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
       this.router.navigate(['/components/Products/new']);
     } else {
@@ -99,6 +98,7 @@ export class CreateditProductComponent implements OnInit {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.form.reset();
     });
   }
 

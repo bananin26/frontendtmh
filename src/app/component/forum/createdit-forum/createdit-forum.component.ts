@@ -68,9 +68,7 @@ export class CreateditForumComponent implements OnInit{
           this.fS.setList(data);
         });
         this.openDialog('Forum Registrado Exitosamente', 'El forum se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
-      this.router.navigate(['/components/Forums']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
@@ -85,6 +83,7 @@ export class CreateditForumComponent implements OnInit{
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.router.navigate(['/components/Forums']);
     });
   }
 

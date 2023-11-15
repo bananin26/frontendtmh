@@ -73,7 +73,6 @@ export class CreateditUserComponent implements OnInit {
           this.uS.setList(data);
         });
         this.openDialog('Usuario Registrado Exitosamente', 'El usuario se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
       this.router.navigate(['/components/Users/new']);
     } else {
@@ -90,6 +89,7 @@ export class CreateditUserComponent implements OnInit {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.form.reset();
     });
   }
 

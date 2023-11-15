@@ -58,7 +58,6 @@ export class CreateditCategoryComponent implements OnInit{
           this.cS.setList(data);
         });
         this.openDialog('Categoria Registrado Exitosamente', 'La categoria se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
       
       this.router.navigate(['/components/Categories/new']);
@@ -76,6 +75,7 @@ export class CreateditCategoryComponent implements OnInit{
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.form.reset();
     });
   }
 

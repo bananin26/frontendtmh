@@ -121,7 +121,6 @@ export class CreateditRecordComponent implements OnInit {
           this.rS.setList(data);
         });
         this.openDialog('Record Registrado Exitosamente', 'El record se ha registrado satisfactoriamente.');
-        this.form.reset();
       });
       this.router.navigate(['/components/Records/new']);
     } else {
@@ -138,6 +137,7 @@ export class CreateditRecordComponent implements OnInit {
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.form.reset();
     });
   }
 
