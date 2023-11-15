@@ -1,3 +1,4 @@
+import { LoginService } from './../../../service/login.service';
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
 import { ProductService } from 'src/app/service/product.service';
@@ -15,7 +16,9 @@ export class ListPricesGreaterThan1000Component implements OnInit {
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
-  constructor(private pS: ProductService) { }
+  role: string = '';
+
+  constructor(private pS: ProductService, private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.pS.getListPrice().subscribe((data) => {
@@ -28,6 +31,25 @@ export class ListPricesGreaterThan1000Component implements OnInit {
       ]
 
     });
+  }
+  verificar() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
+  }
+  cerrar() {
+    sessionStorage.clear();
+  }
+  
+  validarRol() {
+    if (
+      this.role == 'ADMIN' ||
+      this.role == 'CUSTOMER' ||
+      this.role == 'TRAVELER'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

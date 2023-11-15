@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartOptions } from 'chart.js';
 import { ChartType,ChartDataset } from 'chart.js';
+import { LoginService } from 'src/app/service/login.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -15,8 +16,9 @@ export class QuantityMessageSendByUserComponent {
   barChartLabels: string[] = [];
   barChartType: ChartType = 'pie';
   barChartLegend = true;
+  role: string = '';
   barChartData: ChartDataset[] = [];
-  constructor(private uS: UserService) { }
+  constructor(private uS: UserService, private loginService: LoginService) { }
 
 
   ngOnInit(): void {
@@ -30,5 +32,24 @@ export class QuantityMessageSendByUserComponent {
       ]
 
     });
+  }
+  verificar() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
+  }
+  cerrar() {
+    sessionStorage.clear();
+  }
+  
+  validarRol() {
+    if (
+      this.role == 'ADMIN' ||
+      this.role == 'CUSTOMER' ||
+      this.role == 'TRAVELER'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
