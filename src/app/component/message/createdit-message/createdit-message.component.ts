@@ -78,8 +78,8 @@ export class CreateditMessageComponent implements OnInit{
 
   openDialog(title: string, message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
-      width: '800px',
-      height: '300px',
+      width: '400px',
+      height: '200px',
       data: { title, message },
     });
   
