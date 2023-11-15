@@ -21,10 +21,19 @@ import { RecordComponent } from './record/record.component';
 import { HomeComponent } from './home/home.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
 import { TripsComponent } from './trips/trips.component';
+<<<<<<< HEAD
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { TotalPurchasesByUserDTOComponent } from '../model/TotalPurchasesByUserDTO';
+=======
+import { ReportComponent } from './report/report.component';
+import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
+import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
+
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
+
+>>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
 
 const routes: Routes = [
   {
@@ -113,7 +122,15 @@ const routes: Routes = [
 
     ],
 
+<<<<<<< HEAD
   }
+=======
+  },
+  {
+    path: 'Map',
+    component: MapachevereComponent,
+  },
+>>>>>>> c69641d88b6698c718c11b44e7d559376238db3b
 ];
 
 @NgModule({
