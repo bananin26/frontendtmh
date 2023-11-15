@@ -28,6 +28,9 @@ import { TotalProductForUserComponent } from './report/total-product-for-user/to
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
 import { PointsByUserComponent } from './report/points-by-user/points-by-user.component';
+import { ListPricesGreaterThan1000Component } from './report/list-prices-greater-than1000/list-prices-greater-than1000.component';
+import { QuantityMessageReceiveByUserComponent } from './report/quantity-message-receive-by-user/quantity-message-receive-by-user.component';
+import { QuantityMessageSendByUserComponent } from './report/quantity-message-send-by-user/quantity-message-send-by-user.component';
 
 const routes: Routes = [
   {
@@ -114,6 +117,9 @@ const routes: Routes = [
       { path: 'query01', component: TotalProductForUserComponent },
       { path: 'query02', component: TotalTripsByUserComponent },
       { path: 'query03', component: PointsByUserComponent },
+      { path: 'query04', component: ListPricesGreaterThan1000Component },
+      { path: 'query05', component: QuantityMessageReceiveByUserComponent },
+      { path: 'query06', component: QuantityMessageSendByUserComponent },
     ],
 
   },
