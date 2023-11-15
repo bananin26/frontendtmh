@@ -36,6 +36,7 @@ export class CreateditRecordComponent implements OnInit {
   idUserSeleccionada: number = 0;
   edition: boolean = false;
   id: number = 0;
+  precioProductoSeleccionado: number = 0;
   payment: { value: string; viewValue: string }[] = [
     { value: 'Efectivo', viewValue: 'Efectivo' },
     { value: 'Visa', viewValue: 'Visa' },
@@ -90,8 +91,17 @@ export class CreateditRecordComponent implements OnInit {
     this.uS.list().subscribe((data) => {
       this.listaUser = data;
     });
-    
+
+    this.form.get('product')?.valueChanges.subscribe((idProduct) => {
+      const selectedProduct = this.listaProduct.find((p) => p.idProduct === idProduct);
+      if (selectedProduct) {
+        this.precioProductoSeleccionado = selectedProduct.priceProduct;
+        // Asigna automáticamente los puntos según el intervalo de precios
+        this.asignarPuntosAutomaticamente();
+      }
+    });
   }
+    
   
   accept(): void {
     if (this.form.valid) {
@@ -122,6 +132,25 @@ export class CreateditRecordComponent implements OnInit {
     }
     return control;
   }
+
+
+asignarPuntosAutomaticamente() {
+  if (this.precioProductoSeleccionado >= 0 && this.precioProductoSeleccionado <= 100) {
+    this.form.patchValue({ points: 10 });
+  } else if (this.precioProductoSeleccionado <= 200) {
+    this.form.patchValue({ points: 30 });
+  } else if (this.precioProductoSeleccionado <= 300) {
+    this.form.patchValue({ points: 50 });
+  } else if (this.precioProductoSeleccionado <= 400) {
+    this.form.patchValue({ points: 100 });
+  } else if (this.precioProductoSeleccionado <= 450) {
+    this.form.patchValue({ points: 120 });
+  } else if (this.precioProductoSeleccionado <= 500) {
+    this.form.patchValue({ points: 150 });
+  } else {
+    this.form.patchValue({ points: 200 });
+  }
+}
 
   init() {
     if (this.edition) {
