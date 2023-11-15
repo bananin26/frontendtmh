@@ -84,7 +84,7 @@ export class CreateditProductComponent implements OnInit {
         this.openDialog('Producto Registrado Exitosamente', 'El producto se ha registrado satisfactoriamente.');
         this.form.reset();
       });
-      this.router.navigate(['/components/Products']);
+      this.router.navigate(['/components/Products/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
