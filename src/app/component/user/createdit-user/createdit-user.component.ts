@@ -52,7 +52,7 @@ export class CreateditUserComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: [''],
       name: ['', Validators.required],
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       birthday: ['', Validators.required],
       country: ['', Validators.required],    
