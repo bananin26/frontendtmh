@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Trips } from '../model/trips';
-import { TotalPurchasesByUserDTOComponent } from '../model/TotalPurchasesByUserDTO';
+import { TotalTripsByUserDTO } from '../model/TotalTripsByUserDTO';
 
 
 const base_url = environment.base;
@@ -66,19 +66,16 @@ export class TripsService {
       .set('Authorization', `Bearer ${token}`)
       .set('Content-Type', 'application/json'),  
     });
-
-    
   }
 
-  getPurchases():Observable<TotalPurchasesByUserDTOComponent[]>{
+  getTrips():Observable<TotalTripsByUserDTO[]>{
     let token = sessionStorage.getItem('token');
-    return this.http.get<TotalPurchasesByUserDTOComponent[]>(`${this.url}/SumatoryPurchasesByUser`,{
+    return this.http.get<TotalTripsByUserDTO[]>(`${this.url}/SumatoryTripsByUser`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
 
     });
-
-
   }
+  
 }

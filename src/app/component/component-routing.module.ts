@@ -1,3 +1,4 @@
+import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -23,10 +24,9 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
 import { TripsComponent } from './trips/trips.component';
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
-import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
 
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
-
+import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
 
 const routes: Routes = [
   {
@@ -111,8 +111,7 @@ const routes: Routes = [
     component:ReportComponent,
     children:[
       { path: 'query01', component: TotalProductForUserComponent },
-      { path: 'query02', component: TotalPurchasesByUserDTOComponent },
-
+      { path: 'query02', component: TotalTripsByUserComponent },
     ],
 
   },

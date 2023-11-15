@@ -48,13 +48,13 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { NgChartsModule } from 'ng2-charts';
-import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
 
 import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MapachevereComponent } from './mapachevere/mapachevere.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatCardModule } from '@angular/material/card';
+import { TotalTripsByUserComponent } from './report/total-trips-by-user/total-trips-by-user.component';
 
 @NgModule({
   declarations: [
@@ -90,9 +90,9 @@ import { MatCardModule } from '@angular/material/card';
     CreateditTripsComponent,
     ReportComponent,
     TotalProductForUserComponent,
-    TotalPurchasesByUserDTOComponent,
     DialogConfirmComponent,
     MapachevereComponent,
+    TotalTripsByUserComponent,
   ],
   imports: [
     CommonModule,

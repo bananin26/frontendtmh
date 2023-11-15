@@ -6,12 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <mat-card class="mat-card-container" style="width: 1000px; border-radius: 50px;">
     <div class="container">
-        <div style="text-align:center">
-            <h1>Total de compra por usuario</h1>
+        <div style="text-align:center; margin-top: 30px;">
+            <h1>Total de viajes por usuario</h1>
         </div>
         <div style="text-align: center">
-            <canvas
+            <canvas 
             baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"
@@ -22,7 +23,7 @@
 
             </canvas>
         </div>
-
     </div>
+    </mat-card> 
 </body>
 </html>

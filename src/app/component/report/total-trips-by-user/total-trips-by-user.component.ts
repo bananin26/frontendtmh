@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
+import { Component } from '@angular/core';
+import { ChartOptions } from 'chart.js';
+import { ChartType,ChartDataset } from 'chart.js';
 import { TripsService } from 'src/app/service/trips.service';
 
 @Component({
-  selector: 'app-total-purchases-by-user-dto',
-  templateUrl: './total-purchases-by-user-dto.component.html',
-  styleUrls: ['./total-purchases-by-user-dto.component.css']
+  selector: 'app-total-trips-by-user',
+  templateUrl: './total-trips-by-user.component.html',
+  styleUrls: ['./total-trips-by-user.component.css']
 })
-export class TotalPurchasesByUserDTOComponent implements OnInit {
+export class TotalTripsByUserComponent {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -19,7 +20,7 @@ export class TotalPurchasesByUserDTOComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.tS.getPurchases().subscribe((data) => {
+    this.tS.getTrips().subscribe((data) => {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
@@ -30,5 +31,4 @@ export class TotalPurchasesByUserDTOComponent implements OnInit {
 
     });
   }
-
 }

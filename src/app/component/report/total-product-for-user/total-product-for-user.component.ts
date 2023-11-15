@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartOptions } from 'chart.js';
 import { ChartType,ChartDataset } from 'chart.js';
 import { ProductService } from 'src/app/service/product.service';
-import { TripsService } from 'src/app/service/trips.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-total-product-for-user',
@@ -17,9 +17,11 @@ export class TotalProductForUserComponent implements OnInit{
   barChartType: ChartType = 'pie';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
-  constructor(private pS: ProductService) { }
+  role: string = '';
+  constructor(private pS: ProductService,
+    private loginService: LoginService,) { }
   ngOnInit(): void {
-    this.pS.getTrips().subscribe((data) => {
+    this.pS.getPurchases().subscribe((data) => {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
@@ -29,5 +31,24 @@ export class TotalProductForUserComponent implements OnInit{
       ]
 
     });
+  }
+
+  cerrar() {
+    sessionStorage.clear();
+  }
+  verificar() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
+  }
+  validarRol() {
+    if (
+      this.role == 'ADMIN' ||
+      this.role == 'CUSTOMER' ||
+      this.role == 'TRAVELER'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

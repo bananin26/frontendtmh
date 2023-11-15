@@ -4,7 +4,6 @@ import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../model/product';
 import { TotalProductForUserDTO } from '../model/TotalProductForUserDTO';
-import { TotalPurchasesByUserDTOComponent } from '../model/TotalPurchasesByUserDTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -68,7 +67,7 @@ export class ProductService {
         .set('Content-Type', 'application/json'),
     });
   }
-  getTrips():Observable<TotalProductForUserDTO[]>{
+  getPurchases():Observable<TotalProductForUserDTO[]>{
     let token = sessionStorage.getItem('token');
     return this.http.get<TotalProductForUserDTO[]>(`${this.url}/ProductForUser`,{
       headers: new HttpHeaders()
