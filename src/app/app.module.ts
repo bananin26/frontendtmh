@@ -33,6 +33,8 @@ import { TolistMessageComponent } from './component/message/tolist-message/tolis
 import { CreateditMessageComponent } from './component/message/createdit-message/createdit-message.component';
 import { ReportUserComponent } from './component/user/report-user/report-user.component';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { ReportUserComponent } from './component/user/report-user/report-user.co
     MessageComponent,
     TolistMessageComponent,
     CreateditMessageComponent,
-    ReportUserComponent
+    ReportUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ import { ReportUserComponent } from './component/user/report-user/report-user.co
     ReactiveFormsModule,
     MatListModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
