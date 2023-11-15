@@ -83,21 +83,6 @@
               </mat-form-field>
               <br />
               <br />
-
-              <mat-form-field class="example-full-width">
-                <mat-label>Points</mat-label>
-                <mat-select formControlName="points">
-                  <mat-option *ngFor="let p of puntos" [value]="p.value">
-                    {{ p.viewValue }}
-                  </mat-option>
-                </mat-select>
-                <mat-error
-                  *ngIf="obtenerControlCampo('points')?.errors?.['required']"
-                >
-                  Los puntos son obligatorios.
-                </mat-error>
-              </mat-form-field>
-              <br />
               <br />
 
               <mat-form-field class="example-full-width">
