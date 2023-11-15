@@ -1,8 +1,9 @@
 import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Trips } from '../model/trips';
+import { TotalPurchasesByUserDTOComponent } from '../model/TotalPurchasesByUserDTO';
 
 
 const base_url = environment.base;
@@ -65,5 +66,19 @@ export class TripsService {
       .set('Authorization', `Bearer ${token}`)
       .set('Content-Type', 'application/json'),  
     });
+
+    
+  }
+
+  getPurchases():Observable<TotalPurchasesByUserDTOComponent[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<TotalPurchasesByUserDTOComponent[]>(`${this.url}/SumatoryPurchasesByUser`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
+    });
+
+
   }
 }

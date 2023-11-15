@@ -1,8 +1,10 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../model/product';
+import { TotalProductForUserDTO } from '../model/TotalProductForUserDTO';
+import { TotalPurchasesByUserDTOComponent } from '../model/TotalPurchasesByUserDTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -66,5 +68,15 @@ export class ProductService {
         .set('Content-Type', 'application/json'),
     });
   }
+  getTrips():Observable<TotalProductForUserDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<TotalProductForUserDTO[]>(`${this.url}/ProductForUser`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
+    });
+  }
+  
 
 }

@@ -47,6 +47,10 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
+import { ReportComponent } from './report/report.component';
+import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
+import { NgChartsModule } from 'ng2-charts';
+import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +85,9 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
     TripsComponent,
     TolistTripsComponent,
     CreateditTripsComponent,
+    ReportComponent,
+    TotalProductForUserComponent,
+    TotalPurchasesByUserDTOComponent,
   ],
   imports: [
     CommonModule,
@@ -97,6 +104,7 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    NgChartsModule
   ],
   providers: [],
 })
