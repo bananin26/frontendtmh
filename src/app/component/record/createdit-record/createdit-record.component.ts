@@ -120,7 +120,7 @@ export class CreateditRecordComponent implements OnInit {
         this.rS.list().subscribe((data) => {
           this.rS.setList(data);
         });
-        this.openDialog('Record Registrado Exitosamente', 'El record se ha registrado satisfactoriamente.');
+        this.openDialog('El record se ha registrado satisfactoriamente.');
       });
       this.router.navigate(['/components/Records/new']);
     } else {
@@ -128,11 +128,11 @@ export class CreateditRecordComponent implements OnInit {
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {

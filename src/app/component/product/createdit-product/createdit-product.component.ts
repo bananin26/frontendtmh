@@ -81,7 +81,7 @@ export class CreateditProductComponent implements OnInit {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
         });
-        this.openDialog('Producto Registrado Exitosamente', 'El producto se ha registrado satisfactoriamente.');
+        this.openDialog('El producto se ha registrado satisfactoriamente.');
       });
       this.router.navigate(['/components/Products/new']);
     } else {
@@ -89,11 +89,11 @@ export class CreateditProductComponent implements OnInit {
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {

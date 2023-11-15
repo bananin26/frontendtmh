@@ -85,7 +85,7 @@ export class CreateditNotificationComponent {
         this.nS.list().subscribe((data) => {
           this.nS.setList(data);
         });
-        this.openDialog('Notificación Registrado Exitosamente', 'La notificación se ha registrado satisfactoriamente.');
+        this.openDialog('La notificación se ha registrado satisfactoriamente.');
         this.form.reset();
       });
       this.router.navigate(['/components/Notifications']);
@@ -94,11 +94,11 @@ export class CreateditNotificationComponent {
     }
   }
 
-  openDialog(title: string, message: string): void {
+  openDialog(message: string): void {
     const dialogRef = this.dialog.open(DialogConfirmComponent, {
       width: '400px',
       height: '200px',
-      data: { title, message },
+      data: { message },
     });
   
     dialogRef.afterClosed().subscribe(result => {
