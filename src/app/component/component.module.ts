@@ -47,6 +47,8 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
+import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,7 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
     TripsComponent,
     TolistTripsComponent,
     CreateditTripsComponent,
+    DialogConfirmComponent,
   ],
   imports: [
     CommonModule,
@@ -97,6 +100,7 @@ import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
+    MatDialogModule
   ],
   providers: [],
 })
