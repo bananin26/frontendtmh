@@ -15,6 +15,7 @@ import { Category } from 'src/app/model/category';
 import { Trips } from 'src/app/model/trips';
 import { TripsService } from 'src/app/service/trips.service';
 import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-createdit-product',
@@ -27,7 +28,9 @@ export class CreateditProductComponent implements OnInit {
   mensaje: string = '';
   listaTrips:Trips[]=[]
   listaCategory:Category[]=[]
+  listaUser:User[]=[]
   idOrderSeleccionada:number=0
+  idUserSeleccionada:number=0
   idCategorySeleccionada:number=0
   edition: boolean = false;
   id: number = 0;
@@ -76,6 +79,8 @@ export class CreateditProductComponent implements OnInit {
       this.product.dimensionsProduct = this.form.value.dimensionsProduct;
       this.product.trips.idTrips = this.form.value.trips;
       this.product.category.idCategory = this.form.value.category;
+      this.product.user.idUser = this.form.value.user;
+
 
       this.pS.insert(this.product).subscribe((data) => {
         this.pS.list().subscribe((data) => {
@@ -121,6 +126,7 @@ export class CreateditProductComponent implements OnInit {
           dimensionsProduct: new FormControl(data.dimensionsProduct),
           trips: new FormControl(data.trips.idTrips),
           category: new FormControl(data.category.idCategory), 
+          user: new FormControl(data.user.idUser), 
         });
       });
     }

@@ -1,5 +1,6 @@
 import { Category } from './category';
 import { Trips } from './trips';
+import { User } from './user';
 
 export class Product {
   idProduct: number = 0;
@@ -9,4 +10,5 @@ export class Product {
   dimensionsProduct: string = '';
   trips: Trips = new Trips();
   category: Category = new Category();
+  user: User = new User();
 }
