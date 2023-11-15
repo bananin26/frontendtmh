@@ -13,7 +13,7 @@ export class PointsByUserComponent {
     responsive: true,
   };
   barChartLabels: string[] = [];
-  barChartType: ChartType = 'pie';
+  barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
   constructor(private rS: RecordService) { }
@@ -25,7 +25,7 @@ export class PointsByUserComponent {
       this.barChartData = [
         {
           data: data.map(item => item.points), label: 'Total Puntos por persona',
-          backgroundColor:'rgba(30,0,0,0.79)'
+          backgroundColor:'rgba(50,0,0,0.79)'
         }
       ]
 
