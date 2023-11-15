@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import {
   FormGroup,
   FormControl,
@@ -16,6 +17,7 @@ import { RecordService } from 'src/app/service/record.service';
 import * as moment from 'moment';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
+import { DialogConfirmComponent } from '../../user/dialog-confirm/dialog-confirm.component';
 
 @Component({
   selector: 'app-createdit-record',
@@ -63,7 +65,8 @@ export class CreateditRecordComponent implements OnInit {
     private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog 
   ) {}
 
   ngOnInit(): void {
@@ -117,11 +120,25 @@ export class CreateditRecordComponent implements OnInit {
         this.rS.list().subscribe((data) => {
           this.rS.setList(data);
         });
+        this.openDialog('Record Registrado Exitosamente', 'El record se ha registrado satisfactoriamente.');
+        this.form.reset();
       });
-      this.router.navigate(['/components/Records']);
+      this.router.navigate(['/components/Records/new']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
+  }
+
+  openDialog(title: string, message: string): void {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
+      width: '800px',
+      height: '300px',
+      data: { title, message },
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   obtenerControlCampo(nombreCampo: string): AbstractControl {
