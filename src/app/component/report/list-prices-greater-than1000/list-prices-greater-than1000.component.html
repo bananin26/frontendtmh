@@ -1,1 +1,29 @@
-<p>list-prices-greater-than1000 works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-card class="mat-card-container" style="width: 1000px; border-radius: 50px;">
+    <div class="container">
+        <div style="text-align:center; margin-top: 30px;">
+            <h1>Precios Mayores a 1000</h1>
+        </div>
+        <div style="text-align: center">
+            <canvas 
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [type]="barChartType"
+            >
+
+            </canvas>
+        </div>
+    </div>
+    </mat-card> 
+</body>
+</html>
