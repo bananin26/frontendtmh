@@ -86,11 +86,7 @@ import { MatCardModule } from '@angular/material/card';
     TolistTripsComponent,
     CreateditTripsComponent,
     DialogConfirmComponent,
-<<<<<<< HEAD
-
-=======
     MapachevereComponent,
->>>>>>> 03beda004c49ea783bed8d470bbd9a6422c89d14
   ],
   imports: [
     CommonModule,
