@@ -44,19 +44,14 @@ import { HomeComponent } from './home/home.component';
 import { TripsComponent } from './trips/trips.component';
 import { TolistTripsComponent } from './trips/tolist-trips/tolist-trips.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
-<<<<<<< HEAD
 import { ReportComponent } from './report/report.component';
 import { TotalProductForUserComponent } from './report/total-product-for-user/total-product-for-user.component';
 import { NgChartsModule } from 'ng2-charts';
 import { TotalPurchasesByUserDTOComponent } from './report/total-purchases-by-user-dto/total-purchases-by-user-dto.component';
-=======
-import { DialogConfirmComponent } from './user/dialog-confirm/dialog-confirm.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MapachevereComponent } from './mapachevere/mapachevere.component';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { GoogleMap } from '@angular/google-maps';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { MatCardModule } from '@angular/material/card';
-
->>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
 
 @NgModule({
   declarations: [
@@ -90,14 +85,10 @@ import { MatCardModule } from '@angular/material/card';
     TripsComponent,
     TolistTripsComponent,
     CreateditTripsComponent,
-<<<<<<< HEAD
     ReportComponent,
     TotalProductForUserComponent,
     TotalPurchasesByUserDTOComponent,
-=======
-    DialogConfirmComponent,
-    MapachevereComponent,
->>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
+    MapachevereComponent
   ],
   imports: [
     CommonModule,
@@ -114,13 +105,9 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-<<<<<<< HEAD
-    NgChartsModule
-=======
-    MatDialogModule,
-    GoogleMapsModule,
-    MatCardModule
->>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
+    MatCardModule,
+    NgChartsModule,
+    GoogleMapsModule
   ],
   providers: [CreateditUserComponent],
 })

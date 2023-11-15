@@ -50,7 +50,6 @@
 
       <div class="container-menu">
         <div class="cont-menu">
-<<<<<<< HEAD
             <div class="sidebar">
                 <div class="toolbar-content">
                     <img
@@ -134,38 +133,8 @@
                     <li>
                       <a style="cursor: pointer;" routerLink="/login" (click)="cerrar()"><span class="menu-icon material-icons" style="margin-left: 24px;">exit_to_app</span>Cerrar Sesión<span class="submenu-icon9 material-icons" style="visibility: hidden;">keyboard_arrow_down</span></a>
                     </li>
-=======
-          <div class="sidebar">
-            <div class="toolbar-content">
-              <img
-                src="assets/logo2.png"
-                alt="Logo de la aplicación"
-                class="toolbar-image"
-                style="margin-left: 92px"
-              />
-            </div>
-            <ul>
-              <li style="margin-top: -20px" *ngIf="validarRol()">
-                <a
-                  ><span class="mover1" class="menu-icon material-icons"
-                    >person</span
-                  >User<span class="submenu-icon material-icons"
-                    >keyboard_arrow_down</span
-                  ></a
-                >
-                <ul class="sub-menu">
-                  <li *ngIf="role == 'CUSTOMER' || role == 'TRAVELER'">
-                    <a href="/components/Users/new">Add User</a>
-                  </li>
-                  <li *ngIf="role == 'ADMIN'">
-                    <a href="/components/Users">List User</a>
-                  </li>
-                  <li *ngIf="role == 'ADMIN'">
-                    <a href="/components/Users/search">Search User</a>
-                  </li>
->>>>>>> 9d731bca77e7cb84a71c760b2632a05f1ecec34a
                 </ul>
-              </li>
+                
               <li *ngIf="role == 'CUSTOMER' || role == 'ADMIN'">
                 <a
                   ><span class="menu-icon material-icons">store</span
@@ -304,7 +273,7 @@
                   ></a
                 >
               </li>
-            </ul>
+            
 
             <label for="btn-menu" class="boton2" class="material-icons"
               >menu</label
