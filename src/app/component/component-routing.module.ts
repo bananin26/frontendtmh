@@ -21,6 +21,7 @@ import { RecordComponent } from './record/record.component';
 import { HomeComponent } from './home/home.component';
 import { CreateditTripsComponent } from './trips/createdit-trips/createdit-trips.component';
 import { TripsComponent } from './trips/trips.component';
+import { MapachevereComponent } from './mapachevere/mapachevere.component';
 
 const routes: Routes = [
   {
@@ -99,6 +100,10 @@ const routes: Routes = [
   {
     path: 'Home',
     component: HomeComponent,
+  },
+  {
+    path: 'Map',
+    component: MapachevereComponent,
   },
 ];
 
