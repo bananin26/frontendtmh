@@ -78,7 +78,7 @@ export class CreateditRecordComponent implements OnInit {
       payment: ['', Validators.required],
       paymentDate: ['', [Validators.required]],
       arriveDate: ['', Validators.required],
-      points: ['', Validators.required],
+      points: [''],
       product: ['', Validators.required],
       user: ['', Validators.required],
     });
@@ -96,7 +96,6 @@ export class CreateditRecordComponent implements OnInit {
       const selectedProduct = this.listaProduct.find((p) => p.idProduct === idProduct);
       if (selectedProduct) {
         this.precioProductoSeleccionado = selectedProduct.priceProduct;
-        // Asigna automáticamente los puntos según el intervalo de precios
         this.asignarPuntosAutomaticamente();
       }
     });
