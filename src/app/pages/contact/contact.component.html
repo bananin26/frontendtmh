@@ -198,10 +198,14 @@
 
     <!-- Start Map -->
 
-
-
-
-
+    <div class="container-123" style="margin-top: 0px;">
+      <google-map width="1900" height="600" [center]="position" >
+          <map-marker
+          [position]="position"
+          [label]="label">
+          </map-marker>
+      </google-map>
+  </div>
     
     <!-- Ena Map -->
 
