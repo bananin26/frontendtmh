@@ -81,6 +81,7 @@ visibility: visible;
 }
 .cont-menu{
 width: 100%;
+font-family: 'Courier New', Courier, monospace;
 max-width: 250px;
 background: #1c1c1c;
 height: 100vh;
