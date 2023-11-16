@@ -1,4 +1,11 @@
-
+@charset 'UTF-8';
+.slick-dots,
+.slick-next,
+.slick-prev {
+  position: absolute;
+  display: block;
+  padding: 0;
+}
 .slick-dots li button:before,
 .slick-next:before,
 .slick-prev:before {
@@ -6,8 +13,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
+.slick-loading .slick-list {
+  background: url(../img/ajax-loader.gif) center center no-repeat #fff;
+}
+@font-face {
+  font-family: slick;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../webfonts/slick.eot);
+  src: url(../webfonts/slick.eot?#iefix) format("embedded-opentype"),
+    url(../webfonts/slick.woff) format("woff"),
+    url(../webfonts/slick.ttf) format("truetype"),
+    url(../webfonts/slick.svg#slick) format("svg");
+}
 .slick-next,
 .slick-prev {
   font-size: 0;
@@ -130,5 +148,3 @@
   opacity: 0.75;
   color: #000;
 }
-
-  

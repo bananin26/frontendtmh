@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  position = {
+    lat:-12.07660,
+    lng:-77.09338
+  };
 
+  label={
+    color:'red',
+    text:'.'
+  }
 }
