@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
   position = {
-    lat:-12.07660,
-    lng:-77.09338
+    lat:-12.10417,     
+    lng:-76.96341
   };
 
   label={
