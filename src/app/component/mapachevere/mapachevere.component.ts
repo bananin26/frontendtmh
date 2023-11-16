@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class MapachevereComponent {
 
   position = {
-    lat:-12.07660,
-    lng:-77.09338
+    lat:-12.10417,     
+    lng:-76.96341
   };
 
   label={
