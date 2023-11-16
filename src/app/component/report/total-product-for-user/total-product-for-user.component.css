@@ -5,7 +5,7 @@
 
 .mat-card-container{ 
     margin: auto;
-    height: 600px;
+    height: 550px;
     border: 1px solid #ccc;
     width: 1000px; 
     border-radius: 50px;
@@ -24,7 +24,8 @@
 /* styles.css */
 /* Estilo personalizado para la barra de herramientas */
 .mat-toolbar.mat-primary {
-background-color: black;
+background-color: rgba(0,0,0,0.10);
+background: #242222;
 color: white; /* Cambia el color del texto si es necesario */
 }
 /*Estilos para el encabezado*/
