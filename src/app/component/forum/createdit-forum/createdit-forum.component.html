@@ -26,13 +26,15 @@
                   matInput
                   placeholder="Ex. reclamo aplicado..."
                   formControlName="forum"
-                ></textarea>                <mat-error
+                ></textarea>               
+                 <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('forum')?.errors?.['required']"
                 >
                   El forum es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>User</mat-label>
@@ -44,7 +46,7 @@
                     {{ l.name }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('user')?.errors?.['required']"
                 >
                   El usuario es obligatorio.

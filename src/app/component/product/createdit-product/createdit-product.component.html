@@ -27,13 +27,14 @@
                   placeholder="Name Product"
                   formControlName="nameProduct"
                 />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('nameProduct')?.errors?.['required']"
                 >
                   El nombre es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Description</mat-label>
@@ -42,13 +43,13 @@
                   placeholder="Description"
                   formControlName="descriptionProduct"
                 />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('descriptionProduct')?.errors?.['required']"
                 >
                   La descripción es obligatorio.
                 </mat-error>
               </mat-form-field>
-
+              <br>
               <br />
               <mat-form-field class="example-full-width">
                 <mat-label>Price</mat-label>
@@ -61,12 +62,13 @@
                   max="5000"
                 />
                 
-                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['required']">El precio es obligatorio.</mat-error>
-                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['min']">El precio debe ser mayor o igual a 10.</mat-error>
-                <mat-error *ngIf="obtenerControlCampo('priceProduct')?.errors?.['max']">El precio debe ser menor o igual a 5000.</mat-error>
+                <mat-error style="font-size: 10.7px;" *ngIf="obtenerControlCampo('priceProduct')?.errors?.['required']">El precio es obligatorio.</mat-error>
+                <mat-error style="font-size: 10.7px;" *ngIf="obtenerControlCampo('priceProduct')?.errors?.['min']">El precio debe ser mayor o igual a 10.</mat-error>
+                <mat-error style="font-size: 10.7px;" *ngIf="obtenerControlCampo('priceProduct')?.errors?.['max']">El precio debe ser menor o igual a 5000.</mat-error>
 
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Dimensions</mat-label>
@@ -75,13 +77,14 @@
                   placeholder="Dimensions"
                   formControlName="dimensionsProduct"
                 />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('dimensionsProduct')?.errors?.['required']"
                 >
                   Las dimensiones son obligatorias.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Trips</mat-label>
@@ -93,13 +96,14 @@
                     {{ lt.user.name }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('trips')?.errors?.['required']"
                 >
                   El nombre del viajero es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Category</mat-label>
@@ -114,13 +118,14 @@
                     {{ l.nameCategory }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('category')?.errors?.['required']"
                 >
                   La categoria es obligatoria.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>User</mat-label>
@@ -135,7 +140,7 @@
                     {{ l.name }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('user')?.errors?.['required']"
                 >
                   El usuario es obligatorio.
