@@ -25,35 +25,37 @@
               <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
                 <input matInput placeholder="Name" formControlName="name" />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('name')?.errors?.['required']"
                 >
                   El nombre es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Email" formControlName="email" />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('email')?.errors?.['required']"
                 >
                   El e-mail es obligatorio.
                 </mat-error>
               </mat-form-field>
-
+              <br>
               <br />
               <mat-form-field class="example-full-width">
                 <mat-label>Phone</mat-label>
                 <input matInput placeholder="Phone" formControlName="phone" />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('phone')?.errors?.['required']"
                 >
                   El teléfono es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field appearance="fill" class="example-full-width">
                 <input
@@ -69,14 +71,14 @@
                   [for]="picker"
                 ></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('birthday')?.errors?.['required']"
                 >
                   La fecha es obligatoria.
                 </mat-error>
               </mat-form-field>
               <br />
-
+              <br>
               <mat-form-field class="example-full-width">
                 <mat-label>País</mat-label>
                 <mat-select formControlName="country">
@@ -84,7 +86,7 @@
                     {{ p.viewValue }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('country')?.errors?.['required']"
                 >
                   El país es obligatorio.

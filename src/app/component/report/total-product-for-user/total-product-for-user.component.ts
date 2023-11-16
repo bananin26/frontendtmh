@@ -25,7 +25,7 @@ export class TotalProductForUserComponent implements OnInit{
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
-          data: data.map(item => item.totalProducts), label: 'Total de viajes',
+          data: data.map(item => item.totalProducts), label: 'Total de Productos',
           backgroundColor:'rgba(0,0,0,0.79)'
         }
       ]

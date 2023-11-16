@@ -11,7 +11,7 @@
       style="max-width: 250px; max-height: 250px"
     />
   </div>
-  
+
   <button mat-menu-item style="color: white; background-color: black; border: none;">
     Rol:
     <span>{{ role }}</span>
@@ -114,12 +114,31 @@
                         <li *ngIf="role == 'ADMIN'"><a href="/components/Records">List Records</a></li>
                     </ul>
                 </li>
+                <li *ngIf="role == 'ADMIN'">
+                  <a><span class="menu-icon material-icons">report</span>Reports<span class="submenu-icon9 material-icons">keyboard_arrow_down</span></a>
+                  <ul class="sub-menu">
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query01">Report 1</a></li>
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Report 2</a></li>
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Report 3</a></li>
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Report 4</a></li>
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Report 5</a></li>
+                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Report 6</a></li>
+                  </ul>
+              </li>
                 <li >
                   <a style="cursor: pointer;" routerLink="/login" (click)="cerrar()"><span class="menu-icon material-icons" style="margin-left: 24px;">exit_to_app</span>Cerrar Sesión<span class="submenu-icon9 material-icons" style="visibility: hidden;">keyboard_arrow_down</span></a>
                 </li>
             </ul>
 
-            <label for="btn-menu" class="boton2" class="material-icons">menu</label>
+            <div class="container">
+              <label for="btn-menu" style="margin-left: -100px;"><img
+                src="assets/menu-chevere-recontraoficial.png"
+                class="image-menu"
+    
+                alt="Logo"
+    
+                /></label>
+              </div>
     </div>
  </div>
 </div>

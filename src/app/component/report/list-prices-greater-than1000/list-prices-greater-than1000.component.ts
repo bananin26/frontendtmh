@@ -25,7 +25,7 @@ export class ListPricesGreaterThan1000Component implements OnInit {
       this.barChartLabels = data.map((item) => item.nameProduct);
       this.barChartData = [
         {
-          data: data.map(item => item.priceProduct), label: 'Total Dificultad asignada',
+          data: data.map(item => item.priceProduct), label: 'Precios ',
           backgroundColor:'rgba(173, 216, 230, 0.5)'
         }
       ]

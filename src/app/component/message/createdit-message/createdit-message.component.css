@@ -81,7 +81,12 @@ body {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente si lo deseas */
 }
-
-
+.mat-error {
+  font-size: 5%; /* Ajusta el tamaño del texto según sea necesario */
+}
+.custom-error {
+  font-size: 5%; /* Ajusta el tamaño del texto según sea necesario */
+  /* Otros estilos personalizados si es necesario */
+}
 
 
