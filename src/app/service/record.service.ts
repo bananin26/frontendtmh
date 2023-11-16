@@ -1,6 +1,7 @@
+import { PointsDTO } from './../model/PointsDTO';
 import { environment } from './../../environments/environment';
 import { Injectable, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Record } from '../model/record';
 
@@ -66,6 +67,16 @@ export class RecordService {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
+    });
+  }
+
+  getPoints():Observable<PointsDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<PointsDTO[]>(`${this.url}/CountPoints`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+
     });
   }
 }

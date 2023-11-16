@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { ChartOptions } from 'chart.js';
 import { ChartType,ChartDataset } from 'chart.js';
 import { LoginService } from 'src/app/service/login.service';
-import { TripsService } from 'src/app/service/trips.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
-  selector: 'app-total-trips-by-user',
-  templateUrl: './total-trips-by-user.component.html',
-  styleUrls: ['./total-trips-by-user.component.css']
+  selector: 'app-quantity-message-send-by-user',
+  templateUrl: './quantity-message-send-by-user.component.html',
+  styleUrls: ['./quantity-message-send-by-user.component.css']
 })
-export class TotalTripsByUserComponent {
+export class QuantityMessageSendByUserComponent {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -18,15 +18,15 @@ export class TotalTripsByUserComponent {
   barChartLegend = true;
   role: string = '';
   barChartData: ChartDataset[] = [];
-  constructor(private tS: TripsService, private loginService: LoginService) { }
+  constructor(private uS: UserService, private loginService: LoginService) { }
 
 
   ngOnInit(): void {
-    this.tS.getTrips().subscribe((data) => {
+    this.uS.getSend().subscribe((data) => {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
-          data: data.map(item => item.totalPurchases), label: 'Total Dificultad asignada',
+          data: data.map(item => item.quantityMessageSend), label: 'Total de mensajes enviados',
           backgroundColor:'rgba(30,0,0,0.79)'
         }
       ]

@@ -2,32 +2,32 @@ import { Component } from '@angular/core';
 import { ChartOptions } from 'chart.js';
 import { ChartType,ChartDataset } from 'chart.js';
 import { LoginService } from 'src/app/service/login.service';
-import { TripsService } from 'src/app/service/trips.service';
+import { RecordService } from 'src/app/service/record.service';
 
 @Component({
-  selector: 'app-total-trips-by-user',
-  templateUrl: './total-trips-by-user.component.html',
-  styleUrls: ['./total-trips-by-user.component.css']
+  selector: 'app-points-by-user',
+  templateUrl: './points-by-user.component.html',
+  styleUrls: ['./points-by-user.component.css']
 })
-export class TotalTripsByUserComponent {
+export class PointsByUserComponent {
   barChartOptions: ChartOptions = {
     responsive: true,
   };
   barChartLabels: string[] = [];
-  barChartType: ChartType = 'pie';
+  barChartType: ChartType = 'bar';
   barChartLegend = true;
   role: string = '';
   barChartData: ChartDataset[] = [];
-  constructor(private tS: TripsService, private loginService: LoginService) { }
+  constructor(private rS: RecordService, private loginService: LoginService) { }
 
 
   ngOnInit(): void {
-    this.tS.getTrips().subscribe((data) => {
+    this.rS.getPoints().subscribe((data) => {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
-          data: data.map(item => item.totalPurchases), label: 'Total Dificultad asignada',
-          backgroundColor:'rgba(30,0,0,0.79)'
+          data: data.map(item => item.points), label: 'Total Puntos por persona',
+          backgroundColor:'rgba(255,0,0,0.79)'
         }
       ]
 
