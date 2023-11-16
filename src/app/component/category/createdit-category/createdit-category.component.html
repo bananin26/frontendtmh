@@ -26,13 +26,14 @@
                   placeholder="Name Category"
                   formControlName="nameCategory"
                 />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('nameCategory')?.errors?.['required']"
                 >
                   El nombre es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Details</mat-label>
@@ -41,13 +42,13 @@
                   placeholder="Detalla la categoría..."
                   formControlName="detailsCategory"
                 ></textarea>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('detailsCategory')?.errors?.['required']"
                 >
                   La descripción es obligatorio.
                 </mat-error>
               </mat-form-field>
-
+              <br>
               <br />
 
               <button
