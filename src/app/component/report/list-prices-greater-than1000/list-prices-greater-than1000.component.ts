@@ -17,7 +17,6 @@ export class ListPricesGreaterThan1000Component implements OnInit {
   barChartLegend = true;
   barChartData: ChartDataset[] = [];
   role: string = '';
-  backgroundImage = 'url("assets/fondo-record.jpg")';
 
 
   constructor(private pS: ProductService, private loginService: LoginService) { }
