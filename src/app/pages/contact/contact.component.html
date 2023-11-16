@@ -14,14 +14,30 @@
     >
       <div class="container text-light">
         <div class="w-100 d-flex justify-content-between">
-            <i class="fa fa-envelope mx-2"></i>
-            <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">takemehome.com</a>
+          <i class="fa fa-envelope mx-2"></i>
+          <a
+            class="navbar-sm-brand text-light text-decoration-none"
+            href="mailto:info@company.com"
+            >takemehome.com</a
+          >
           <div>
-            <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-            <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
-            <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
-            <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
-        </div>
+
+            <a
+              class="text-light"
+              href="https://www.instagram.com/"
+              target="_blank"
+              ><i class="fab fa-instagram fa-sm fa-fw me-2"></i
+            ></a>
+            <a class="text-light" href="https://twitter.com/" target="_blank"
+              ><i class="fab fa-twitter fa-sm fa-fw me-2"></i
+            ></a>
+            <a
+              class="text-light"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              ><i class="fab fa-linkedin fa-sm fa-fw"></i
+            ></a>
+          </div>
         </div>
       </div>
     </nav>
@@ -34,7 +50,7 @@
           class="navbar-brand text-success logo h1 align-self-center"
           href="/Start"
         >
-          Take me Home
+          TakeMeHome
         </a>
 
         <button
@@ -171,22 +187,20 @@
       <div class="col-md-6 m-auto text-center">
         <h1 class="h1">Ubícanos</h1>
         <p>
-          Nos encontramos en Prolongación Primavera 2390, Santiago de Surco 15023
+          Nos encontramos en Prolongación Primavera 2390, Santiago de Surco
+          15023
         </p>
       </div>
     </div>
 
     <!-- Start Map -->
 
-    <div class="container-123" style="margin-top: 0px;">
-      <google-map width="1900" height="600" [center]="position" >
-          <map-marker
-          [position]="position"
-          [label]="label">
-          </map-marker>
+    <div class="container-123" style="margin-top: 0px">
+      <google-map width="1900" height="600" [center]="position">
+        <map-marker [position]="position" [label]="label"> </map-marker>
       </google-map>
-  </div>
-    
+    </div>
+
     <!-- Ena Map -->
 
     <!-- Start Contact -->
@@ -253,28 +267,23 @@
         <div class="row">
           <div class="col-md-4 pt-5">
             <h2 class="h2 text-success border-bottom pb-3 border-light logo">
-              Take Me Home
+              TakeMeHome
             </h2>
             <ul class="list-unstyled text-light footer-link-list">
               <li>
-                <a
-                  ><span class="mover1" class="menu-icon material-icons"
-                    >map</span
-                  ></a
-                >
+                <i class="fas fa-map-marker-alt fa-fw"></i>
                 Prolongación Primavera 2390, Santiago de Surco 15023
               </li>
               <li>
-                <a
-                  ><span
-                    class="mover1"
-                    class="menu-icon material-icons"
-                    style="margin-right: 5px"
-                    >phone</span
-                  ></a
+                <i class="fa fa-phone fa-fw"></i>
+                <a class="text-decoration-none" href="tel:010-020-0340">
+                  010-020-0340</a
                 >
-                <a class="text-decoration-none" href="tel:010-020-0340"
-                  >010-020-0340</a
+              </li>
+              <li>
+                <i class="fa fa-envelope fa-fw"></i>
+                <a class="text-decoration-none" href="mailto:info@company.com">
+                  takemehome.com</a
                 >
               </li>
             </ul>
@@ -312,13 +321,17 @@
               Further Info
             </h2>
             <ul class="list-unstyled text-light footer-link-list">
-              <li><a class="text-decoration-none" href="#">Home</a></li>
-              <li><a class="text-decoration-none" href="#">About Us</a></li>
+              <li><a class="text-decoration-none" href="/Start">Home</a></li>
+              <li>
+                <a class="text-decoration-none" href="/About">About Us</a>
+              </li>
               <li>
                 <a class="text-decoration-none" href="#">Shop Locations</a>
               </li>
               <li><a class="text-decoration-none" href="#">FAQs</a></li>
-              <li><a class="text-decoration-none" href="#">Contact</a></li>
+              <li>
+                <a class="text-decoration-none" href="/Contact">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -336,16 +349,8 @@
                   class="text-light text-decoration-none"
                   target="_blank"
                   href="http://facebook.com/"
-                >
-                  <a
-                    ><span
-                      class="mover1"
-                      class="menu-icon material-icons"
-                      style="margin-top: 10px"
-                      >facebook</span
-                    ></a
-                  >
-                </a>
+                  ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+                ></a>
               </li>
               <li
                 class="list-inline-item border border-light rounded-circle text-center"
@@ -354,55 +359,29 @@
                   class="text-light text-decoration-none"
                   target="_blank"
                   href="https://www.instagram.com/"
-                >
-                <a
-                ><span
-                  class="mover1"
-                  class="menu-icon material-icons"
-                  style="margin-top: 10px"
-                  >mail</span
-                ></a
+                  ><i class="fab fa-instagram fa-lg fa-fw"></i
+                ></a>
+              </li>
+              <li
+                class="list-inline-item border border-light rounded-circle text-center"
               >
-            </a>
-                
-            <li
-            class="list-inline-item border border-light rounded-circle text-center"
-          >
-            <a
-              class="text-light text-decoration-none"
-              target="_blank"
-              href="https://www.instagram.com/"
-            >
-            <a
-            ><span
-              class="mover1"
-              class="menu-icon material-icons"
-              style="margin-top: 10px"
-              >my_location</span
-            ></a
-          >
-        </a>
-            
-          </li>
-          <li
-          class="list-inline-item border border-light rounded-circle text-center"
-        >
-          <a
-            class="text-light text-decoration-none"
-            target="_blank"
-            href="https://www.instagram.com/"
-          >
-          <a
-          ><span
-            class="mover1"
-            class="menu-icon material-icons"
-            style="margin-top: 10px"
-            >local_mall</span
-          ></a
-        >
-      </a>
-          
-        </li>
+                <a
+                  class="text-light text-decoration-none"
+                  target="_blank"
+                  href="https://twitter.com/"
+                  ><i class="fab fa-twitter fa-lg fa-fw"></i
+                ></a>
+              </li>
+              <li
+                class="list-inline-item border border-light rounded-circle text-center"
+              >
+                <a
+                  class="text-light text-decoration-none"
+                  target="_blank"
+                  href="https://www.linkedin.com/"
+                  ><i class="fab fa-linkedin fa-lg fa-fw"></i
+                ></a>
+              </li>
             </ul>
           </div>
           <div class="col-auto">
@@ -427,8 +406,8 @@
           <div class="row pt-2">
             <div class="col-12">
               <p class="text-left text-light">
-                Copyright &copy; 2023 Company Take Me Home | Designed by
-                <a rel="sponsored" href="https://google.com" target="_blank"
+                Copyright &copy; 2023 Take Me Home | Designed by
+                <a rel="sponsored" href="https://templatemo.com" target="_blank"
                   >Grupo 03</a
                 >
               </p>
