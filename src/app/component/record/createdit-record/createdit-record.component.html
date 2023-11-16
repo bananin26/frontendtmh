@@ -27,13 +27,14 @@
                     {{ p.viewValue }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('payment')?.errors?.['required']"
                 >
                   El tipo de pago es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field appearance="fill" class="example-full-width">
                 <input
@@ -50,13 +51,14 @@
                   [for]="picker1"
                 ></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('paymentDate')?.errors?.['required']"
                 >
                   La fecha de pago es obligatoria.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field appearance="fill" class="example-full-width">
                 <input
@@ -73,13 +75,15 @@
                   [for]="picker2"
                 ></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('arriveDate')?.errors?.['required']"
                 >
                   La fecha de entrega es obligatoria.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
+
 
               <mat-form-field class="example-full-width">
                 <mat-label>Product</mat-label>
@@ -94,13 +98,14 @@
                     {{ l.nameProduct }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('product')?.errors?.['required']"
                 >
                   El producto es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Price Product</mat-label>
@@ -115,13 +120,14 @@
                     {{ l.priceProduct }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('product')?.errors?.['required']"
                 >
                   El precio del producto es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>User</mat-label>
@@ -133,7 +139,7 @@
                     {{ l.name }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('user')?.errors?.['required']"
                 >
                   El usuario es obligatorio.

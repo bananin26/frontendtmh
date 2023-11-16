@@ -23,13 +23,14 @@
               <mat-form-field class="example-full-width">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="Title" formControlName="title" />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('title')?.errors?.['required']"
                 >
                   El título es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Description</mat-label>
@@ -38,13 +39,14 @@
                   placeholder="Description"
                   formControlName="description"
                 />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('description')?.errors?.['required']"
                 >
                   La descripción es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
+              <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Viewed</mat-label>
@@ -53,13 +55,13 @@
                     {{ v.viewValue }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('viewed')?.errors?.['required']"
                 >
                   El visto es obligatorio.
                 </mat-error>
               </mat-form-field>
-
+              <br>
               <br />
 
               <mat-form-field class="example-full-width">
@@ -72,13 +74,13 @@
                     {{ p.name }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('user')?.errors?.['required']"
                 >
                   El usuario es obligatorio.
                 </mat-error>
               </mat-form-field>
-
+              <br>
               <br />
 
               <mat-form-field class="example-full-width">
@@ -91,7 +93,7 @@
                     {{ m.content }}
                   </mat-option>
                 </mat-select>
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('message')?.errors?.['required']"
                 >
                   El mensaje es obligatorio.
