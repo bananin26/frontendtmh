@@ -28,6 +28,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ShopSingleComponent } from './pages/shop-single/shop-single.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { StartComponent } from './pages/start/start.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { StartComponent } from './pages/start/start.component';
     MatIconModule,
     MatSnackBarModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
