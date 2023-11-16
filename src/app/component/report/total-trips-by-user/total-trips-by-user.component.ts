@@ -26,7 +26,7 @@ export class TotalTripsByUserComponent {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
-          data: data.map(item => item.totalPurchases), label: 'Total Dificultad asignada',
+          data: data.map(item => item.totalPurchases), label: 'Total de Viajes',
           backgroundColor:'rgba(30,0,0,0.79)'
         }
       ]

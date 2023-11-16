@@ -26,7 +26,7 @@ export class QuantityMessageReceiveByUserComponent {
       this.barChartLabels = data.map((item) => item.name);
       this.barChartData = [
         {
-          data: data.map(item => item.quantityMessage), label: 'Total de mensajes recibidos',
+          data: data.map(item => item.quantityMessage), label: 'Mensajes recibidos',
           backgroundColor:'rgba(30,0,0,0.79)'
         }
       ]
