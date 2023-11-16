@@ -1,3 +1,5 @@
+<body>
+  
 <mat-toolbar color="primary" *ngIf="verificar()">
   <div class="toolbar-content">
     <img
@@ -113,12 +115,12 @@
                 <li *ngIf="role == 'ADMIN'">
                   <a><span class="menu-icon material-icons">report</span>Reports<span class="submenu-icon9 material-icons">keyboard_arrow_down</span></a>
                   <ul class="sub-menu">
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query01">Report 1</a></li>
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Report 2</a></li>
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Report 3</a></li>
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Report 4</a></li>
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Report 5</a></li>
-                      <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Report 6</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query01">Total Products</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Total Trips</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Points</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Products Greater</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Quantity Receive</a></li>
+                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Quantity Send</a></li>
                   </ul>
               </li>
                 <li >
@@ -141,20 +143,22 @@
 </mat-toolbar>
 
 
-  <mat-card class="mat-card-container" style="width: 1000px; border-radius: 50px; margin-top: 200px;">
-        <div style="text-align:center; margin-top: 110px;">
-            <h1>Cantidad de Mensajes Enviados por Usuario</h1>
-        </div>
-        <div style="text-align: center; width: 300px;">
-            <canvas
-            baseChart
-            [datasets]="barChartData"
-            [labels]="barChartLabels"
-            [options]="barChartOptions"
-            [legend]="barChartLegend"
-            [type]="barChartType"
-            >
+<mat-card class="mat-card-container" style="width: 1000px; border-radius: 50px; margin-top: 200px;">
+  <div style="text-align:center; margin-top: 110px;">
+    <h1 style="font-family: 'Arial', sans-serif; color: #333; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
+      Cantidad de Mensajes Enviados</h1>
+  </div>
+  <div style="text-align: center; width: 700px; margin-top: 50px;">
+      <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      [type]="barChartType"
+      >
 
-            </canvas>
-        </div>
+      </canvas>
+  </div>
 </mat-card>
+</body>

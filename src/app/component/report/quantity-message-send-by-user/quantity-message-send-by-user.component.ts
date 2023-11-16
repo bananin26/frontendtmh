@@ -14,7 +14,7 @@ export class QuantityMessageSendByUserComponent {
     responsive: true,
   };
   barChartLabels: string[] = [];
-  barChartType: ChartType = 'pie';
+  barChartType: ChartType = 'bar';
   barChartLegend = true;
   role: string = '';
   barChartData: ChartDataset[] = [];

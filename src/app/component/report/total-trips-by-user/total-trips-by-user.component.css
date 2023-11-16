@@ -450,3 +450,16 @@ line-height: -500px;
 margin-left: 94px; width: 53px; height: 52px; cursor: pointer;
 margin-top: -4px; 
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/trips.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
