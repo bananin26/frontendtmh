@@ -76,3 +76,11 @@ table {
   background-size: cover;
   background-position: center;
 }
+
+.mat {
+  background-color: lightblue;
+  border-radius: 8px;
+  box-shadow: 0 0 34px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  margin-left: 600px; /* Ajusta según sea necesario */
+}
