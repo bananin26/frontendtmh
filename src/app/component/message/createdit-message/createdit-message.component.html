@@ -22,14 +22,14 @@
               <mat-form-field class="example-full-width">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="Title" formControlName="title" />
-                <mat-error
+                <mat-error style="font-size: 10.7px;"
                   *ngIf="obtenerControlCampo('title')?.errors?.['required']"
                 >
                   El título es obligatorio.
                 </mat-error>
               </mat-form-field>
               <br />
-
+              <br>  
               <mat-form-field class="example-full-width">
                 <mat-label>Message</mat-label>
                 <textarea
