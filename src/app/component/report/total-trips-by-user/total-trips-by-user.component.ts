@@ -27,7 +27,7 @@ export class TotalTripsByUserComponent {
       this.barChartData = [
         {
           data: data.map(item => item.totalPurchases), label: 'Total de Viajes',
-          backgroundColor:'rgba(30,0,0,0.79)'
+          backgroundColor:'rgba(173, 216, 230, 0.5)'
         }
       ]
 

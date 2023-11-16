@@ -377,7 +377,7 @@ font-size: 100px; /* Ajusta el valor según el tamaño de fuente deseado */
 body {
 margin: 0;
 padding: 0;
-background-image: url('/assets/fondo-home.jpg');
+background-image: url('/assets/fondo-record.jpg');
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
