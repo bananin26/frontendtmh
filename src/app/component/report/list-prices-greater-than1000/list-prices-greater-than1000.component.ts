@@ -18,6 +18,7 @@ export class ListPricesGreaterThan1000Component implements OnInit {
   barChartData: ChartDataset[] = [];
   role: string = '';
 
+
   constructor(private pS: ProductService, private loginService: LoginService) { }
 
   ngOnInit(): void {
@@ -51,5 +52,6 @@ export class ListPricesGreaterThan1000Component implements OnInit {
       return false;
     }
   }
+
 
 }

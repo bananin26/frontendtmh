@@ -374,18 +374,6 @@ font-size: 100px; /* Ajusta el valor según el tamaño de fuente deseado */
 }
 
 
-body {
-margin: 0;
-padding: 0;
-background-image: url('/assets/fondo-home.jpg');
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
 .background-image {
 width: 100%;
@@ -450,3 +438,22 @@ line-height: -500px;
 margin-left: 94px; width: 53px; height: 52px; cursor: pointer;
 margin-top: -4px; 
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/fondo-record.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .background-image {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5 ); /* Fondo semi-transparente si lo deseas */
+  }
