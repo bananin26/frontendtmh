@@ -31,6 +31,7 @@ import { PointsByUserComponent } from './report/points-by-user/points-by-user.co
 import { ListPricesGreaterThan1000Component } from './report/list-prices-greater-than1000/list-prices-greater-than1000.component';
 import { QuantityMessageReceiveByUserComponent } from './report/quantity-message-receive-by-user/quantity-message-receive-by-user.component';
 import { QuantityMessageSendByUserComponent } from './report/quantity-message-send-by-user/quantity-message-send-by-user.component';
+import { StartComponent } from '../pages/start/start.component';
 
 const routes: Routes = [
   {
@@ -109,6 +110,7 @@ const routes: Routes = [
   {
     path: 'Home',
     component: HomeComponent,
+    children: [ {path:'#carousel',component: StartComponent}]
   },
   {
     path:'reports', 
