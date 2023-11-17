@@ -120,14 +120,14 @@
                         <ul class="sub-menu">
                             <li *ngIf="role == 'CUSTOMER'"><a href="/components/Records/new">Add Records</a></li>
                             <li *ngIf="role == 'ADMIN'"><a href="/components/Records">List Records</a></li>
+                            <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Points</a></li>
                         </ul>
                     </li>
                     <li *ngIf="role == 'ADMIN'">
                       <a><span class="menu-icon material-icons">report</span>Reports<span class="submenu-icon9 material-icons">keyboard_arrow_down</span></a>
                       <ul class="sub-menu">
-                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query01">Total Products</a></li>
+                        <li><a href="/components/reports/query01">Total Products</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Total Trips</a></li>
-                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Points</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Products Greater</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Quantity Receive</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Quantity Send</a></li>
