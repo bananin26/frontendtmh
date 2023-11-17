@@ -10,9 +10,10 @@
 /* styles.css */
 /* Estilo personalizado para la barra de herramientas */
 .mat-toolbar.mat-primary {
-background-color: black;
-color: white; /* Cambia el color del texto si es necesario */
-}
+  background-color: rgba(0,0,0,0.10);
+  background: #242222;
+  color: white; /* Cambia el color del texto si es necesario */
+  }
 /*Estilos para el encabezado*/
 .header{
 width: 100%;
