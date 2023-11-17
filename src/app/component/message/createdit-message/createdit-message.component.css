@@ -17,6 +17,7 @@
   height: 100vh; /* Ajusta la altura del contenedor al 100% del viewport */
   padding: 20px;
   position: relative; /* Agregado para posicionar el icono */
+  
 }
 
 /* Estilos para el formulario */
@@ -79,7 +80,7 @@ body {
 .background-image {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Fondo semi-transparente si lo deseas */
+  background-image: "/assets/mensaje.png"; /* Fondo semi-transparente si lo deseas */
 }
 .mat-error {
   font-size: 5%; /* Ajusta el tamaño del texto según sea necesario */
@@ -89,4 +90,20 @@ body {
   /* Otros estilos personalizados si es necesario */
 }
 
+mat-card{
+  background-image: "/assets/mensaje.png"; /* Fondo semi-transparente si lo deseas */
+}
 
+.mat-card-container {
+  background: url('/assets/mensaje.png') center/cover no-repeat;
+  color: black; /* Ajusta el color del texto según sea necesario para que sea legible en la imagen */
+}
+
+.mat-card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
