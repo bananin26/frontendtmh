@@ -33,7 +33,6 @@
             >
           </div>
           <div>
-
             <a
               class="text-light"
               href="https://www.instagram.com/"
@@ -60,7 +59,7 @@
       <div class="container d-flex justify-content-between align-items-center">
         <a
           class="navbar-brand text-success logo h1 align-self-center"
-          href="/login"
+          href="/Start"
         >
           TakeMeHome
         </a>
@@ -85,21 +84,21 @@
             <ul
               class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
             >
-            <li class="nav-item">
-              <a class="nav-link" href="/Start">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/About">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Shop">Shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/Contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Start">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/About">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Shop">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
             </ul>
           </div>
           <div class="navbar align-self-center d-flex">
@@ -189,41 +188,29 @@
     </div>
 
     <!-- Start Banner Hero -->
-    <div
-      id="template-mo-zay-hero-carousel"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
         <li
-          data-bs-target="#template-mo-zay-hero-carousel"
+          data-bs-target="/#carousel"
           data-bs-slide-to="0"
           class="active"
         ></li>
-        <li
-          data-bs-target="#template-mo-zay-hero-carousel"
-          data-bs-slide-to="1"
-        ></li>
-        <li
-          data-bs-target="#template-mo-zay-hero-carousel"
-          data-bs-slide-to="2"
-        ></li>
+        <li data-bs-target="#carousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carousel" data-bs-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="container">
             <div class="row p-5">
               <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                <img
-                  class="img-fluid"
-                  src="./assets/logo.png"
-                  alt=""
-                />
+                <img class="img-fluid" src="./assets/logo.png" alt="" />
               </div>
               <div class="col-lg-6 mb-0 d-flex align-items-center">
                 <div class="text-align-left align-self-center">
                   <h1 class="h1 text-success"><b>Take</b> meHome</h1>
-                  <h3 class="h2">¿Quieres algo del extranjero? Un turista te lo traerá</h3>
+                  <h3 class="h2">
+                    ¿Quieres algo del extranjero? Un turista te lo traerá
+                  </h3>
                   <p>
                     A través de TakeMeHome, una persona podrá hacer un pedido de
                     algún paquete y será traído hacia él por medio de turistas
@@ -290,7 +277,7 @@
       </div>
       <a
         class="carousel-control-prev text-decoration-none w-auto ps-3"
-        href="#template-mo-zay-hero-carousel"
+        href="#carousel"
         role="button"
         data-bs-slide="prev"
       >
@@ -298,7 +285,7 @@
       </a>
       <a
         class="carousel-control-next text-decoration-none w-auto pe-3"
-        href="#template-mo-zay-hero-carousel"
+        href="#carousel"
         role="button"
         data-bs-slide="next"
       >
@@ -311,11 +298,8 @@
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">Categories of The Month</h1>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </p>
+          <h1 class="h1">Compra productos</h1>
+          <p>Accede a nuestro catalogo y compra cualquier tipo de productos.</p>
         </div>
       </div>
       <div class="row">
@@ -325,7 +309,7 @@
               src="./assets/img/category_img_01.jpg"
               class="rounded-circle img-fluid border"
           /></a>
-          <h2 class="h5 text-center mt-3 mb-3">Watches</h2>
+          <h2 class="h5 text-center mt-3 mb-3">Tecnología</h2>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
@@ -334,7 +318,7 @@
               src="./assets/img/category_img_02.jpg"
               class="rounded-circle img-fluid border"
           /></a>
-          <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
+          <h2 class="h5 text-center mt-3 mb-3">Ropa</h2>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
@@ -343,7 +327,7 @@
               src="./assets/img/category_img_03.jpg"
               class="rounded-circle img-fluid border"
           /></a>
-          <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
+          <h2 class="h5 text-center mt-3 mb-3">Accesorios</h2>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
       </div>
@@ -355,10 +339,10 @@
       <div class="container py-5">
         <div class="row text-center py-3">
           <div class="col-lg-6 m-auto">
-            <h1 class="h1">Featured Product</h1>
+            <h1 class="h1">Comentario de los usuarios</h1>
             <p>
-              Reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              Take Me Home ya tiene una familia de usuarios, conoce sus
+              opiniones!
             </p>
           </div>
         </div>
@@ -381,18 +365,20 @@
                     <i class="text-muted fa fa-star"></i>
                     <i class="text-muted fa fa-star"></i>
                   </li>
-                  <li class="text-muted text-right">$240.00</li>
+                  <li class="text-muted text-right">Customer</li>
                 </ul>
                 <a
                   href="shop-single.html"
                   class="h2 text-decoration-none text-dark"
-                  >Gym Weight</a
+                  >Apolo Díaz</a
                 >
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                  in culpa qui officia deserunt.
+                  Increíble experiencia con TakeMeHome! Hice mi pedido desde el
+                  extranjero y en poco tiempo, un viajero amable trajo los
+                  productos directamente a mi puerta. ¡Rápido, eficiente y una
+                  forma genial de obtener productos exclusivos de otros lugares!
                 </p>
-                <p class="text-muted">Reviews (24)</p>
+                <p class="text-muted">Compras (12)</p>
               </div>
             </div>
           </div>
@@ -414,18 +400,21 @@
                     <i class="text-muted fa fa-star"></i>
                     <i class="text-muted fa fa-star"></i>
                   </li>
-                  <li class="text-muted text-right">$480.00</li>
+                  <li class="text-muted text-right">Traveler</li>
                 </ul>
                 <a
                   href="shop-single.html"
                   class="h2 text-decoration-none text-dark"
-                  >Cloud Nike Shoes</a
+                  >Adriana Salas</a
                 >
                 <p class="card-text">
-                  Aenean gravida dignissim finibus. Nullam ipsum diam, posuere
-                  vitae pharetra sed, commodo ullamcorper.
+                  Como entusiasta de los viajes, ser parte de TakeMeHome ha sido
+                  una experiencia increíble. No solo he tenido la oportunidad de
+                  explorar nuevos lugares, sino que también he ayudado a las
+                  personas a obtener los productos que desean. ¡Ganar dinero
+                  extra mientras viajo es simplemente genial!
                 </p>
-                <p class="text-muted">Reviews (48)</p>
+                <p class="text-muted">Viajes (5)</p>
               </div>
             </div>
           </div>
@@ -447,18 +436,21 @@
                     <i class="text-warning fa fa-star"></i>
                     <i class="text-warning fa fa-star"></i>
                   </li>
-                  <li class="text-muted text-right">$360.00</li>
+                  <li class="text-muted text-right">Customer</li>
                 </ul>
                 <a
                   href="shop-single.html"
                   class="h2 text-decoration-none text-dark"
-                  >Summer Addides Shoes</a
+                  >Camille Duboy</a
                 >
                 <p class="card-text">
-                  Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar
-                  sagittis diam, et scelerisque ipsum lobortis nec.
+                  TakeMeHome ha cambiado completamente la forma en que hago
+                  compras internacionales. No solo es conveniente, sino que
+                  también me permite acceder a productos únicos que no están
+                  disponibles localmente. La entrega a través de viajeros es una
+                  idea brillante y me ha ahorrado mucho tiempo.
                 </p>
-                <p class="text-muted">Reviews (74)</p>
+                <p class="text-muted">Compras (15)</p>
               </div>
             </div>
           </div>
@@ -473,23 +465,23 @@
         <div class="row">
           <div class="col-md-4 pt-5">
             <h2 class="h2 text-success border-bottom pb-3 border-light logo">
-              Take Me Home
+              TakeMeHome
             </h2>
             <ul class="list-unstyled text-light footer-link-list">
               <li>
                 <i class="fas fa-map-marker-alt fa-fw"></i>
-                123 Consectetur at ligula 10660
+                Prolongación Primavera 2390, Santiago de Surco 15023
               </li>
               <li>
                 <i class="fa fa-phone fa-fw"></i>
-                <a class="text-decoration-none" href="tel:010-020-0340"
-                  >010-020-0340</a
+                <a class="text-decoration-none" href="tel:010-020-0340">
+                  010-020-0340</a
                 >
               </li>
               <li>
                 <i class="fa fa-envelope fa-fw"></i>
-                <a class="text-decoration-none" href="mailto:info@company.com"
-                  >infocompany.com</a
+                <a class="text-decoration-none" href="mailto:info@company.com">
+                  takemehome.com</a
                 >
               </li>
             </ul>
@@ -500,19 +492,25 @@
               Products
             </h2>
             <ul class="list-unstyled text-light footer-link-list">
-              <li><a class="text-decoration-none" href="#">Luxury</a></li>
-              <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-              <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
+              <li><a class="text-decoration-none" href="#">Smartwatch</a></li>
+              <li>
+                <a class="text-decoration-none" href="#">Coffee Maker </a>
+              </li>
+              <li>
+                <a class="text-decoration-none" href="#">Digital Camera</a>
+              </li>
               <li>
                 <a class="text-decoration-none" href="#">Women's Shoes</a>
               </li>
               <li>
-                <a class="text-decoration-none" href="#">Popular Dress</a>
+                <a class="text-decoration-none" href="#"
+                  >Portable Bluetooth Speaker</a
+                >
               </li>
               <li>
                 <a class="text-decoration-none" href="#">Gym Accessories</a>
               </li>
-              <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+              <li><a class="text-decoration-none" href="#">Laptop</a></li>
             </ul>
           </div>
 
@@ -521,13 +519,17 @@
               Further Info
             </h2>
             <ul class="list-unstyled text-light footer-link-list">
-              <li><a class="text-decoration-none" href="#">Home</a></li>
-              <li><a class="text-decoration-none" href="#">About Us</a></li>
+              <li><a class="text-decoration-none" href="/Start">Home</a></li>
+              <li>
+                <a class="text-decoration-none" href="/About">About Us</a>
+              </li>
               <li>
                 <a class="text-decoration-none" href="#">Shop Locations</a>
               </li>
               <li><a class="text-decoration-none" href="#">FAQs</a></li>
-              <li><a class="text-decoration-none" href="#">Contact</a></li>
+              <li>
+                <a class="text-decoration-none" href="/Contact">Contact</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -602,9 +604,9 @@
           <div class="row pt-2">
             <div class="col-12">
               <p class="text-left text-light">
-                Copyright &copy; 2021 Company Name | Designed by
+                Copyright &copy; 2023 Take Me Home | Designed by
                 <a rel="sponsored" href="https://templatemo.com" target="_blank"
-                  >TemplateMo</a
+                  >Grupo 03</a
                 >
               </p>
             </div>
