@@ -54,7 +54,7 @@
                   style="margin-left: 92px;"
                 />
               </div>
-            <ul>
+              <ul>
                 <li style="margin-top: -20px;" *ngIf="validarRol()" ><a><span class="mover1"class="menu-icon material-icons">person</span>User<span class="submenu-icon material-icons">keyboard_arrow_down</span></a>
                     <ul class="sub-menu">
                         <li *ngIf="role == 'CUSTOMER' || role == 'TRAVELER'"><a href="/components/Users/new">Add User</a></li>
@@ -67,6 +67,7 @@
                     <ul class="sub-menu">
                         <li *ngIf="role == 'CUSTOMER'"><a href="/components/Products/new">Add Product</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/Products">List Product</a></li>
+                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Products Greater</a></li>
                     </ul>
                 </li>
                 <li *ngIf="role == 'ADMIN' || role == 'TRAVELER'">
@@ -74,6 +75,7 @@
                     <ul class="sub-menu">
                         <li *ngIf="role == 'TRAVELER'"><a href="/components/Trips/new">Add Trips</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/Trips">List Trips</a></li>
+                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Total Trips</a></li>
                     </ul>
                 </li>
                 <li *ngIf="validarRol()">
@@ -81,6 +83,8 @@
                     <ul class="sub-menu">
                         <li><a href="/components/Messages/new">Add Message</a></li>
                         <li><a href="/components/Messages">List Message</a></li>
+                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Quantity Receive</a></li>
+                        <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Quantity Send</a></li>
                     </ul>
                 </li>
                 <li *ngIf="validarRol()">
@@ -115,19 +119,9 @@
                     <ul class="sub-menu">
                         <li *ngIf="role == 'CUSTOMER'"><a href="/components/Records/new">Add Records</a></li>
                         <li *ngIf="role == 'ADMIN'"><a href="/components/Records">List Records</a></li>
+                        <li *ngIf="role == 'CUSTOMER' || role == 'ADMIN'"><a href="/components/reports/queery03">Points</a></li>
                     </ul>
                 </li>
-                <li *ngIf="role == 'ADMIN'">
-                  <a><span class="menu-icon material-icons">report</span>Reports<span class="submenu-icon9 material-icons">keyboard_arrow_down</span></a>
-                  <ul class="sub-menu">
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query01">Total Products</a></li>
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query02">Total Trips</a></li>
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/queery03">Points</a></li>
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query04">Products Greater</a></li>
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query05">Quantity Receive</a></li>
-                    <li *ngIf="role == 'ADMIN'"><a href="/components/reports/query06">Quantity Send</a></li>
-                  </ul>
-              </li>
                 <li >
                   <a style="cursor: pointer;" routerLink="/login" (click)="cerrar()"><span class="menu-icon material-icons" style="margin-left: 24px;">exit_to_app</span>Cerrar Sesión<span class="submenu-icon9 material-icons" style="visibility: hidden;">keyboard_arrow_down</span></a>
                 </li>
