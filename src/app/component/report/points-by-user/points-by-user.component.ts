@@ -14,7 +14,7 @@ export class PointsByUserComponent {
     responsive: true,
   };
   barChartLabels: string[] = [];
-  barChartType: ChartType = 'bar';
+  barChartType: ChartType = 'pie';
   barChartLegend = true;
   role: string = '';
   barChartData: ChartDataset[] = [];
